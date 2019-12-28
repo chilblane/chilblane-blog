@@ -1,0 +1,4 @@
+baseURL = "http://www.chilblane.com/"
+languageCode = "en-us"
+title = "Chilblane"
+theme = "ananke"
