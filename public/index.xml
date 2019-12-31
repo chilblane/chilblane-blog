@@ -6,18 +6,38 @@
     <description>Recent content on Chilblane</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Nov 2019 10:36:55 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 11:41:48 -0700</lastBuildDate>
     
 	<atom:link href="http://www.chilblane.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>http://www.chilblane.com/about/</link>
+      <pubDate>Tue, 31 Dec 2019 11:41:48 -0700</pubDate>
+      
+      <guid>http://www.chilblane.com/about/</guid>
+      <description>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</description>
+    </item>
+    
+    <item>
+      <title>Second Post</title>
+      <link>http://www.chilblane.com/posts/second-post/</link>
+      <pubDate>Tue, 31 Dec 2019 11:10:36 -0700</pubDate>
+      
+      <guid>http://www.chilblane.com/posts/second-post/</guid>
+      <description>Fusce lacus magna, maximus nec sapien eu, porta efficitur neque. Aliquam erat volutpat. Vestibulum enim nibh, posuere eu diam nec, varius sagittis turpis.
+Praesent quis sapien egestas mauris accumsan pulvinar. Ut mattis gravida venenatis. Vivamus lobortis risus id nisi rutrum, at iaculis.</description>
+    </item>
+    
+    <item>
       <title>Test Post</title>
-      <link>http://www.chilblane.com/posts/test-post/</link>
+      <link>http://www.chilblane.com/posts/first-post/</link>
       <pubDate>Mon, 25 Nov 2019 10:36:55 -0700</pubDate>
       
-      <guid>http://www.chilblane.com/posts/test-post/</guid>
-      <description>Here&amp;rsquo;s my test post&amp;hellip;.</description>
+      <guid>http://www.chilblane.com/posts/first-post/</guid>
+      <description>In vel ligula tortor. Aliquam erat volutpat. Pellentesque at felis eu quam tincidunt dignissim. Nulla facilisi.
+Pellentesque tempus nisi et interdum convallis. In quam ante, vulputate at massa et, rutrum gravida dui. Phasellus tristique libero at ex.</description>
     </item>
     
   </channel>

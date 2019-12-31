@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article>
+    {{ .Content }}
+</article>
+<section>
+    <h2>Posts</h2>
+    {{- range first 10 .Site.Pages -}} {{- if eq .Type "posts"}}
+    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    {{- end -}} {{- end }}
+    <h2>Pages</h2>
+    {{- range first 10 .Site.Pages -}} {{- if eq .Type "page"}}
+    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    {{- end -}} {{- end }}
+</section>
+{{ end }}
