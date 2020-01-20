@@ -1,7 +1,15 @@
 {{ define "main" }}
 <article>
-    <section>
-        {{- .Content -}}
-    </section>
+    <header>
+        <h1>
+            {{- .Title -}}
+        </h1>
+    </header>
+    {{ range .Pages.ByPublishDate.Reverse }}
+    <p>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </p>
+    {{ end }}
 </article>
+
 {{ end }}

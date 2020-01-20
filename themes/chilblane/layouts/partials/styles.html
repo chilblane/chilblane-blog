@@ -1,0 +1,6 @@
+<!-- prettier-ignore -->
+{{ $sass_options := (dict "targetPath" "css/styles.css" "outputStyle" "nested") -}}
+<!-- prettier-ignore -->
+{{ $styles := resources.Get "sass/styles.scss" | toCSS $sass_options -}}
+
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />

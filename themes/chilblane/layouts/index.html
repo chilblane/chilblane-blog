@@ -1,7 +1,5 @@
 {{ define "main" }}
-<article>
-    {{ .Content }}
-</article>
+<h1>{{ .Site.Title }}</h1>
 <section>
     <h2>Posts</h2>
     {{- range first 10 .Site.Pages -}} {{- if eq .Type "posts"}}

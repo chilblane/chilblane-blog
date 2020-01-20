@@ -1,15 +1,16 @@
 <head>
     <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>{{ .Title }}</title>
-    <meta property="og:title" content="{{ .Title }}" />
-    <meta
-        name="description"
-        content="UX designer and UI engineer based in Phoenix, Arizona."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {{ hugo.Generator }}
+    <!-- prettier-ignore -->
+    {{- partial "styles.html" . -}}
+    <!-- prettier-ignore -->
+    {{ $title := print .Title " | " .Site.Title }}
+    <!-- prettier-ignore -->
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+    <meta property="og:title" content="{{ $title }}" />
+    <meta name="description" content="UX designer and UI engineer based in Phoenix, Arizona." />
     <meta
         property="og:description"
         content="UX designer and UI engineer based in Phoenix, Arizona."
@@ -19,10 +20,7 @@
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-65603184-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65603184-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {

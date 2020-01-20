@@ -1,0 +1,23 @@
+{
+  "name": "chilblane-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chilblane/chilblane-blog.git"
+  },
+  "author": "Daniel Singer",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/chilblane/chilblane-blog/issues"
+  },
+  "homepage": "https://github.com/chilblane/chilblane-blog#readme"
+}

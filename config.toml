@@ -2,3 +2,13 @@ baseURL = "http://www.chilblane.com/"
 languageCode = "en-us"
 title = "Chilblane"
 theme = "chilblane"
+
+[menu]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+    [[menu.main]]
+        name = "Posts"
+        url = "/posts/"
+        weight = 2
