@@ -2,6 +2,10 @@ $color-palette-data: (
     white: (
         base: #fff
     ),
+    gray: (
+        light: #a3b4c8,
+        darker: #101924
+    ),
     blue: (
         lighter: #aecef5,
         light: #348ffd,
@@ -32,3 +36,8 @@ $color-palette-data: (
         @error 'Color `#{$hue} - #{$value}` not found.';
     }
 }
+
+$background-color: color(gray, darker);
+$text-color: color(gray, light);
+$action-color: color(blue, light);
+$action-color-hover: color(blue, lighter);

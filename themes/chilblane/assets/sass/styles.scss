@@ -4,10 +4,14 @@
 
 @import 'mixins/container';
 @import 'mixins/screen-reader';
+@import 'mixins/state';
 
-@import 'normalize';
+@import 'core/normalize';
+@import 'core/core';
 
 @import 'components/container';
+@import 'components/featuredposts';
+@import 'components/siteheader';
 
 @import 'utils/spacing';
 @import 'utils/text';

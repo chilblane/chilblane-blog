@@ -1,0 +1,9 @@
+.c-siteheader {
+    background-color: #000;
+    @include container();
+    nav a {
+        display: inline-block;
+        padding: space(4);
+        margin-right: space(8);
+    }
+}

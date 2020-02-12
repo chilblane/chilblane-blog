@@ -1,6 +1,6 @@
 ---
-title: 'A post detailing a project'
-date: 2019-12-31T11:10:36-07:00
+title: "Here's how this should work"
+date: 2020-02-12T12:36:37-07:00
 ---
 
 Fusce lacus magna, maximus nec sapien eu,

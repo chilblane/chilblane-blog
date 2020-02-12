@@ -1,0 +1,17 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    @include typeface(body);
+    background-color: $background-color;
+    color: $text-color;
+}
+
+a {
+    color: $action-color;
+    text-decoration: none;
+    @include hover {
+        color: $action-color-hover;
+        text-decoration: underline;
+    }
+}

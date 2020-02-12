@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "Chilblane"
 theme = "chilblane"
 
+[params]
+    homeHeroHeadline = "Daniel Singer"
+    homeHeroText = "Product designer and UI engineer"
+
 [menu]
     [[menu.main]]
         name = "Home"
