@@ -1,13 +1,13 @@
 {{ define "main" }}
-<h1>{{ .Site.Title }}</h1>
+<section class="c-container u-padding-y-32">
+    <h1>{{ .Site.Title }}</h1>
+</section>
 <section>
-    <h2>Posts</h2>
-    {{- range first 10 .Site.Pages -}} {{- if eq .Type "posts"}}
-    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-    {{- end -}} {{- end }}
-    <h2>Pages</h2>
-    {{- range first 10 .Site.Pages -}} {{- if eq .Type "page"}}
-    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    <h2 class="u-sr-only">Latest posts</h2>
+    {{- range first 3 .Site.RegularPages -}} {{- if eq .Type "posts"}}
+    <div class="c-container u-padding-y-16">
+        <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    </div>
     {{- end -}} {{- end }}
 </section>
 {{ end }}

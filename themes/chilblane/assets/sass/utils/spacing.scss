@@ -1,0 +1,47 @@
+@each $prop in (margin, padding) {
+    @each $size, $length in $spacing-palette-data {
+        .u-#{$prop}-#{$size} {
+            #{$prop}: $length;
+        }
+        .u-#{$prop}-t-#{$size},
+        .u-#{$prop}-y-#{$size} {
+            #{$prop}-top: $length;
+        }
+        .u-#{$prop}-b-#{$size},
+        .u-#{$prop}-y-#{$size} {
+            #{$prop}-bottom: $length;
+        }
+        .u-#{$prop}-l-#{$size},
+        .u-#{$prop}-x-#{$size} {
+            #{$prop}-left: $length;
+        }
+        .u-#{$prop}-r-#{$size},
+        .u-#{$prop}-x-#{$size} {
+            #{$prop}-right: $length;
+        }
+    }
+}
+
+.u-margin-auto {
+    margin: auto;
+}
+
+.u-margin-t-auto,
+.u-margin-y-auto {
+    margin-top: auto;
+}
+
+.u-margin-b-auto,
+.u-margin-y-auto {
+    margin-bottom: auto;
+}
+
+.u-margin-l-auto,
+.u-margin-x-auto {
+    margin-left: auto;
+}
+
+.u-margin-r-auto,
+.u-margin-x-auto {
+    margin-right: auto;
+}

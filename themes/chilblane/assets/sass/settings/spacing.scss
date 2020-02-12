@@ -1,0 +1,36 @@
+$spacing-palette-data: (
+    none: (
+        0
+    ),
+    4: (
+        0.25rem
+    ),
+    8: (
+        0.5rem
+    ),
+    12: (
+        0.75rem
+    ),
+    16: (
+        1rem
+    ),
+    20: (
+        1.25rem
+    ),
+    24: (
+        1.5rem
+    ),
+    32: (
+        2rem
+    )
+);
+
+@function space($variant) {
+    $fetched-value: map-get($spacing-palette-data, $variant);
+
+    @if type-of($fetched-value) == number {
+        @return $fetched-value;
+    } @else {
+        @error 'Spacing value `#{$variant}` not found.';
+    }
+}
