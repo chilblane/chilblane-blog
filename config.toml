@@ -1,4 +1,4 @@
-baseURL = "http://www.chilblane.com/"
+baseURL = "https://chilblane.netlify.com/"
 languageCode = "en-us"
 title = "Chilblane"
 theme = "chilblane"
