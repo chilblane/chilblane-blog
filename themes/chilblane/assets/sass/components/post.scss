@@ -1,0 +1,16 @@
+.c-post {
+    @include container();
+    padding-bottom: space(32);
+    header {
+        border-bottom: 1px solid currentColor;
+        padding-top: space(32);
+        padding-bottom: space(32);
+        margin-bottom: space(32);
+        text-align: center;
+    }
+    &__body {
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

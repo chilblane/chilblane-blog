@@ -5,6 +5,7 @@
 @import 'mixins/container';
 @import 'mixins/screen-reader';
 @import 'mixins/state';
+@import 'mixins/img-fluid';
 
 @import 'core/normalize';
 @import 'core/core';
@@ -13,6 +14,8 @@
 @import 'components/container';
 @import 'components/featuredposts';
 @import 'components/siteheader';
+@import 'components/post';
+@import 'components/figure';
 
 @import 'utils/spacing';
 @import 'utils/text';
