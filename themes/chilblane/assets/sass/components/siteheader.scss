@@ -1,9 +1,15 @@
 .c-siteheader {
     background-color: #000;
     @include container();
+    @include font-size(s);
+    display: flex;
+    nav {
+        flex: 0 1 auto;
+        margin-left: space(-8);
+        margin-right: space(-8);
+    }
     nav a {
         display: inline-block;
-        padding: space(4);
-        margin-right: space(8);
+        padding: space(8);
     }
 }

@@ -1,0 +1,14 @@
+.c-layout {
+}
+
+@media screen and (orientation: landscape) {
+    .c-layout {
+        display: flex;
+        .c-siteheader {
+            flex: 0 1 0;
+        }
+        #content {
+            flex: 1 1 auto;
+        }
+    }
+}
