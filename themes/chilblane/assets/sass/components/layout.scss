@@ -1,7 +1,8 @@
 .c-layout {
+    background-color: $background-color;
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 25rem) and (orientation: landscape) {
     .c-layout {
         display: flex;
         .c-siteheader {

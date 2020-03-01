@@ -1,16 +1,18 @@
 {{ define "main" }}
-<section class="c-container u-padding-y-32">
-    <h1>{{ .Site.Params.homeHeroHeadline }}</h1>
-    <p>{{ .Site.Params.homeHeroText }}</p>
-</section>
-<section>
+<main class="c-home">
+    <section class="c-home__hero">
+        <h1>{{ .Site.Params.homeHeroHeadline }}</h1>
+        <p>{{ .Site.Params.homeHeroText }}</p>
+    </section>
     <h2 class="u-sr-only">Latest posts</h2>
-    <ul class="c-featuredposts">
-        {{- range first 4 .Site.RegularPages -}} {{- if eq .Type "posts"}}
-        <li>
-            <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-        </li>
-        {{- end -}} {{- end }}
-    </ul>
-</section>
+    <section class="c-home__featured">
+        <ul class="c-featuredposts">
+            {{- range first 4 .Site.RegularPages -}} {{- if eq .Type "posts"}}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{- end -}} {{- end }}
+        </ul>
+    </section>
+</main>
 {{ end }}
