@@ -1,4 +1,12 @@
 .c-home {
+    background-image: repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 5px,
+            #000 5px,
+            #000 8px
+        ),
+        linear-gradient(-15deg, color(gray, darker), color(blue, darker), color(purple, dark));
     &__hero {
         @include container();
         padding-top: space(32);
