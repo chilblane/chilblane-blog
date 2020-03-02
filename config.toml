@@ -1,11 +1,14 @@
-baseURL = "https://chilblane.netlify.com/"
+baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
-title = "Chilblane"
+title = "Chilblane.com"
 theme = "chilblane"
+googleAnalytics = "UA-65603184-1"
 
 [params]
+    description = "UX designer and UI engineer based in Phoenix, Arizona."
     homeHeroHeadline = "Daniel Singer"
     homeHeroText = "Product designer and UI engineer"
+
 
 [menu]
     [[menu.main]]

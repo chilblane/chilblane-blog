@@ -10,7 +10,9 @@
         padding: space(24);
         flex: 1 1 30ch;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
         &:nth-of-type(odd) {
             background-color: rgba(255, 255, 255, 0.02);
         }
