@@ -38,7 +38,7 @@ I went ahead and grabbed the CSS file and several Javascript files from the new 
 
 I didn't want this project to be confused for the official site in any way, so I deliberately broke much of the Javascript code and removed all outbound links. What remained was the code used to handle the transitions and other parts of the UI. There was also a Javascript library that provided a modular way to manage media queries and breakpoints in the code. This, alongside the modular CSS classes themselves, made this prototype much easier to build than I was expecting.
 
-I found I was able to adapt most of my mockup into the [prototype](http://www.chilblane.com/wow-armory-redesign/dnasis), thanks to the rules I had set when creating the mockup. There were still several issues with regards to the breakpoints, and I adjusted the layout of the page accordingly once I had viewed the content in a one-column view on mobile.
+I found I was able to adapt most of my mockup into the [prototype](http://chilblane.github.io/wow-armory-redesign/dnasis), thanks to the rules I had set when creating the mockup. There were still several issues with regards to the breakpoints, and I adjusted the layout of the page accordingly once I had viewed the content in a one-column view on mobile.
 
 {{< img name="armory-header.jpg" alt="Header of my prototype, featuring an updated character pose" caption="I also updated the header to feature a much more active character pose" >}}
 
