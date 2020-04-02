@@ -3,9 +3,9 @@
     {{- partial "head.html" . -}}
     <body>
         <div class="c-layout">
-            {{- partial "header.html" . -}}
+            {{- partial "siteheader.html" . -}}
             <div id="content">
-                {{- block "main" . }}{{- end }}
+                {{ partial "nav.html" . }} {{- block "main" . }}{{- end }}
             </div>
             {{- partial "footer.html" . -}}
         </div>

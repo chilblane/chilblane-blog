@@ -7,8 +7,7 @@ timeout = 60000
 
 [params]
     description = "UX designer and UI engineer based in Phoenix, Arizona."
-    homeHeroHeadline = "Daniel Singer"
-    homeHeroText = "Product designer and UI engineer"
+    homeHeroHeadline = "Chilblane"
 
 
 [menu]
@@ -17,6 +16,6 @@ timeout = 60000
         url = "/"
         weight = 1
     [[menu.main]]
-        name = "Posts"
-        url = "/posts/"
+        name = "Articles"
+        url = "/articles/"
         weight = 2

@@ -8,7 +8,8 @@ $spacing-palette-data: (
     16: (1rem),
     20: (1.25rem),
     24: (1.5rem),
-    32: (2rem)
+    32: (2rem),
+    64: (4rem)
 );
 
 @function space($variant) {
