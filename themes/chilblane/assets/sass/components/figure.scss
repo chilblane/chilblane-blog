@@ -1,23 +1,22 @@
 .c-figure {
-    margin-left: 0;
-    margin-right: 0;
-    img {
-        @include img-fluid;
-        border: 1px solid color(gray);
-        opacity: percentage(2/3);
-        margin-left: auto;
-        margin-right: auto;
-        transition: opacity 0.4s ease-out, border-color 0.4s ease-out;
-    }
-    figcaption {
-        @include font-size(s);
-        text-align: center;
-    }
+  margin-left: 0;
+  margin-right: 0;
+  img {
+    @include img-fluid;
+    border: 1px solid color(gray);
+    opacity: percentage(2/3);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  figcaption {
+    @include font-size(s);
+    text-align: center;
+  }
 
-    a:hover {
-        img {
-            border-color: color(gray, light);
-            opacity: 1;
-        }
+  a:hover {
+    img {
+      border-color: color(gray, light);
+      opacity: 1;
     }
+  }
 }
