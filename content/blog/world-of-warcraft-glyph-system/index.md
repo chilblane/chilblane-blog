@@ -2,8 +2,6 @@
 title: 'Overhauling the cosmetic appearances of abilities in World of Warcraft'
 description: 'A history of cosmetic customization and the Glyphs system in World of Warcraft, and my ideas on how to improve the gameplay and user interface for glyphs'
 date: 2021-02-22
-images:
-  - blog/world-of-warcraft-glyph-system/glyphs-concept.jpg
 ---
 
 _Originally posted August 10, 2020 on [LinkedIn](https://www.linkedin.com/pulse/overhauling-cosmetic-appearances-abilities-world-warcraft-singer/)_
