@@ -4,7 +4,7 @@ $font-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace
 
 $ff-body: join('Inter', $font-system, comma);
 $ff-heading: join('Inter', $font-system, comma);
-$ffm: $font-mono;
+$ffm: join('JetBrains Mono', $font-mono, comma);
 
 // The font size set on the root html element.
 $base-font-size: 16px !default;

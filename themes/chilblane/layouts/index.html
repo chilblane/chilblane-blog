@@ -1,7 +1,13 @@
-{{ define "main" }}
-<main class="c-list">
-  <article class="c-post">
-    <h1>{{.Site.Params.description}}</h1>
+{{ define "main" }} {{/* TODO: continue moving strings to front matter */}}
+<main class="c-home">
+  <div class="c-industry-alert">
+    <div class="c-industry-alert__header">Chilblane Industries</div>
+    <div class="c-industry-alert__body">
+      <strong>Status:</strong> {{ .Params.currentAlert}}
+    </div>
+  </div>
+  <article>
+    <h1 class="c-home__heading">{{.Params.heading}}</h1>
   </article>
 </main>
 {{ end }}

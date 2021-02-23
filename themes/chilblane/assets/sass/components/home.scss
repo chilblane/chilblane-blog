@@ -1,0 +1,21 @@
+.c-home {
+  padding-top: space(16);
+  &__heading {
+    display: inline-block;
+    background-color: color(gray, dark);
+    @include container();
+    padding-top: space(24);
+    padding-bottom: space(24);
+    margin-bottom: space(32);
+  }
+  @media screen and (min-width: 25rem) {
+    @include container();
+  }
+  @media screen and (min-width: 40rem) {
+    &__heading {
+      font-size: 5rem;
+      line-height: 1.4;
+      letter-spacing: -0.02229983988915077em;
+    }
+  }
+}

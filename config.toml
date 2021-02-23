@@ -9,7 +9,6 @@ timeout = 60000
     description = "Daniel Singer is a product designer and design technologist based in Phoenix, Arizona."
     navTitle = "Daniel Singer"
     navSubTitle = "Chilblane"
-    homeHeading1 = "Product designer, design technologist"
     images = ["og-image.jpg"]
 
 
