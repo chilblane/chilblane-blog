@@ -1,14 +1,16 @@
 baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
-title = "Chilblane.com"
+title = "Daniel Singer | Product designer & design technologist"
 theme = "chilblane"
 googleAnalytics = "UA-65603184-1"
 timeout = 60000
 
 [params]
-    description = "Product designer and design technologist based in Phoenix, Arizona."
+    description = "Daniel Singer is a product designer and design technologist based in Phoenix, Arizona."
     navTitle = "Daniel Singer"
     navSubTitle = "Chilblane"
+    homeHeading1 = "Product designer, design technologist"
+    images = ["og-image.jpg"]
 
 
 [menu]

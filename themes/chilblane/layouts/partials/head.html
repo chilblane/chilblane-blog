@@ -1,38 +1,41 @@
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    {{ hugo.Generator }}
-    <!-- prettier-ignore -->
-    {{- partial "styles.html" . -}}
-    <!-- prettier-ignore -->
-    {{ $title := print .Title " | " .Site.Title }}
-    <!-- prettier-ignore -->
-    {{ $description := .Description }}
-    <!-- prettier-ignore -->
-    {{ if .IsHome }}
-    <!-- prettier-ignore -->
-    {{ $title = .Site.Title }}
-    <!-- prettier-ignore -->
-    {{ $description = .Site.Params.Description }}
-    <!-- prettier-ignore -->
-    {{ end }}
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-        rel="stylesheet"
-    />
-    <title>{{ $title }}</title>
-    <meta property="og:title" content="{{ $title }}" />
-    <meta name="description" content="{{ $description }}" />
-    <meta property="og:description" content="{{ $description }}" />
-    <link rel="canonical" href="{{ .Site.BaseURL }}" />
-    <meta property="og:url" content="{{ .Site.BaseURL }}" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9fbcdf" />
-    <meta name="theme-color" content="#9fbcdf" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    {{ template "_internal/google_analytics.html" . }}
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  {{ hugo.Generator }}
+  <!-- prettier-ignore -->
+  {{- partial "styles.html" . -}}
+  <!-- prettier-ignore -->
+  {{ $title := print .Title " | Daniel Singer" }}
+  <!-- prettier-ignore -->
+  {{ if .IsHome }}
+  <!-- prettier-ignore -->
+  {{ $title = .Site.Title }}
+  <!-- prettier-ignore -->
+  {{ end }}
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>{{ $title }}</title>
+  <meta
+    name="description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+  />
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  {{ template "_internal/opengraph.html" . }}
+  <!-- prettier-ignore -->
+  {{ template "_internal/twitter_cards.html" . }}
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9fbcdf" />
+  <meta name="theme-color" content="#9fbcdf" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  {{ template "_internal/google_analytics.html" . }}
 </head>
