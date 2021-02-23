@@ -7,10 +7,13 @@
     opacity: percentage(2/3);
     margin-left: auto;
     margin-right: auto;
+    max-height: 40rem;
+    max-height: 70vh;
   }
   figcaption {
     @include font-size(s);
     text-align: center;
+    letter-spacing: -0.006223544263193em;
   }
 
   a:hover {
