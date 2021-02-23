@@ -9,12 +9,6 @@
         padding-bottom: space(32);
         margin-bottom: space(32);
         time {
-            @include type-layout(xs, 1);
-        }
-    }
-    &__body {
-        p,
-        li {
             @include type-layout(s, 1);
         }
     }

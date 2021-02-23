@@ -1,6 +1,29 @@
 .c-siteheader {
-    @include container();
-    @include type-layout(xl, 3);
-    padding-top: space(32);
-    padding-bottom: space(32);
+  @include container();
+  padding-top: space(16);
+  padding-bottom: space(16);
+  display: flex;
+  align-items: center;
+  &__home {
+    @include type-layout(xl, 1);
+    padding-top: space(16);
+    padding-bottom: space(16);
+    font-weight: 700;
+    flex-grow: 1;
+    flex-basis: 100%;
+    span:first-child {
+      letter-spacing: -0.01em;
+      display: block;
+    }
+    span:last-child {
+      font-size: 50%;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 400;
+    }
+    @media screen and (min-width: 40rem) {
+      font-size: 2rem;
+      line-height: 1.5rem;
+    }
+  }
 }

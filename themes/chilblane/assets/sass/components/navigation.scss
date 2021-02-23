@@ -1,20 +1,22 @@
 .c-navigation {
-    background-color: color(gray, dark);
-    @include container();
-    @include font-size(s);
-    display: flex;
-    align-items: center;
-    a {
-        display: inline-block;
-        padding: space(8);
-    }
+  @include font-size(s);
+  a {
+    display: block;
+    padding: space(4);
+  }
 }
 
 @media screen and (min-width: 40rem) {
-    .c-navigation {
-        flex-direction: column;
-        padding-top: space(16);
-        padding-bottom: space(16);
-        align-items: flex-start;
+  .c-navigation {
+    @include container();
+    display: flex;
+    align-items: center;
+    padding-top: space(16);
+    padding-bottom: space(16);
+    align-items: flex-start;
+    @include font-size(l);
+    a {
+      padding-left: space(24);
     }
+  }
 }
