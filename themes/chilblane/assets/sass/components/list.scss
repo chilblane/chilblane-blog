@@ -2,7 +2,7 @@
   padding-top: space(16);
   &__heading {
     @include container();
-    @include type-layout(m, 1);
+    @include font-size(m);
   }
   @media screen and (min-width: 25rem) {
     @include container();

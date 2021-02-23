@@ -1,26 +1,53 @@
 html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    @include typeface(body);
-    background-color: $background-color;
-    color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  @include typeface(body);
+  line-height: 1.4;
+  letter-spacing: -0.010959778564167367em;
+  background-color: $background-color;
+  color: $text-color;
 }
 
 a {
-    color: $action-color;
-    text-decoration: none;
-    @include hover {
-        color: $action-color-hover;
-        text-decoration: underline;
-    }
+  color: $action-color;
+  text-decoration: none;
+  @include hover {
+    color: $action-color-hover;
+    text-decoration: underline;
+  }
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+// define Inter ideal letter spacing for these font sizes.
+// remember to change if the font sizes change!
+h1 {
+  letter-spacing: -0.02160486150154747em;
+}
 h2 {
-    @include typeface(headline);
+  letter-spacing: -0.01949232756522em;
+}
+h3 {
+  letter-spacing: -0.016657338648324763em;
+}
+h4 {
+  letter-spacing: -0.010959778564167367em;
+}
+h5 {
+  letter-spacing: -0.006223544263193em;
+}
+h6 {
+  letter-spacing: 0.01000932295886em;
 }
 
 li {
-    @include margin(1 0);
+  @include margin(1 0);
 }

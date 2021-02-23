@@ -5,25 +5,30 @@
   display: flex;
   align-items: center;
   &__home {
-    @include type-layout(xl, 1);
+    @include font-size(xl);
     padding-top: space(16);
     padding-bottom: space(16);
     font-weight: 700;
     flex-grow: 1;
     flex-basis: 100%;
     span:first-child {
-      letter-spacing: -0.01em;
       display: block;
+      letter-spacing: -0.01949232756522em;
     }
     span:last-child {
+      display: block;
       font-size: 50%;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.0004907744588531736em;
       font-weight: 400;
     }
     @media screen and (min-width: 40rem) {
-      font-size: 2rem;
-      line-height: 1.5rem;
+      @include font-size(xxl);
+      letter-spacing: -0.02160486150154747em;
+
+      span:last-child {
+        letter-spacing: -0.010959778564167367em;
+      }
     }
   }
 }

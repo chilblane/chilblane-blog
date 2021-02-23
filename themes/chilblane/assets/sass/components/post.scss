@@ -1,15 +1,15 @@
 .c-post {
-    background-color: color(gray, dark);
-    @include container();
-    padding-top: space(24);
-    padding-bottom: space(24);
+  background-color: color(gray, dark);
+  @include container();
+  padding-top: space(24);
+  padding-bottom: space(24);
+  margin-bottom: space(32);
+  header {
+    border-bottom: 1px solid color(gray);
+    padding-bottom: space(32);
     margin-bottom: space(32);
-    header {
-        border-bottom: 1px solid color(gray);
-        padding-bottom: space(32);
-        margin-bottom: space(32);
-        time {
-            @include type-layout(s, 1);
-        }
+    time {
+      @include font-size(s);
     }
+  }
 }
