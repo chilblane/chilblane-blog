@@ -1,43 +1,46 @@
 $color-palette-data: (
-    white: (
-        base: #fff
-    ),
-    gray: (
-        light: #a3b4c8,
-        base: #3d5168,
-        dark: #122337,
-        darker: #101924
-    ),
-    blue: (
-        lighter: #aecef5,
-        light: #348ffd,
-        base: #0073ff,
-        dark: #004291,
-        darker: #001835
-    ),
-    orange: (
-        lighter: #ffe0ae,
-        light: #ffa922,
-        base: #ff9c00,
-        dark: #dd8700,
-        darker: #513100
-    ),
-    purple: (
-        base: #ff00f2,
-        dark: #910189
-    )
+  white: (
+    base: #fff
+  ),
+  gray: (
+    light: #afbfcf,
+    base: #3d5168,
+    dark: #122337,
+    darker: #101924
+  ),
+  blue: (
+    lighter: #aecef5,
+    light: #348ffd,
+    base: #0073ff,
+    dark: #004291,
+    darker: #001835
+  ),
+  orange: (
+    lighter: #ffe0ae,
+    light: #ffa922,
+    base: #ff9c00,
+    dark: #dd8700,
+    darker: #513100
+  ),
+  purple: (
+    base: #ff00f2,
+    dark: #910189
+  )
 );
 
 @function color($hue, $value: base) {
-    $fetched-color: map-get(map-get($color-palette-data, $hue), $value);
-    @if map-has-key($color-palette-data, $fetched-color) {
-        $fetched-color: map-get(map-get($color-palette-data, $fetched-color), $value);
-    }
-    @if type-of($fetched-color) == color {
-        @return $fetched-color;
-    } @else {
-        @error 'Color `#{$hue} - #{$value}` not found.';
-    }
+  $fetched-color: map-get(map-get($color-palette-data, $hue), $value);
+  @if map-has-key($color-palette-data, $fetched-color) {
+    $fetched-color: map-get(
+      map-get($color-palette-data, $fetched-color),
+      $value
+    );
+  }
+  @if type-of($fetched-color) == color {
+    @return $fetched-color;
+  } @else {
+    @error 'Color `#{$hue} - #{$value}` not found.';
+  }
 }
 
 $background-color: color(gray, darker);
