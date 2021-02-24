@@ -8,14 +8,64 @@
     padding-bottom: space(24);
     margin-bottom: space(32);
   }
-  @media screen and (min-width: 25rem) {
+  &__body {
     @include container();
   }
+  h2 {
+    display: table;
+    white-space: nowrap;
+    margin-right: space(16);
+    &::after {
+      border-top: 1px solid $text-color;
+      content: '';
+      display: table-cell;
+      position: relative;
+      top: 1em;
+      width: 100%;
+      left: 0.5em;
+    }
+  }
+  h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  @media screen and (min-width: 25rem) {
+    @include container();
+    &__body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
   @media screen and (min-width: 40rem) {
+    section {
+      padding-top: space(16);
+      padding-bottom: space(16);
+    }
     &__heading {
       font-size: 5rem;
       line-height: 1.4;
       letter-spacing: -0.02229983988915077em;
     }
+  }
+}
+
+// TODO: this will be a separate grid component one day
+.c-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: space(-8);
+  margin-right: space(-8);
+}
+
+.c-column {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-left: space(8);
+  padding-right: space(8);
+  @media screen and (min-width: 40rem) {
+    flex: 0 0 auto;
+    width: percentage(1/3);
   }
 }

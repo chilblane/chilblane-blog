@@ -9,6 +9,12 @@ html {
   color: $text-color;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 a {
   color: $action-color;
   text-decoration: none;
