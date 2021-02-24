@@ -6,31 +6,9 @@
   />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   {{ hugo.Generator }}
-  <!-- prettier-ignore -->
   {{- partial "styles.html" . -}}
-  <!-- prettier-ignore -->
-  {{ $title := print .Title " | Daniel Singer" }}
-  <!-- prettier-ignore -->
-  {{ if .IsHome }}
-  <!-- prettier-ignore -->
-  {{ $title = .Site.Title }}
-  <!-- prettier-ignore -->
-  {{ end }}
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <title>{{ $title }}</title>
-  <meta
-    name="description"
-    content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
-  />
+  {{- partial "meta.html" . -}}
   <link rel="canonical" href="{{ .Permalink }}" />
-
-  {{ template "_internal/opengraph.html" . }}
-  <!-- prettier-ignore -->
-  {{ template "_internal/twitter_cards.html" . }}
   <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
