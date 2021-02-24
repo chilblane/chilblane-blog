@@ -26,6 +26,7 @@
   }
   &__body {
     @include typeface(monospace);
+    letter-spacing: 0;
     strong {
       text-transform: uppercase;
     }
