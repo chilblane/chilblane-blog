@@ -11,6 +11,19 @@
   &__body {
     @include container();
   }
+  &__links {
+    display: flex;
+    padding-top: space(16);
+    padding-bottom: space(16);
+    p {
+      margin: 0;
+      flex: 0 0 auto;
+      width: percentage(1/3);
+      text-align: center;
+      @include font-size(l);
+      letter-spacing: -0.016657338648324763em;
+    }
+  }
   h2 {
     display: table;
     white-space: nowrap;
