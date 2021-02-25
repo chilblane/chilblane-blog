@@ -1,6 +1,10 @@
 .c-figure {
   margin-left: 0;
   margin-right: 0;
+  text-align: center;
+  a {
+    display: inline-block;
+  }
   img {
     @include img-fluid;
     border: 1px solid color(gray);
@@ -12,7 +16,6 @@
   }
   figcaption {
     @include font-size(s);
-    text-align: center;
     letter-spacing: -0.006223544263193em;
   }
 

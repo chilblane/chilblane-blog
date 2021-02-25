@@ -1,7 +1,7 @@
 baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
 title = "Daniel Singer | Product designer & design technologist"
-theme = "chilblane"
+theme = ["chilblane", "hugo-shortcode-gallery"]
 googleAnalytics = "UA-65603184-1"
 timeout = 60000
 
@@ -10,6 +10,11 @@ timeout = 60000
     navTitle = "Daniel Singer"
     navSubTitle = "Chilblane"
     images = ["og-image.jpg"]
+    galleryLoadJQuery = true
+    gallerySortOrder = "asc"
+    galleryPreviewType="blur"
+    galleryEmbedPreview="true"
+    galleryMargins="8"
 
 
 [menu]
