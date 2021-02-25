@@ -3,32 +3,31 @@
   padding-top: space(16);
   padding-bottom: space(16);
   display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: center;
   &__home {
     @include font-size(xl);
     padding-top: space(16);
     padding-bottom: space(16);
     font-weight: 700;
-    flex-grow: 1;
-    flex-basis: 100%;
+    text-align: right;
     span:first-child {
       display: block;
       letter-spacing: -0.01949232756522em;
     }
     span:last-child {
       display: block;
+      @include typeface(monospace);
       font-size: 50%;
       text-transform: uppercase;
-      letter-spacing: 0.0004907744588531736em;
+      letter-spacing: 0.05em;
       font-weight: 400;
+      color: color(gray);
     }
     @media screen and (min-width: 40rem) {
       @include font-size(xxl);
       letter-spacing: -0.02160486150154747em;
-
-      span:last-child {
-        letter-spacing: -0.010959778564167367em;
-      }
     }
   }
 }
