@@ -1,24 +1,38 @@
 {{ define "main" }}
-<main class="c-container">
-  <h2>Recent posts</h2>
-  {{ range .Pages.ByPublishDate.Reverse }}
-  <article class="c-post">
-    <header>
-      <h3 class="c-post__title">
-        <a href="{{ .Permalink }}">{{- .Title -}}</a>
-      </h3>
-      <p>{{- .Description -}}</p>
-      <time>
-        Posted&nbsp;{{- .Date.Format "January 2, 2006" -}}
-      </time>
-    </header>
-    <section class="c-post__body">
-      {{- if eq .Type "updates"}} {{- .Content -}} {{- else }}
-      <a href="{{ .Permalink }}">Read more</a>
-      {{- end }}
-    </section>
-  </article>
-  {{- end -}}
-</main>
-
+  <main class="c-container">
+    <h2>Recent posts</h2>
+    <div class="c-row c-list">
+      {{ range .Pages.ByPublishDate.Reverse }}
+        <div class="c-col-6 c-list__column">
+          <article class="c-list__item">
+            <a href="{{ .Permalink }}" class="c-list__image">
+              {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
+              {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
+              {{ if $featured_image }}
+                {{ $thumbnail = $featured_image }}
+              {{ end }}
+              {{ with $thumbnail }}
+                <img
+                  srcset="
+              {{ (.Resize "400x").Permalink }} 400w,
+              {{ (.Resize "800x").Permalink }} 2x"
+                  src="{{ (.Resize "400x").Permalink }}"
+                  alt="{{ .Title }}"
+                  width="400"
+                  height="210"
+                />
+              {{ end }}
+            </a>
+            <h3 class="c-list__title">
+              <a href="{{ .Permalink }}">{{- .Title -}}</a>
+            </h3>
+            <time class="c-list__tag">
+              {{- .Date.Format "January 2, 2006" -}}
+            </time>
+            <p>{{- .Description -}}</p>
+          </article>
+        </div>
+      {{- end -}}
+    </div>
+  </main>
 {{ end }}

@@ -35,7 +35,7 @@
             </h3>
             <div class="c-list__tags">
               {{ if .Params.project_year }}
-              <span class="c-list__tag">{{ .Params.project_year }}</span>
+                <span class="c-list__tag">{{ .Params.project_year }}</span>
               {{ end }}
               {{ $project_areas := "project_areas" }}
               {{ with .Param $project_areas }}
@@ -43,7 +43,6 @@
                   <span class="c-list__tag">{{ $tag }}</span>
                 {{- end -}}
               {{- end -}}
-
             </div>
             <p>{{- .Description -}}</p>
           </article>
