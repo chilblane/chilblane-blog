@@ -3,6 +3,7 @@ title: 'Offerpad - Marketing / Web Presence'
 description: "Overview of design and development work done for Offerpad's marketing content."
 project_url: https://www.offerpad.com/
 project_year: 2020
+project_areas: ['web design', 'front-end dev']
 weight: 3
 ---
 

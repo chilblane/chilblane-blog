@@ -3,6 +3,7 @@ title: 'Offerpad - Home Listings UI (Web)'
 description: 'Design mockups and planning for buy.offerpad.com'
 project_url: https://buy.offerpad.com/
 project_year: 2019
+project_areas: ['product design', 'front-end dev']
 weight: 4
 ---
 

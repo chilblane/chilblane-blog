@@ -3,6 +3,7 @@ title: 'Offerpad - Offer Request Experience'
 description: "History of my work on Offerpad's offer request, including a substantial proposal for a completely new approach for the request form itself."
 project_url: https://sell.offerpad.com/
 project_year: 2019
+project_areas: ['product management', 'product design', 'front-end dev']
 weight: 2
 ---
 

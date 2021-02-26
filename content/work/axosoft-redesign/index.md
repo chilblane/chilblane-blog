@@ -3,6 +3,7 @@ title: 'Axosoft Redesign Project'
 description: 'My first software redesign project, updating the design language of the Axosoft app'
 project_url: https://www.axosoft.com/project-management/
 project_year: 2016
+project_areas: ['product design']
 weight: 6
 ---
 

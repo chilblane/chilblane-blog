@@ -4,6 +4,8 @@ description: 'UX designer, React UI development, and product direction on a popu
 project_url: https://kedyn.github.io/fusliez-notes/
 project_year: 2020
 weight: 1
+project_areas: ['product management', 'product design', 'front-end dev']
+featured_image: featured-image.png
 ---
 
 In late summer of 2020, the gaming trends on Twitch were changing.

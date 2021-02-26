@@ -3,6 +3,7 @@ title: 'Offerpad - Mobile App Work'
 description: 'Various explorations for the Offerpad Mobile app.'
 project_url: https://apps.apple.com/us/app/offerpad-find-houses-for-sale/id1354052452
 project_year: 2020
+project_areas: ['mobile design']
 weight: 5
 ---
 
