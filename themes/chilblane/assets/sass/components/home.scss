@@ -62,23 +62,3 @@
     }
   }
 }
-
-// TODO: this will be a separate grid component one day
-.c-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: space(-8);
-  margin-right: space(-8);
-}
-
-.c-column {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-left: space(8);
-  padding-right: space(8);
-  @media screen and (min-width: 40rem) {
-    flex: 0 0 auto;
-    width: percentage(1/3);
-  }
-}

@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <main class="c-list">
+  <main class="c-container">
     <div class="c-industry-alert">
       <div class="c-industry-alert__header">Chilblane Industries</div>
       <div class="c-industry-alert__body">
@@ -7,18 +7,45 @@
         content. Redesign is in progress.
       </div>
     </div>
-    <h2 class="c-list__heading">Selected work</h2>
-    <div class="c-portfolio">
+    <h2>Selected work</h2>
+    <div class="c-row c-list">
       {{ range .Pages }}
-        <div class="c-portfolio__column">
-          <article class="c-portfolio__item">
-            <header>
-              <h3 class="c-portfolio__title">
-                <a href="{{ .Permalink }}">{{- .Title -}}</a>
-              </h3>
-              <p>{{- .Description -}}</p>
-              <p class="u-margin-b-none">{{- .Params.project_year -}}</p>
-            </header>
+        <div class="c-col-6 c-list__column">
+          <article class="c-list__item">
+            <a href="{{ .Permalink }}" class="c-list__image">
+              {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
+              {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
+              {{ if $featured_image }}
+                {{ $thumbnail = $featured_image }}
+              {{ end }}
+              {{ with $thumbnail }}
+                <img
+                  srcset="
+                {{ (.Resize "400x").Permalink }} 400w,
+                {{ (.Resize "800x").Permalink }} 2x"
+                  src="{{ (.Resize "400x").Permalink }}"
+                  alt="{{ .Title }}"
+                  width="400"
+                  height="210"
+                />
+              {{ end }}
+            </a>
+            <h3 class="c-list__title">
+              <a href="{{ .Permalink }}">{{- .Title -}}</a>
+            </h3>
+            <div class="c-list__tags">
+              {{ if .Params.project_year }}
+              <span class="c-list__tag">{{ .Params.project_year }}</span>
+              {{ end }}
+              {{ $project_areas := "project_areas" }}
+              {{ with .Param $project_areas }}
+                {{ range $index, $tag := . }}
+                  <span class="c-list__tag">{{ $tag }}</span>
+                {{- end -}}
+              {{- end -}}
+
+            </div>
+            <p>{{- .Description -}}</p>
           </article>
         </div>
       {{- end -}}

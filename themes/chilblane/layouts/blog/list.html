@@ -1,6 +1,6 @@
 {{ define "main" }}
-<main class="c-list">
-  <h2 class="c-list__heading">Recent posts</h2>
+<main class="c-container">
+  <h2>Recent posts</h2>
   {{ range .Pages.ByPublishDate.Reverse }}
   <article class="c-post">
     <header>

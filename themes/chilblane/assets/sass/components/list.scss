@@ -1,13 +1,44 @@
 .c-list {
-  padding-top: space(16);
-  &__heading {
-    @include container();
-    @include font-size(m);
+  &__column {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
   }
-  @media screen and (min-width: 25rem) {
-    @include container();
-    &__heading {
-      padding: 0;
+
+  &__item {
+    flex: 0 0 100%;
+    margin-bottom: space(16);
+    background-color: color(gray, dark);
+    padding: space(24);
+  }
+  &__image {
+    img {
+      @include img-fluid;
+      border: 1px solid color(gray);
+      opacity: percentage(2/3);
+    }
+    &:hover {
+      img {
+        border-color: color(gray, light);
+        opacity: 1;
+      }
     }
   }
+}
+
+// TODO: make this its own component?
+.c-list__tag {
+  display: inline-block;
+  background-color: color(blue, darker);
+  border: 1px solid color(gray);
+  padding-top: space(4);
+  padding-bottom: space(4);
+  padding-left: space(8);
+  padding-right: space(8);
+  border-radius: 0.25rem;
+  margin-right: space(4);
+  margin-top: space(4);
+  margin-bottom: space(4);
+  @include font-size(s);
+  letter-spacing: -0.006223544263193em;
 }
