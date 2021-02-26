@@ -8,22 +8,20 @@
       </div>
     </div>
     <h2 class="c-list__heading">Selected work</h2>
-    {{ range .Pages }}
-      <article class="c-post">
-        <header>
-          <h3 class="c-post__title">
-            <a href="{{ .Permalink }}">{{- .Title -}}</a>
-          </h3>
-          <p>{{- .Description -}}</p>
-          <p class="u-margin-b-none">{{- .Params.project_year -}}</p>
-        </header>
-        <section class="c-post__body">
-          {{- if eq .Type "updates" }}
-            {{- .Content -}} {{- else }}
-            <a href="{{ .Permalink }}">Read more</a>
-          {{- end }}
-        </section>
-      </article>
-    {{- end -}}
+    <div class="c-portfolio">
+      {{ range .Pages }}
+        <div class="c-portfolio__column">
+          <article class="c-portfolio__item">
+            <header>
+              <h3 class="c-portfolio__title">
+                <a href="{{ .Permalink }}">{{- .Title -}}</a>
+              </h3>
+              <p>{{- .Description -}}</p>
+              <p class="u-margin-b-none">{{- .Params.project_year -}}</p>
+            </header>
+          </article>
+        </div>
+      {{- end -}}
+    </div>
   </main>
 {{ end }}

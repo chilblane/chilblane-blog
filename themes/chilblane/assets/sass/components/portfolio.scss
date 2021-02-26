@@ -1,0 +1,31 @@
+// TODO: this will be a separate grid component one day
+.c-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: space(-8);
+  margin-right: space(-8);
+  &__column {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: space(8);
+    padding-right: space(8);
+    @media screen and (min-width: 40rem) {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    margin-bottom: space(16);
+    background-color: color(gray, dark);
+    padding: space(24);
+  }
+  &__title {
+    margin-top: 0;
+  }
+}
