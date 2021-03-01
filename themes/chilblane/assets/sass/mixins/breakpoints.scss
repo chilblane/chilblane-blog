@@ -1,11 +1,20 @@
+// breakpoint between small and large phone screens (400px)
 @mixin breakpoint-md {
   @media screen and (min-width: 25rem) {
     @content;
   }
 }
 
+// breakpoint for "full" layout between phone and tablet (640px)
 @mixin breakpoint-lg {
   @media screen and (min-width: 40rem) {
+    @content;
+  }
+}
+
+// breakpoint for expanded visuals on large screens (960px)
+@mixin breakpoint-xl {
+  @media screen and (min-width: 60rem) {
     @content;
   }
 }
