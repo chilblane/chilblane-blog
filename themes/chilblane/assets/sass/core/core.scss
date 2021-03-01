@@ -6,6 +6,15 @@ html {
   line-height: 1.4;
   letter-spacing: -0.010959778564167367em;
   background-color: $background-color;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5) 0,
+      rgba(0, 0, 0, 0.5) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    linear-gradient($background-color, color(blue, darker));
+  background-attachment: fixed, fixed;
+  background-size: auto 5px, auto auto;
   color: $text-color;
 }
 
