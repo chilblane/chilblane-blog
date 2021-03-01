@@ -6,6 +6,7 @@
         <div class="c-col-6 c-list__column">
           <article class="c-list__item">
             <a href="{{ .Permalink }}" class="c-list__image">
+              {{ $title := .Title }}
               {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
               {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
               {{ if $featured_image }}
@@ -17,14 +18,14 @@
               {{ (.Resize "400x").Permalink }} 400w,
               {{ (.Resize "800x").Permalink }} 2x"
                   src="{{ (.Resize "400x").Permalink }}"
-                  alt="{{ .Title }}"
+                  alt="{{ $title }}"
                   width="400"
                   height="210"
                 />
               {{ end }}
             </a>
             <h3 class="c-list__title">
-              <a href="{{ .Permalink }}">{{- .Title -}}</a>
+              <a href="{{ .Permalink }}">{{- $title -}}</a>
             </h3>
             <time class="c-list__tag">
               {{- .Date.Format "January 2, 2006" -}}
