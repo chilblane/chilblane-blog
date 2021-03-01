@@ -43,14 +43,14 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
-  @media screen and (min-width: 25rem) {
+  @include breakpoint-md {
     @include container();
     &__body {
       padding-left: 0;
       padding-right: 0;
     }
   }
-  @media screen and (min-width: 40rem) {
+  @include breakpoint-lg {
     section {
       padding-top: space(16);
       padding-bottom: space(16);

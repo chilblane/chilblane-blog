@@ -1,0 +1,11 @@
+@mixin breakpoint-md {
+  @media screen and (min-width: 25rem) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lg {
+  @media screen and (min-width: 40rem) {
+    @content;
+  }
+}

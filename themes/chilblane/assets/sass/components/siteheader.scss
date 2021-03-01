@@ -25,7 +25,7 @@
       font-weight: 400;
       color: color(gray);
     }
-    @media screen and (min-width: 40rem) {
+    @include breakpoint-lg {
       @include font-size(xxl);
       letter-spacing: -0.02160486150154747em;
     }

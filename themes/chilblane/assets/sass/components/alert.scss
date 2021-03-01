@@ -31,7 +31,7 @@
       text-transform: uppercase;
     }
   }
-  @media screen and (min-width: 25rem) {
+  @include breakpoint-md {
     border-radius: 0.25rem;
   }
 }
