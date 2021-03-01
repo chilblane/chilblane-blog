@@ -1,5 +1,14 @@
 .c-home {
   padding-top: space(16);
+  @include breakpoint-md {
+    @include container();
+  }
+  @include breakpoint-lg {
+    section {
+      padding-top: space(16);
+      padding-bottom: space(16);
+    }
+  }
   &__heading {
     display: inline-block;
     background-color: color(gray, dark);
@@ -7,9 +16,27 @@
     padding-top: space(24);
     padding-bottom: space(24);
     margin-bottom: space(32);
+    background-size: cover;
+    background-position: right center;
+    text-shadow: 0 1px 2px black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid color(gray);
+    @include breakpoint-md {
+      border-radius: 0.25rem;
+    }
+    @include breakpoint-lg {
+      font-size: 4.5rem;
+      line-height: 1.4;
+      letter-spacing: -0.02229935331042822em;
+      padding-right: 4.5rem;
+    }
   }
   &__body {
     @include container();
+    @include breakpoint-md {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   &__links {
     display: flex;
@@ -42,23 +69,5 @@
     margin-top: 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-  }
-  @include breakpoint-md {
-    @include container();
-    &__body {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  @include breakpoint-lg {
-    section {
-      padding-top: space(16);
-      padding-bottom: space(16);
-    }
-    &__heading {
-      font-size: 5rem;
-      line-height: 1.4;
-      letter-spacing: -0.02229983988915077em;
-    }
   }
 }

@@ -1,87 +1,94 @@
-{{ define "main" }} {{/* TODO: continue moving strings to front matter */}}
-<main class="c-home">
-  <div class="c-industry-alert">
-    <div class="c-industry-alert__header">Chilblane Industries</div>
-    <div class="c-industry-alert__body">
-      <strong>Status:</strong> {{ .Params.currentAlert}}
+{{ define "main" }}
+  {{/* TODO: continue moving strings to front matter */}}
+  <main class="c-home">
+    <div class="c-industry-alert">
+      <div class="c-industry-alert__header">Chilblane Industries</div>
+      <div class="c-industry-alert__body">
+        <strong>Status:</strong> {{ .Params.currentAlert }}
+      </div>
     </div>
-  </div>
-  <article>
-    <h1 class="c-home__heading">{{.Params.heading}}</h1>
-    <div class="c-home__body">
-      <section class="c-home__links">
-        <p>
-          <a href="https://www.github.com/chilblane/">GitHub</a>
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/in/chilblane/">LinkedIn</a>
-        </p>
-        <p>
-          <a href="https://www.twitter.com/chilblane/">Twitter</a>
-        </p>
-      </section>
-      <section>
-        <h2>Hi there!</h2>
-        <p>
-          I'm a product designer and design technologist with extensive
-          experience in marketing websites and conversion forms. I also focus on
-          design systems and branding, information architecture, and visual
-          design.
-        </p>
-        <p>
-          Development-wise, I have some experience with React, Sass, Javascript
-          build tools like Webpack and Grunt, and static generators like Hugo
-          and Jekyll. I do not consider myself a programmer, but aim to ensure
-          good design translates into good code and a good user experience for
-          the end user.
-        </p>
-      </section>
-      <section>
-        <h2>Specialities</h2>
-        <div class="c-row">
-          <div class="c-col-4">
-            <h3>UX ideation</h3>
-            <p>
-              Work with product and other stakeholders to architect new and
-              updated experiences for the user, making decisions based on data
-              and commonly-accepted best practices.
-            </p>
+    <article>
+      {{ $herobg :=resources.Get "images/home-bg.jpg" }}
+      <h1
+        class="c-home__heading"
+        style="background-image: url({{ $herobg.Permalink }})"
+      >
+        {{ .Params.heading }}
+      </h1>
+      <div class="c-home__body">
+        <section class="c-home__links">
+          <p>
+            <a href="https://www.github.com/chilblane/">GitHub</a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/chilblane/">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://www.twitter.com/chilblane/">Twitter</a>
+          </p>
+        </section>
+        <section>
+          <h2>Hi there!</h2>
+          <p>
+            I'm a product designer and design technologist with extensive
+            experience in marketing websites and conversion forms. I also focus
+            on design systems and branding, information architecture, and visual
+            design.
+          </p>
+          <p>
+            Development-wise, I have some experience with React, Sass,
+            Javascript build tools like Webpack and Grunt, and static generators
+            like Hugo and Jekyll. I do not consider myself a programmer, but aim
+            to ensure good design translates into good code and a good user
+            experience for the end user.
+          </p>
+        </section>
+        <section>
+          <h2>Specialities</h2>
+          <div class="c-row">
+            <div class="c-col-4">
+              <h3>UX ideation</h3>
+              <p>
+                Work with product and other stakeholders to architect new and
+                updated experiences for the user, making decisions based on data
+                and commonly-accepted best practices.
+              </p>
+            </div>
+            <div class="c-col-4">
+              <h3>UX/UI web design</h3>
+              <p>
+                Design and build websites using a variety of tools and
+                languages, including Figma, Adobe XD, React, Sass, Webpack,
+                Wordpress, Hugo, and more.
+              </p>
+            </div>
+            <div class="c-col-4">
+              <h3>Design systems</h3>
+              <p>
+                Collaborating with developers, branding, and product to plan out
+                effective, flexible design systems that work in both prototype
+                and code contexts.
+              </p>
+            </div>
           </div>
-          <div class="c-col-4">
-            <h3>UX/UI web design</h3>
-            <p>
-              Design and build websites using a variety of tools and languages,
-              including Figma, Adobe XD, React, Sass, Webpack, Wordpress, Hugo,
-              and more.
-            </p>
-          </div>
-          <div class="c-col-4">
-            <h3>Design systems</h3>
-            <p>
-              Collaborating with developers, branding, and product to plan out
-              effective, flexible design systems that work in both prototype and
-              code contexts.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Other pursuits</h2>
-        <p>
-          The intersection of gaming and social media is an area I'm well-versed
-          in, and the streaming/influencer industry is an area I'd like to
-          explore in my career.
-        </p>
-        <p>
-          Applicant tracking software and recruitment marketing is an area that
-          fascinates me.
-        </p>
-        <p>
-          I'm also interested in the product and UX approaches in minimizing
-          abuse and harassment on social platforms.
-        </p>
-      </section>
-    </div>
-  </article>
-</main>
+        </section>
+        <section>
+          <h2>Other pursuits</h2>
+          <p>
+            The intersection of gaming and social media is an area I'm
+            well-versed in, and the streaming/influencer industry is an area I'd
+            like to explore in my career.
+          </p>
+          <p>
+            Applicant tracking software and recruitment marketing is an area
+            that fascinates me.
+          </p>
+          <p>
+            I'm also interested in the product and UX approaches in minimizing
+            abuse and harassment on social platforms.
+          </p>
+        </section>
+      </div>
+    </article>
+  </main>
 {{ end }}
