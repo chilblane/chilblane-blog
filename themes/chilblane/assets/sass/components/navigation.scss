@@ -12,11 +12,12 @@
     align-items: center;
     padding-top: space(16);
     padding-bottom: space(16);
+    margin-left: space(-16);
     align-items: flex-start;
     @include font-size(l);
     a {
-      padding-left: 0;
-      padding-right: space(32);
+      padding-left: space(16);
+      padding-right: space(16);
     }
   }
 }
