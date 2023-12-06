@@ -1,12 +1,12 @@
 {{ define "main" }}
   {{/* TODO: continue moving strings to front matter */}}
   <main class="c-home">
-    <div class="c-industry-alert">
+    {{/*  <div class="c-industry-alert">
       <div class="c-industry-alert__header">Chilblane Industries</div>
       <div class="c-industry-alert__body">
         <strong>Status:</strong> {{ .Params.currentAlert }}
       </div>
-    </div>
+    </div>  */}}
     <article>
       {{ $herobg :=resources.Get "images/home-bg.jpg" }}
       <h1
@@ -33,38 +33,43 @@
             design.
           </p>
           <p>
-            Development-wise, I have some experience with React, Sass,
-            Javascript build tools like Webpack and Grunt, and static generators
-            like Hugo and Jekyll. I do not consider myself a programmer, but aim
-            to ensure good design translates into good code and a good user
-            experience for the end user.
+            Development-wise, I have some experience with React,
+            Sass, Javascript build tools like Webpack and Grunt,
+            and static generators like Hugo and Jekyll. I do not
+            consider myself a programmer or software engineer,
+            but aim to ensure good design translates into good
+            code and a good user experience for the end user.
           </p>
         </section>
         <section>
           <h2>Specialities</h2>
           <div class="c-row">
             <div class="c-col-4">
+              <h3>Design systems</h3>
+              <p>
+                Collaborating with developers, branding, and
+                product to plan out effective, flexible
+                design systems and tokens that work in both
+                design tool and code contexts, along with
+                detailed documentation.
+              </p>
+            </div>
+            <div class="c-col-4">
               <h3>UX ideation</h3>
               <p>
-                Work with product and other stakeholders to architect new and
-                updated experiences for the user, making decisions based on data
-                and commonly-accepted best practices.
+                Work with product and other stakeholders to
+                architect new and updated experiences for
+                the user, making decisions based on data and
+                commonly-accepted best practices.
               </p>
             </div>
             <div class="c-col-4">
               <h3>UX/UI web design</h3>
               <p>
-                Design and build websites using a variety of tools and
-                languages, including Figma, Adobe XD, React, Sass, Webpack,
-                Wordpress, Hugo, and more.
-              </p>
-            </div>
-            <div class="c-col-4">
-              <h3>Design systems</h3>
-              <p>
-                Collaborating with developers, branding, and product to plan out
-                effective, flexible design systems that work in both prototype
-                and code contexts.
+                Design and build content and marketing
+                websites using a variety of tools and
+                languages, including Figma, React, Sass,
+                Gatsby, Hugo, and more.
               </p>
             </div>
           </div>
