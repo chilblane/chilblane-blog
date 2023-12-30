@@ -3,7 +3,7 @@ title: 'Among Us Companion App'
 description: 'UX designer, React UI development, and product direction on a popular (and controversial) companion app for the popular online game.'
 project_url: https://kedyn.github.io/fusliez-notes/
 project_year: 2020
-weight: 1
+weight: 2
 project_areas: ['product management', 'product design', 'front-end dev']
 featured_image: featured-image.png
 ---
