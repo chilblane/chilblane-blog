@@ -2,7 +2,6 @@ baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
 title = "Daniel Singer | Product designer & design technologist"
 theme = ["chilblane", "hugo-shortcode-gallery"]
-googleAnalytics = "UA-65603184-1"
 timeout = 60000
 
 [params]
@@ -31,3 +30,9 @@ timeout = 60000
         name = "Blog"
         url = "/blog/"
         weight = 3
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-LH45RPKL08'
+
+
