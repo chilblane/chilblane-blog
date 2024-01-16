@@ -18,6 +18,10 @@
       margin-right: space(16);
       margin-top: space(64);
       margin-bottom: space(32);
+      @include font-size(xxl);
+      @include typeface(monospace);
+      letter-spacing: 0.025em;
+      font-weight: 400;
       &::after {
         border-top: 1px solid $text-color;
         content: '';

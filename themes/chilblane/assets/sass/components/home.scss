@@ -54,6 +54,10 @@
     display: table;
     white-space: nowrap;
     margin-right: space(16);
+    @include font-size(xxl);
+    @include typeface(monospace);
+    letter-spacing: 0.025em;
+    font-weight: 400;
     &::after {
       border-top: 1px solid $text-color;
       content: '';

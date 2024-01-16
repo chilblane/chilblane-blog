@@ -3,6 +3,7 @@ $color-palette-data: (
     base: #fff
   ),
   gray: (
+    lighter: #d7e3f0,
     light: #afbfcf,
     base: #3d5168,
     dark: #122337,
@@ -44,6 +45,6 @@ $color-palette-data: (
 }
 
 $background-color: color(gray, darker);
-$text-color: color(gray, light);
+$text-color: color(gray, lighter);
 $action-color: color(blue, light);
 $action-color-hover: color(blue, lighter);
