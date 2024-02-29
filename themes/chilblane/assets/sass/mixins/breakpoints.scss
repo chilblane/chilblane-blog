@@ -18,3 +18,10 @@
     @content;
   }
 }
+
+// breakpoint for expanded visuals on very large screens (1440px)
+@mixin breakpoint-xxl {
+  @media screen and (min-width: 90rem) {
+    @content;
+  }
+}

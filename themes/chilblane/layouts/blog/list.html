@@ -3,7 +3,7 @@
     <h2>Recent posts</h2>
     <div class="c-row c-list">
       {{ range .Pages.ByPublishDate.Reverse }}
-        <div class="c-col-6 c-list__column">
+        <div class="c-list__column">
           <article class="c-list__item">
             <a href="{{ .Permalink }}" class="c-list__image">
               {{ $title := .Title }}
