@@ -3,8 +3,7 @@ title: 'Offerpad - Offer Request Experience'
 description: "History of my work on Offerpad's offer request, including a substantial proposal for a completely new approach for the request form itself."
 project_url: https://sell.offerpad.com/
 project_year: 2019
-project_areas: ['product management', 'product design', 'front-end dev']
-weight: 2
+project_areas: ['product management', 'ux design', 'front-end dev']
 ---
 
 The first project I worked on for the request experience was a redesign of the offer view with my product manager. We sought to transform a mobile-unfriendly, one-page experience into more of a guided tour with additional helpful information for the prospective seller. After further iterations on these designs, I worked with our senior front-end developer to bring it into fruition as the company's first React app.

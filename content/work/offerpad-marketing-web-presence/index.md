@@ -4,7 +4,6 @@ description: "Overview of design and development work done for Offerpad's market
 project_url: https://www.offerpad.com/
 project_year: 2020
 project_areas: ['web design', 'front-end dev']
-weight: 3
 ---
 
 The main offerpad.com website is probably the most representative of my UX design and development work at Offerpad. Since originally building the rebranded React site in June 2018, I repeatedly added and updated the site as needed. This page will highlight some of the work I've done or been responsible for.

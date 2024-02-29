@@ -2,7 +2,6 @@
 title: 'Zonar Systems - DSPLY System'
 description: 'Overview of my design technologist work for Zonar Systems'
 project_year: 2023
-weight: 1
 project_areas: ['product management', 'design systems']
 featured_image: featured-image.png
 ---

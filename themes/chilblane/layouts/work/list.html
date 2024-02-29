@@ -2,7 +2,7 @@
   <main class="c-container">
     <h2>Selected work</h2>
     <div class="c-row c-list">
-      {{ range .Pages }}
+      {{ range (.Pages.ByParam "project_year").Reverse }}
         <div class="c-col-6 c-list__column">
           <article class="c-list__item">
             <a href="{{ .Permalink }}" class="c-list__image">

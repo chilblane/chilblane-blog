@@ -1,7 +1,8 @@
 ---
-title: 'Unofficial World of Warcraft Armory Redesign'
-description: 'My first unsolicited redesign, working with the design direction and code of an existing site to create an updated user experience'
-date: 2020-02-27
+title: 'World of Warcraft Armory Redesign'
+description: 'Unsolicited redesign, working with the design direction and code of an existing site to create an updated user experience'
+project_year: 2017
+project_areas: ['ux design', 'front-end dev']
 ---
 
 _Originally published May 20th, 2017_

@@ -1,7 +1,8 @@
 ---
-title: 'Overhauling the cosmetic appearances of abilities in World of Warcraft'
+title: 'World of Warcraft Glyphs'
 description: 'A history of cosmetic customization and the Glyphs system in World of Warcraft, and my ideas on how to improve the gameplay and user interface for glyphs'
-date: 2021-02-22
+project_year: 2020
+project_areas: ['game design', 'ux design']
 featured_image: featured-image.jpg
 ---
 
