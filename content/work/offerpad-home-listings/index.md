@@ -16,7 +16,7 @@ At the beginning of 2019, I began work on the buy 2.0 project with our web devel
 
 Here's early low-fidelity (no color) mockups of the search results page. High fidelity mockups can be found in this [Figma document](https://www.figma.com/file/B0v7djr0x1os8kxJjSTSvk/Daniel-s-buy-mocks).
 
-{{< gallery match="low-fidelity/*" rowHeight="200">}}
+{{< gallery match="low-fidelity/*" rowHeight="200" thumbnailResizeOptions="600x600 q90 Lanczos" >}}
 
 {{< img name="high-fidelity.png" alt="Screenshot of a high-fidelity mockup of a home listings map and search results" caption="From the higher fidelity mockups for the buy redesign." >}}
 

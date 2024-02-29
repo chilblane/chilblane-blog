@@ -8,13 +8,13 @@ project_areas: ['product management', 'ux design', 'front-end dev']
 
 The first project I worked on for the request experience was a redesign of the offer view with my product manager. We sought to transform a mobile-unfriendly, one-page experience into more of a guided tour with additional helpful information for the prospective seller. After further iterations on these designs, I worked with our senior front-end developer to bring it into fruition as the company's first React app.
 
-{{< gallery match="redesign-1/desktop/*" rowHeight="200">}}
+{{< gallery match="redesign-1/desktop/*" rowHeight="200" thumbnailResizeOptions="600x600 q90 Lanczos" >}}
 
-{{< gallery match="redesign-1/mobile/*" rowHeight="150">}}
+{{< gallery match="redesign-1/mobile/*" rowHeight="150" thumbnailResizeOptions="600x600 q90 Lanczos" >}}
 
 Prior to officially working on a redesign of our offer request form, I was already thinking about ideas for it. The original 1.0 version of the form was spread over 4 long pages and asked a lot of questions of the user. It was also not mobile-friendly, so I explored what a mobile-friendly layout could look like.
 
-{{< gallery match="redesign-1/request/*" rowHeight="150" >}}
+{{< gallery match="redesign-1/request/*" rowHeight="150" thumbnailResizeOptions="600x600 q90 Lanczos"  >}}
 
 Here are some [Figma mockups](https://www.figma.com/file/myKOsbnzIRtzw4mCd9LTdN/Request-Form-Exploration-2?node-id=24%253A0) I made for the request form for the 2.0 release.
 
