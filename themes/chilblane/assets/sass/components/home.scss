@@ -39,15 +39,18 @@
   }
   &__links {
     display: flex;
-    padding-top: space(16);
-    padding-bottom: space(16);
+    flex-wrap: wrap;
+    justify-content: space-between;
     p {
-      margin: 0;
-      flex: 0 0 auto;
-      width: percentage(1/2);
+      margin: space(16) 0;
+      padding-left: space(16);
+      padding-right: space(16);
+      flex: 1 0 auto;
       text-align: center;
       @include font-size(l);
       letter-spacing: -0.016657338648324763em;
+      @include breakpoint-lg {
+      }
     }
   }
   h2 {
