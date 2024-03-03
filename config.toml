@@ -1,7 +1,7 @@
 baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
 title = "Daniel Singer | Product designer & design technologist"
-theme = ["chilblane", "hugo-shortcode-gallery"]
+theme = ["hugo-shortcode-gallery"]
 timeout = 60000
 
 [params]
