@@ -1,0 +1,22 @@
+{{/* Source: https://nilsnh.no/2018/06/10/hugo-how-to-add-support-for-responsive-images-trough-image-processing-and-page-bundles-3/ */}}
+
+{{ $altText := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ with $.Page.Resources.GetMatch (.Get "name") }}
+  <figure>
+    <a class="block" href="{{ .RelPermalink }}">
+      <img
+        class="img-fluid border-2 max-h-[70dvh] !my-0"
+        srcset="
+          {{ (.Resize "320x").RelPermalink }} 320w,
+          {{ (.Resize "810x").RelPermalink }} 810w,
+          {{ (.Resize "1620x").RelPermalink }} 2x"
+        src="{{ (.Resize "810x").RelPermalink }}"
+        alt="{{ $altText }}"
+      />
+    </a>
+    <figcaption>{{ $caption }}</figcaption>
+  </figure>
+{{ else }}
+  could not find image
+{{ end }}

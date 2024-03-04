@@ -1,0 +1,9 @@
+<section class="flex justify-between flex-row-reverse items-center mb-4">
+  <div class="py-4 lg:py-8 text-right">
+    <span class="font-bold text-xl md:text-3xl block">
+      {{ .Site.Params.navTitle }}
+    </span>
+    <span class="block md:text-xl">{{ .Site.Params.navSubtitle }}</span>
+  </div>
+  {{ partial "nav.html" . }}
+</section>

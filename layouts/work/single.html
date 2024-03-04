@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <article
+    class="bg-white/50 shadow-sm max-w-prose p-4 -mx-4 md:p-8 md:mx-auto md:rounded-xl"
+  >
+    <header class="border-b-2 pb-8 mb-8">
+      <h1 class="pt-4 md:pt-8">
+        {{- .Title -}}&nbsp;({{- .Params.project_year -}})
+      </h1>
+      <p class="lead !mb-0">{{- .Description -}}</p>
+      {{ if .Params.project_url }}
+        <p>
+          <strong>Project URL:</strong>
+          <a href="{{- .Params.project_url -}}">{{- .Params.project_url -}}</a>
+        </p>
+      {{ end }}
+    </header>
+    <section class="c-post__body">
+      {{- .Content -}}
+    </section>
+  </article>
+{{ end }}

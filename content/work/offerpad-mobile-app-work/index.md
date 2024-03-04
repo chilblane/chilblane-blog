@@ -14,4 +14,4 @@ Some of the concepts here would guide my later work on buy.offerpad.com design a
 
 Later in 2020, after doing the redesign work for buy.offerpad.com, I thought about what a completely rethought Offerpad Mobile app might look like. This exercise was entirely initiated by myself and not used for the product, but I would continue to use aspects of it in future projects.
 
-{{< gallery match="exploration/*" rowHeight="300" thumbnailResizeOptions="600x600 q90 Lanczos" >}}
+{{< gallery match="exploration/*" >}}

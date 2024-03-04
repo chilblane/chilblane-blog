@@ -5,12 +5,19 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.1.0",
     "prettier-plugin-go-template": "^0.0.15",
-    "typey": "^1.1.2"
+    "tailwindcss": "^3.3.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
+    "dev:hugo": "hugo serve -D",
+    "dev": "npm-run-all dev:css --parallel \"dev:* -- --watch\"",
+    "build:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --minify",
+    "build:hugo": "hugo --gc --minify",
+    "build": "run-s build:css build:hugo"
   },
   "repository": {
     "type": "git",
