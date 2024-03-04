@@ -9,7 +9,15 @@ featured: true
 
 I was brought on to Zonar Systems' UX team (a subsidiary of Continental) as senior design technologist to help grow their nascent design system (DSPLY). As someone whose prior experience included working on a mature design system (Smartsheet) as well as building my own initial version (Offerpad), my role was crucial for elevating a pattern library codebase and Figma design library into a unified entity to benefit the product organization.
 
-## Analysis
+## Key takeaways
+
+- Worked with the UX organization and product/engineering teams at Zonar to evaluate the current state of their design system (DSPLY) and pattern library and identify opportunities for improvement and development
+- Audited the Angular-based pattern library, documenting for the first time how every team used its components in their product work
+- Identified and pushed forward the need for a centralized Storybook instance to consolidate documentation for both UX and engineering, and provide isolated code specimens without the need for app deployment
+- Planned out how to more effectively use design tokens within the design system project, in both the Angular code as well as our Figma library
+- Worked with the design director on a comprehensive color framework overhaul, incorporating updated branding and design requirements as well as knowledge from the above audits
+
+## Analysis of the design system
 
 First, I had to get familiar with the existing design system. The Zonar pattern library was based on Angular Material, with most components sourced directly from Material. The separate components Zonar engineers maintained were custom components needed for product. Overall, the pattern library was split over about a dozen repositories.
 
@@ -21,7 +29,7 @@ On the UX side, the design system existed entirely within the Figma design libra
 
 During the project work outlined below, it became clear to me the number of inconsistences between what the Figma design library included and what was actually possible in the Angular Material code base. It was my hope that in time they could be reconciled with direct and ongoing curation of the design system.
 
-## Documentation
+## Planning documentation
 
 I identified early on that the lack of centralized documentation for the design system as a whole was holding back serious progess on improving the system. I already knew based on prior experience that not only does good design system documentation provide meaningful component usage guidelines for both engineering and UX roles, but more essential information was needed. We required design principles to be codified to guide our UX efforts; these principles would in turn inform our foundational guidelines on typography, spacing, color, interactions, responsive design, and so on; these foundations would improve and fill gaps in our components; and we could even provide guidance on how to use components together for commonly used patterns.
 
@@ -29,7 +37,7 @@ Writing all of this content would take time, and we started this process by meet
 
 We also needed a place for this content. The UX team and sometimes the engineers would use Confluence. However, while a convenient knowledge base tool to maintain, its limited formatting features and distance from the actual codebase made it easy to ignore. I advocated for someone in engineering to set up a Storybook instance we could use to house this content alongside component specimens from the pattern library in a centralized destination. However, it took time for the engineering organization to be able to free up resources and people to build out the Storybook for us. We also quickly ran into an issue (that I had predicted): the components had difficulty rendering separately as Storybook stories, as opposed to working natively in Zonar's applications. Being able to render in Storybook was a hard requirement, so that any stakeholder could work with the specimens, and so work items for the engineering team were created to fix these issues.
 
-## Color
+## New color system
 
 Meanwhile, our director of UX, Drory, was working on a revamped color palette for the Zonar products. I met with him after his initial release of the palette, and showed how the colors could be both extended and simplified to not only scale with product needs but also fit the requirements of a new color design token system for DSPLY. This again was based on preliminary color token work I had devised while at Smartsheet, including the concepts of "crayons" (also known as primitives) and alias tokens. We needed the color system to meet our needs for neutral backgrounds and text, semantic elements (primary and destructive actions, for example), as well as data visualization needs in the product. It was also important that the color system itself, not necessarily the token values, could work for other Continental brands, and that the tokens were compatible with how Angular Material works with color.
 
