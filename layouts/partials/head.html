@@ -6,7 +6,6 @@
   />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   {{ hugo.Generator }}
-  {{- partial "styles.html" . -}}
   {{- partial "meta.html" . -}}
   <link rel="canonical" href="{{ .Permalink }}" />
   <link rel="manifest" href="/manifest.json" />
@@ -15,5 +14,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9fbcdf" />
   <meta name="theme-color" content="#9fbcdf" />
   <link rel="shortcut icon" href="/favicon.ico" />
+  {{ partialCached "head/css.html" . }}
+  {{ partialCached "head/js.html" . }}
   {{ template "_internal/google_analytics.html" . }}
 </head>

@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.prose-chilblane {
+  --tw-prose-links: #004291;
+  --tw-prose-links-hover: #0073ff;
+  --tw-prose-invert-links: #348ffd;
+}
+
+.gallery-wrapper {
+  @apply bg-black/5;
+  @apply shadow-inner;
+}
+
+@layer components {
+  .bg-gradient {
+    background-attachment: fixed;
+    background-image: linear-gradient(
+      -15deg,
+      rgba(255, 224, 174, 1) 0%,
+      rgba(255, 255, 255, 1) 30%,
+      rgba(174, 206, 245, 1) 100%
+    );
+  }
+  .bg-gradient-animated {
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+      -15deg,
+      rgba(255, 224, 174, 1) 0%,
+      rgba(255, 224, 174, 1) 20%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(174, 206, 245, 1) 80%,
+      rgba(174, 206, 245, 1) 100%
+    );
+    animation: ani-bg-gradient 20s ease infinite;
+  }
+
+  /* tailwind ui badge */
+  .pill {
+    @apply inline-flex;
+    @apply items-center;
+    @apply rounded-md;
+    @apply bg-gray-50;
+    @apply px-2;
+    @apply py-1;
+    @apply text-xs;
+    @apply font-medium;
+    @apply text-gray-600;
+    @apply ring-1;
+    @apply ring-inset;
+    @apply ring-gray-500/10;
+  }
+}
+
+@keyframes ani-bg-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .max-w-prose {
+    max-width: calc(65ch + 4rem);
+  }
+
+  .img-fluid {
+    align-self: flex-start;
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .prose :where(a):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    text-decoration: none;
+  }
+  .prose
+    :where(a:hover):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    text-decoration: underline;
+    color: var(--tw-prose-links-hover);
+  }
+}

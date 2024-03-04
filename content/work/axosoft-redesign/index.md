@@ -50,4 +50,4 @@ I also explored a (mobile-friendly) redesign of the login screen. This is a crit
 
 ### Additional screens
 
-{{< gallery match="additional/*" rowHeight="300" thumbnailResizeOptions="600x600 q90 Lanczos" >}}
+{{< gallery match="additional/*" >}}

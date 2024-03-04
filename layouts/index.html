@@ -1,87 +1,110 @@
 {{ define "main" }}
-  {{/* TODO: continue moving strings to front matter */}}
-  <main class="c-home">
-    <div class="c-industry-alert">
-      <div class="c-industry-alert__header">Chilblane Industries</div>
-      <div class="c-industry-alert__body">
-        <strong>Status:</strong> {{ .Params.currentAlert }}
-      </div>
-    </div>
+  <main
+    class="c-home max-w-prose mx-auto pb-8 lg:max-w-screen-xl lg:pb-16 xl:pb-32 xl:max-w-screen-2xl"
+  >
+    {{- partial "notice.html" . -}}
     <article>
-      {{ $herobg :=resources.Get "images/home-bg.jpg" }}
-      <h1
-        class="c-home__heading"
-        style="background-image: url({{ $herobg.Permalink }})"
+      <section class="flex items-center h-96 xl:h-[55dvh]">
+        <h1 class="text-4xl md:text-6xl xl:text-9xl !m-0 ">
+          {{ .Params.heading }}
+        </h1>
+      </section>
+      <section class="pb-8 md:pb-16">
+        <p class="lead">
+          I'm <strong>Daniel Singer</strong> (aka chilblane), a senior design
+          technologist and product designer with over 10 years of experience in
+          web-based UX design and development—5 years working on design systems.
+        </p>
+      </section>
+      <section
+        class="max-w-prose mx-auto lg:max-w-screen-xl xl:max-w-screen-2xl lg:pb-16 xl:pb-32"
       >
-        {{ .Params.heading }}
-      </h1>
-      <div class="c-home__body">
-        <section class="c-home__links">
-          <p>
-            <a href="https://www.github.com/chilblane/">GitHub</a>
-          </p>
-          <p>
-            <a href="https://www.linkedin.com/in/chilblane/">LinkedIn</a>
-          </p>
-          <p>
-            <a
-              href="https://www.figma.com/file/leUdyaUZWfSXKxZ1FxC1vR/Resume?type=design&mode=design"
-              >Resume (Figma)</a
-            >
-          </p>
-        </section>
-        <section>
-          <h2>Hi there!</h2>
-          <p>
-            As a design technologist and product designer, I've worked with UX
-            organizations and product/engineering teams to evaluate and improve
-            their design systems used across organizations.
-          </p>
-          <p>
-            My core competencies include design systems, information
-            architecture, UX documentation and content strategy, and conversion
-            forms. I've worked as a UX engineer, a product designer, and
-            everything in-between.
-          </p>
-          <p>
-            Beyond my work experience, I have interests in the social media and
-            gaming industries, especially where they coincide. I would love to
-            work in these industries in the future, as I believe they offer
-            exciting challenges and opportunities for design innovation and user
-            engagement.
-          </p>
-        </section>
-        <section>
-          <h2>Specialities</h2>
-          <div class="c-row">
-            <div class="c-col-4">
-              <h3>Design systems</h3>
-              <p>
-                Collaborating with developers, branding, and product to plan out
-                effective, flexible design systems and tokens that work in both
-                design tool and code contexts, along with detailed
-                documentation.
-              </p>
+        <h2>Specialties</h2>
+        <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
+          <div
+            class="px-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
+          >
+            <h3>Design systems</h3>
+            <p>
+              I've collaborated with developers, branding, and product to plan
+              out effective, flexible design systems and tokens, that work in
+              both design tool and code contexts, along with detailed
+              documentation.
+            </p>
+          </div>
+          <div
+            class="px-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
+          >
+            <h3>UX ideation</h3>
+            <p>
+              I've worked with product and other stakeholders to architect new
+              and updated experiences for the user, making decisions based on
+              data and commonly-accepted best practices.
+            </p>
+          </div>
+          <div
+            class="px-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
+          >
+            <h3>UX/UI web design</h3>
+            <p>
+              Design and build content and marketing websites using a variety of
+              tools and languages, including Figma, React, Sass, Gatsby, Hugo,
+              Jekyll, and more.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Featured work</h2>
+        {{ range first 1 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.featured" "=" true) }}
+          <div
+            class="p-4 bg-white/50 shadow-sm items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
+          >
+            <div class="shrink-1 grow-0">
+              {{ $title := .Page.Title }}
+              {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
+              {{ $featured_image := (.Page.Resources.ByType "image").GetMatch "featured-image*" }}
+              {{ if $featured_image }}
+                {{ $thumbnail = $featured_image }}
+              {{ end }}
+              {{ with $thumbnail }}
+                <img
+                  class="img-fluid border-2 !m-0"
+                  srcset="
+                  {{ (.Resize "800x").Permalink }} 400w,
+                  {{ (.Resize "1600x").Permalink }} 2x"
+                  src="{{ (.Resize "800x").Permalink }}"
+                  alt="{{ $title }}"
+                />
+              {{ end }}
             </div>
-            <div class="c-col-4">
-              <h3>UX ideation</h3>
-              <p>
-                Work with product and other stakeholders to architect new and
-                updated experiences for the user, making decisions based on data
-                and commonly-accepted best practices.
-              </p>
-            </div>
-            <div class="c-col-4">
-              <h3>UX/UI web design</h3>
-              <p>
-                Design and build content and marketing websites using a variety
-                of tools and languages, including Figma, React, Sass, Gatsby,
-                Hugo, Jekyll, and more.
-              </p>
+            <div class="shrink-0 grow-1 lg:min-w-96">
+              <h3>
+                <a
+                  href="{{ .Permalink }}"
+                  class="font-bold no-underline hover:underline focus:underline"
+                >
+                  {{- $title -}}
+                </a>
+              </h3>
+              <div class="c-list__tags">
+                {{ if .Page.Params.project_year }}
+                  <span class="pill mr-1 my-1"
+                    >{{ .Page.Params.project_year }}</span
+                  >
+                {{ end }}
+                {{ $project_areas := "project_areas" }}
+                {{ with .Page.Param $project_areas }}
+                  {{ range $index, $tag := . }}
+                    <span class="pill mr-1 my-1">{{ $tag }}</span>
+                  {{- end -}}
+                {{- end -}}
+              </div>
+              <p class="text-base">{{- .Page.Description -}}</p>
             </div>
           </div>
-        </section>
-      </div>
+        {{ end }}
+      </section>
     </article>
   </main>
 {{ end }}

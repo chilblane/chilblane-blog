@@ -1,44 +1,48 @@
 {{ define "main" }}
-  <main class="c-container">
+  <main class="max-w-prose mx-auto lg:max-w-screen-xl xl:max-w-screen-2xl">
     <h2>Selected work</h2>
-    <div class="c-row c-list">
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
       {{ range (.Pages.ByParam "project_year").Reverse }}
-        <div class="c-col-6 c-list__column">
-          <article class="c-list__item">
-            <a href="{{ .Permalink }}" class="c-list__image">
-              {{ $title := .Title }}
-              {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
-              {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
-              {{ if $featured_image }}
-                {{ $thumbnail = $featured_image }}
-              {{ end }}
-              {{ with $thumbnail }}
-                <img
-                  srcset="
+        <div
+          class="flex p-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl"
+        >
+          <article class="shrink-1 grow-0 basis-full">
+            {{ $title := .Title }}
+            {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
+            {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
+            {{ if $featured_image }}
+              {{ $thumbnail = $featured_image }}
+            {{ end }}
+            {{ with $thumbnail }}
+              <img
+                class="img-fluid border-2 mx-auto !my-0"
+                srcset="
                 {{ (.Resize "400x").Permalink }} 400w,
-                {{ (.Resize "800x").Permalink }} 2x"
-                  src="{{ (.Resize "400x").Permalink }}"
-                  alt="{{ $title }}"
-                  width="400"
-                  height="210"
-                />
-              {{ end }}
-            </a>
-            <h3 class="c-list__title">
-              <a href="{{ .Permalink }}">{{- $title -}}</a>
+                {{ (.Resize "1000x").Permalink }} 2x"
+                src="{{ (.Resize "500x").Permalink }}"
+                alt="{{ $title }}"
+              />
+            {{ end }}
+            <h3>
+              <a
+                href="{{ .Permalink }}"
+                class="font-bold no-underline hover:underline focus:underline"
+              >
+                {{- $title -}}
+              </a>
             </h3>
             <div class="c-list__tags">
               {{ if .Params.project_year }}
-                <span class="c-list__tag">{{ .Params.project_year }}</span>
+                <span class="pill mr-1 my-1">{{ .Params.project_year }}</span>
               {{ end }}
               {{ $project_areas := "project_areas" }}
               {{ with .Param $project_areas }}
                 {{ range $index, $tag := . }}
-                  <span class="c-list__tag">{{ $tag }}</span>
+                  <span class="pill mr-1 my-1">{{ $tag }}</span>
                 {{- end -}}
               {{- end -}}
             </div>
-            <p>{{- .Description -}}</p>
+            <p class="text-base">{{- .Description -}}</p>
           </article>
         </div>
       {{- end -}}

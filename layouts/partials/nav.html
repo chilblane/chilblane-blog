@@ -1,5 +1,11 @@
-<nav class="c-navigation">
-    {{ range .Site.Menus.main }}
-    <a href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
+<nav class="c-navigation sm:flex sm:gap-8 sm:items-center sm:py-4 lg:text-xl">
+  {{ range .Site.Menus.main }}
+    <a class="block" href="{{ .URL }}">{{ .Name }}</a>
+  {{ end }}
+  <a
+    class="block"
+    href="https://www.figma.com/file/leUdyaUZWfSXKxZ1FxC1vR/Resume?type=design&mode=design"
+  >
+    Resume
+  </a>
 </nav>
