@@ -9,6 +9,11 @@ timeout = 60000
     description = "Daniel Singer is a product designer and design technologist based in Phoenix, Arizona."
     navTitle = "Daniel Singer"
     navSubTitle = "chilblane"
+    email = "daniel at chilblane dot com"
+    github = "https://www.github.com/chilblane"
+    linkedin = "https://www.linkedin.com/in/chilblane"
+    currentAlert = "Welcome! We're in the middle of a redesign, so please pardon the dust."
+
     images = ["og-image.jpg"]
     galleryLoadJQuery = true
     gallerySortOrder = "asc"
@@ -19,16 +24,19 @@ timeout = 60000
     galleryMaxRowHeight = false
     galleryThumbnailResizeOptions="600x600 q90 Lanczos"
 
-
 [menu]
     [[menu.main]]
         name = "Home"
         url = "/"
         weight = 1
     [[menu.main]]
-        name = "Work"
+        name = "Portfolio"
         url = "/work/"
         weight = 2
+    [[menu.main]]
+        name = "Resume"
+        url = "/resume/"
+        weight = 3
 
 [services]
   [services.googleAnalytics]

@@ -1,0 +1,57 @@
+[
+  {
+    "role": "Senior Design Technologist",
+    "company": "Zonar Systems",
+    "startDate": "August 2022",
+    "endDate": "November 2023",
+    "location": "Remote",
+    "summary": [
+      "Worked with the UX organization and product/engineering teams at Zonar to evaluate the current state of their design system (DSPLY) and pattern library and identify opportunities for improvement and development",
+      "Audited the Angular-based pattern library, documenting for the first time how every team used its components in their product work",
+      "Identified and pushed forward the need for a centralized Storybook instance to consolidate documentation for both UX and engineering, and provide isolated code specimens without the need for app deployment",
+      "Planned out how to more effectively use design tokens within the design system project, in both the Angular code as well as our Figma library",
+      "Worked with the design director on a comprehensive color framework overhaul, incorporating updated branding and design requirements as well as knowledge from the above audits"
+    ]
+  },
+  {
+    "role": "Design Technologist",
+    "company": "Smartsheet",
+    "startDate": "April 2021",
+    "endDate": "July 2022",
+    "location": "Remote",
+    "summary": [
+      "Planning and content strategy for a documentation site for the Lodestar design system",
+      "Designing and building the documentation site in Gatsby alongside the UI Engineering team",
+      "Testing various design system React components in non-SPA (single page application) contexts using the documentation site",
+      "Planning and initial implementation of design token strategy, with a priority on colors"
+    ]
+  },
+  {
+    "role": "User Experience Designer & UX Engineer",
+    "company": "Offerpad",
+    "startDate": "July 2017",
+    "endDate": "May 2020",
+    "location": "Chandler, Arizona",
+    "summary": [
+      "Designed, built, and maintained marketing site, Home Offer Request experience, and worked with engineering team on home listings experience",
+      "Wrote proposal for a complete revamp of Home Offer Request experience, including major changes to UX, architecture, user outcomes, and more",
+      "Worked closely with product manager on requirements and general experience of a self-service portal for home-sellers once they accepted our offer, including a significant audit and redesign of the transaction process between a home-seller requesting an offer to moving out of the home",
+      "Consultation and exploratory design on Offerpad mobile application",
+      "Initiated basic design system (Floorplan)"
+    ]
+  },
+  {
+    "role": "Front-end Designer / Developer",
+    "company": "Axosoft (GitKraken)",
+    "startDate": "February 2011",
+    "endDate": "October 2016",
+    "location": "Scottsdale, Arizona",
+    "summary": [
+      "Primary webmaster (design and code) for Axosoft and GitKraken marketing sites",
+      "Worked on WordPress theme for Axosoft blogs, including writing a CSS framework to share code and design language between blogs and marketing sites",
+      "Produced graphical assets for GitKraken application launch",
+      "Participated in Axosoft product redesign for version 16 launch",
+      "Various other marketing, graphic design, and social media tasks"
+    ]
+  }
+]

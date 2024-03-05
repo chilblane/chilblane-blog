@@ -15,6 +15,32 @@
 }
 
 @layer components {
+  /* tailwind ui button */
+  .button {
+    @apply inline-flex;
+    @apply items-center;
+    @apply px-4;
+    @apply py-2;
+    @apply border;
+    @apply border-transparent;
+    @apply text-sm;
+    @apply font-medium;
+    @apply rounded-md;
+    @apply bg-gray-100;
+  }
+
+  .button:hover {
+    @apply bg-gray-200;
+    @apply no-underline;
+  }
+
+  .button:focus {
+    @apply outline-none;
+    @apply ring-2;
+    @apply ring-offset-2;
+    @apply ring-gray-500;
+  }
+
   .bg-gradient {
     background-attachment: fixed;
     background-image: linear-gradient(

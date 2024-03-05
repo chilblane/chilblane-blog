@@ -1046,6 +1046,42 @@ video {
   margin-bottom: 0;
 }
 
+/* tailwind ui button */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  border-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  text-decoration-line: none;
+}
+
+.button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-offset-width: 2px;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
+}
+
 .bg-gradient {
   background-attachment: fixed;
   background-image: linear-gradient(
@@ -1106,6 +1142,11 @@ video {
   margin-bottom: 0px !important;
 }
 
+.\!my-1 {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -1125,6 +1166,10 @@ video {
   margin-bottom: 0px !important;
 }
 
+.\!mt-2 {
+  margin-top: 0.5rem !important;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1137,8 +1182,20 @@ video {
   margin-right: 0.25rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -1171,6 +1228,10 @@ video {
 
 .grow-0 {
   flex-grow: 0;
+}
+
+.basis-64 {
+  flex-basis: 16rem;
 }
 
 .basis-full {
@@ -1242,6 +1303,18 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-black\/40 {
+  background-color: rgb(0 0 0 / 0.4);
+}
+
+.bg-black\/10 {
+  background-color: rgb(0 0 0 / 0.1);
+}
+
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -1271,6 +1344,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.\!pl-0 {
+  padding-left: 0px !important;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1281,6 +1358,11 @@ video {
 
 .text-right {
   text-align: right;
+}
+
+.\!text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
 }
 
 .text-4xl {
@@ -1311,6 +1393,10 @@ video {
   font-weight: 500;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .no-underline {
   text-decoration-line: none;
 }
@@ -1318,6 +1404,12 @@ video {
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1906,6 +1998,18 @@ video {
     margin-right: auto;
   }
 
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .md\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1954,9 +2058,22 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .md\:\!text-lg {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:\!mt-2 {
+    margin-top: 0.5rem !important;
+  }
+
+  .lg\:\!mt-6 {
+    margin-top: 1.5rem !important;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -1977,6 +2094,11 @@ video {
     flex-direction: row;
   }
 
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -1993,6 +2115,14 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:flex {
+    display: flex;
+  }
+
   .xl\:h-\[55dvh\] {
     height: 55dvh;
   }
@@ -2001,8 +2131,24 @@ video {
     max-width: 1536px;
   }
 
+  .xl\:basis-96 {
+    flex-basis: 24rem;
+  }
+
+  .xl\:basis-\[26rem\] {
+    flex-basis: 26rem;
+  }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:gap-8 {
+    gap: 2rem;
+  }
+
+  .xl\:p-8 {
+    padding: 2rem;
   }
 
   .xl\:pb-32 {

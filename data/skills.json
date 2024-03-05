@@ -1,0 +1,35 @@
+[
+  {
+    "category": "Knowledge",
+    "skills": [
+      "Design Systems",
+      "User Experience",
+      "Information Architecture",
+      "Design Tokens",
+      "Content Strategy",
+      "Strategic thinking",
+      "A/B Testing",
+      "Conversion UX",
+      "Form UX",
+      "Wireframing",
+      "Prototyping"
+    ]
+  },
+  {
+    "category": "Tools",
+    "skills": [
+      "Figma",
+      "Miro",
+      "React",
+      "Gatsby",
+      "Hugo",
+      "Tailwind CSS",
+      "Git",
+      "Github",
+      "GitLab",
+      "TypeScript",
+      "Azure DevOps",
+      "Jira"
+    ]
+  }
+]
