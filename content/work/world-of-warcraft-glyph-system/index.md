@@ -6,8 +6,6 @@ project_areas: ['game design', 'ux design']
 featured_image: featured-image.jpg
 ---
 
-_Originally posted August 10, 2020 on [LinkedIn](https://www.linkedin.com/pulse/overhauling-cosmetic-appearances-abilities-world-warcraft-singer/)_
-
 **TL;DR:** The user experience of customizing your character's spells and abilities in World of Warcraft is... not great, and is mostly due to being the leftovers of other abandoned game concepts. I detail a possible solution to this and highlight how it would impact the rest of the game.
 
 As I recognize that most people reading this article might be completely unfamiliar with this topic, a brief primer (skip to "The Glyph system" if you're a _true gamer_):
