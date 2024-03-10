@@ -1129,6 +1129,11 @@ video {
   --tw-ring-color: rgb(107 114 128 / 0.1);
 }
 
+.mask-image {
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, black 75%);
+          mask-image: linear-gradient(to top, transparent 25%, black 75%);
+}
+
 .\!m-0 {
   margin: 0px !important;
 }
@@ -1166,6 +1171,10 @@ video {
   margin-bottom: 0px !important;
 }
 
+.\!mb-4 {
+  margin-bottom: 1rem !important;
+}
+
 .\!mt-2 {
   margin-top: 0.5rem !important;
 }
@@ -1190,8 +1199,8 @@ video {
   margin-top: 1rem;
 }
 
-.\!mb-4 {
-  margin-bottom: 1rem !important;
+.-mt-16 {
+  margin-top: -4rem;
 }
 
 .block {
@@ -1214,8 +1223,8 @@ video {
   height: 24rem;
 }
 
-.max-h-\[70dvh\] {
-  max-height: 70dvh;
+.max-h-\[50dvh\] {
+  max-height: 50dvh;
 }
 
 .max-w-none {
@@ -1344,14 +1353,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
-.pt-0 {
-  padding-top: 0px;
-}
-
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1421,6 +1422,20 @@ video {
     :where(a:hover):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   text-decoration: underline;
   color: var(--tw-prose-links-hover);
+}
+
+.prose
+    :where(code):not(
+      :where([class~='not-prose'], [class~='not-prose'] *)
+    )::before {
+  content: '';
+}
+
+.prose
+    :where(code):not(
+      :where([class~='not-prose'], [class~='not-prose'] *)
+    )::after {
+  content: '';
 }
 
 .prose-chilblane {
@@ -1949,8 +1964,16 @@ video {
   }
 }
 
+.hover\:border-\[--tw-prose-links-hover\]:hover {
+  border-color: var(--tw-prose-links-hover);
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.focus\:border-\[--tw-prose-links-hover\]:focus {
+  border-color: var(--tw-prose-links-hover);
 }
 
 .focus\:underline:focus {
@@ -1958,6 +1981,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:-mt-32 {
+    margin-top: -8rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -1993,6 +2020,10 @@ video {
 
   .md\:mt-16 {
     margin-top: 4rem;
+  }
+
+  .md\:-mt-32 {
+    margin-top: -8rem;
   }
 
   .md\:flex {
@@ -2059,12 +2090,20 @@ video {
     margin-top: 1.5rem !important;
   }
 
+  .lg\:-mt-64 {
+    margin-top: -16rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
 
   .lg\:min-w-96 {
     min-width: 24rem;
+  }
+
+  .lg\:max-w-\[60rem\] {
+    max-width: 60rem;
   }
 
   .lg\:max-w-screen-xl {

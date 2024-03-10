@@ -4,13 +4,17 @@
 {{ $caption := .Get "caption" }}
 {{ with $.Page.Resources.GetMatch (.Get "name") }}
   <figure>
-    <a class="block" href="{{ .RelPermalink }}">
+    <a
+      class="inline-block border-2 hover:border-[--tw-prose-links-hover] focus:border-[--tw-prose-links-hover]"
+      href="{{ .RelPermalink }}"
+    >
       <img
-        class="img-fluid border-2 max-h-[70dvh] !my-0"
+        class="img-fluid max-h-[50dvh] !my-0"
         srcset="
-          {{ (.Resize "320x").RelPermalink }} 320w,
-          {{ (.Resize "810x").RelPermalink }} 810w,
-          {{ (.Resize "1620x").RelPermalink }} 2x"
+          {{ (.Resize "320x").RelPermalink }}  320w,
+          {{ (.Resize "800x").RelPermalink }}  800w,
+          {{ (.Resize "1440x").RelPermalink }} 1440w
+        "
         src="{{ (.Resize "810x").RelPermalink }}"
         alt="{{ $altText }}"
       />

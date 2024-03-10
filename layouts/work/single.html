@@ -1,24 +1,43 @@
 {{ define "main" }}
   <article
-    class="bg-white/50 shadow-sm max-w-prose p-4 -mx-4 md:p-8 md:mx-auto md:rounded-xl"
+    class="bg-white/50 shadow-sm p-4 -mx-4 md:p-8 md:mx-auto md:rounded-xl lg:max-w-[60rem]"
   >
     <header class="border-b-2 pb-8 mb-8">
-      <p class="lead !mb-0">{{- .Params.project_year -}}</p>
-      <h1 class="pt-2 md:pt-8 !mb-4">
-        {{- .Title -}}
-      </h1>
-      {{ $project_areas := "project_areas" }}
-      {{ with .Param $project_areas }}
-        <div>
-          {{ range $index, $tag := . }}
-            <span class="pill mr-1 my-1">{{ $tag }}</span>
-          {{- end -}}
-        </div>
-      {{- end -}}
-      <p class="lead">{{- .Description -}}</p>
-      {{ if .Params.project_url }}
-        <a href="{{- .Params.project_url -}}">Project Link</a>
+      {{ $title := .Title }}
+      {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
+
+      {{ if $featured_image }}
+        {{ with $featured_image }}
+          <img
+            class="img-fluid mask-image mx-auto !my-0"
+            srcset="
+              {{ (.Resize "320x").RelPermalink }}  320w,
+              {{ (.Resize "800x").RelPermalink }}  800w,
+              {{ (.Resize "1440x").RelPermalink }} 1440w
+            "
+            src="{{ (.Resize "810x").RelPermalink }}"
+            alt="{{ $title }}"
+          />
+        {{ end }}
       {{ end }}
+      <div class="-mt-16 sm:-mt-32">
+        <p class="lead !mb-0">{{- .Params.project_year -}}</p>
+        <h1 class="pt-2 md:pt-8 !mb-4">
+          {{- $title -}}
+        </h1>
+        {{ $project_areas := "project_areas" }}
+        {{ with .Param $project_areas }}
+          <div>
+            {{ range $index, $tag := . }}
+              <span class="pill mr-1 my-1">{{ $tag }}</span>
+            {{- end -}}
+          </div>
+        {{- end -}}
+        <p class="lead">{{- .Description -}}</p>
+        {{ if .Params.project_url }}
+          <a href="{{- .Params.project_url -}}">Project Link</a>
+        {{ end }}
+      </div>
     </header>
     <section class="c-post__body">
       {{- .Content -}}
