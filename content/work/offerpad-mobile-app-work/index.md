@@ -1,9 +1,16 @@
 ---
-title: 'Offerpad - Mobile App Work'
+title: 'Offerpad: Mobile App Work'
 description: 'Various explorations for the Offerpad Mobile app.'
 project_url: https://apps.apple.com/us/app/offerpad-find-houses-for-sale/id1354052452
 project_year: 2020
-project_areas: ['mobile design']
+knowledge:
+  [
+    'mobile design',
+    'information architecture',
+    'prototyping',
+    'user experience',
+  ]
+skills: ['figma']
 ---
 
 When the Offerpad Mobile app was still a small prototype project, I was asked to provide mockups to guide the developers. My screens were based on what I knew about iOS app design at the time.

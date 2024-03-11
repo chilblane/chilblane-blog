@@ -6,13 +6,18 @@
       "User Experience",
       "Information Architecture",
       "Design Tokens",
+      "UX Engineering",
       "Content Strategy",
       "Strategic thinking",
       "A/B Testing",
       "Conversion UX",
       "Form UX",
       "Wireframing",
-      "Prototyping"
+      "Prototyping",
+      "Product Management",
+      "Process Design",
+      "Mobile Design",
+      "Web Analytics"
     ]
   },
   {
@@ -29,7 +34,9 @@
       "GitLab",
       "TypeScript",
       "Azure DevOps",
-      "Jira"
+      "Jira",
+      "CSS",
+      "JavaScript"
     ]
   }
 ]

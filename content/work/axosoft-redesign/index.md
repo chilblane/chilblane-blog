@@ -3,7 +3,7 @@ title: 'Axosoft Redesign Project'
 description: 'My first software redesign project, updating the design language of the Axosoft app'
 project_url: https://www.axosoft.com/project-management/
 project_year: 2016
-project_areas: ['ux design']
+knowledge: ['user experience']
 ---
 
 I sought to redesign Axosoft's project management application for two reasons: bring it in line with our current branding and trade dress, and continue to remove legacy aspects of its Windows desktop roots along with bringing in some much-needed UX improvements. My intent with this redesign, is that much of the design work would rely on the same CSS and style framework we use on our product and support sites.

@@ -25,18 +25,24 @@
         <h1 class="pt-2 md:pt-8 !mb-4">
           {{- $title -}}
         </h1>
-        {{ $project_areas := "project_areas" }}
-        {{ with .Param $project_areas }}
-          <div>
-            {{ range $index, $tag := . }}
-              <span class="pill mr-1 my-1">{{ $tag }}</span>
-            {{- end -}}
-          </div>
-        {{- end -}}
         <p class="lead">{{- .Description -}}</p>
         {{ if .Params.project_url }}
-          <a href="{{- .Params.project_url -}}">Project Link</a>
+          <a class="button" href="{{- .Params.project_url -}}">Project Link</a>
         {{ end }}
+        <div class="mt-4">
+          {{ $knowledge := "knowledge" }}
+          {{ $skills := "skills" }}
+          {{ with .Param $knowledge }}
+            {{ range $index, $tag := . }}
+              <span class="pill mr-1 my-1 md:text-base">{{ $tag }}</span>
+            {{- end -}}
+          {{- end -}}
+          {{ with .Param $skills }}
+            {{ range $index, $tag := . }}
+              <span class="pill mr-1 my-1 md:text-base">{{ $tag }}</span>
+            {{- end -}}
+          {{- end -}}
+        </div>
       </div>
     </header>
     <section class="c-post__body">

@@ -83,7 +83,8 @@
               {{ end }}
             </div>
             <div class="shrink-0 grow-1 lg:min-w-96">
-              <h3>
+              <p class="!mb-0">{{- .Params.project_year -}}</p>
+              <h3 class="!mt-0">
                 <a
                   href="{{ .Permalink }}"
                   class="font-bold no-underline hover:underline focus:underline"
@@ -91,20 +92,21 @@
                   {{- $title -}}
                 </a>
               </h3>
+              <p class="text-base">{{- .Page.Description -}}</p>
               <div class="c-list__tags">
-                {{ if .Page.Params.project_year }}
-                  <span class="pill mr-1 my-1"
-                    >{{ .Page.Params.project_year }}</span
-                  >
-                {{ end }}
-                {{ $project_areas := "project_areas" }}
-                {{ with .Page.Param $project_areas }}
+                {{ $knowledge := "knowledge" }}
+                {{ $skills := "skills" }}
+                {{ with .Param $knowledge }}
                   {{ range $index, $tag := . }}
-                    <span class="pill mr-1 my-1">{{ $tag }}</span>
+                    <span class="pill mr-0.5 my-0.5">{{ $tag }}</span>
+                  {{- end -}}
+                {{- end -}}
+                {{ with .Param $skills }}
+                  {{ range $index, $tag := . }}
+                    <span class="pill mr-0.5 my-0.5">{{ $tag }}</span>
                   {{- end -}}
                 {{- end -}}
               </div>
-              <p class="text-base">{{- .Page.Description -}}</p>
             </div>
           </div>
         {{ end }}

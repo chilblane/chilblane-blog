@@ -1,9 +1,20 @@
 ---
-title: 'Offerpad - Marketing / Web Presence'
+title: 'Offerpad: Marketing / Web Presence'
 description: "Overview of design and development work done for Offerpad's marketing content."
 project_url: https://www.offerpad.com/
 project_year: 2020
-project_areas: ['web design', 'front-end dev']
+knowledge:
+  [
+    'a/b testing',
+    'content strategy',
+    'design systems',
+    'information architecture',
+    'product management',
+    'user experience',
+    'ux engineering',
+    'web analytics',
+  ]
+skills: ['css', 'figma', 'javascript', 'react']
 ---
 
 The main offerpad.com website is probably the most representative of my UX design and development work at Offerpad. Since originally building the rebranded React site in June 2018, I repeatedly added and updated the site as needed. This page will highlight some of the work I've done or been responsible for.

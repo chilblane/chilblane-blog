@@ -1,8 +1,10 @@
 ---
-title: 'Zonar Systems - DSPLY System'
+title: 'Zonar Systems: DSPLY Design System'
 description: 'Auditing and planning growth of an emerging design system'
 project_year: 2023
-project_areas: ['product management', 'design systems', 'content strategy']
+knowledge:
+  ['content strategy', 'design systems', 'process design', 'product management']
+skills: ['figma', 'miro']
 featured_image: featured-image.png
 featured: true
 ---

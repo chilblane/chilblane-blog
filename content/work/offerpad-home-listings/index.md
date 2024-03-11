@@ -1,9 +1,18 @@
 ---
-title: 'Offerpad - Home Listings UI (Web)'
+title: 'Offerpad: Home Listings'
 description: 'Design mockups and planning for buy.offerpad.com'
 project_url: https://buy.offerpad.com/
 project_year: 2019
-project_areas: ['ux design', 'front-end dev']
+knowledge:
+  [
+    'content strategy',
+    'information architecture',
+    'prototyping',
+    'user experience',
+    'ux engineering',
+    'wireframing',
+  ]
+skills: ['css', 'figma', 'react', 'typescript']
 ---
 
 I joined Offerpad shortly before they launched the first version of their home listings. As a design exercise, while we were exploring redesigning other parts of Offerpad's website, I imagined what an improved UI for our home listings could look like. This would serve as a foundation for later design work.

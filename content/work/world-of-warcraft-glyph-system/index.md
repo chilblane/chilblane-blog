@@ -2,7 +2,8 @@
 title: 'World of Warcraft Glyphs'
 description: 'A history of cosmetic customization and the Glyphs system in World of Warcraft, and my ideas on how to improve the gameplay and user interface for glyphs'
 project_year: 2020
-project_areas: ['game design', 'ux design']
+knowledge: ['unsolicited redesign', 'systems design', 'user experience']
+skills: ['figma']
 featured_image: featured-image.jpg
 ---
 

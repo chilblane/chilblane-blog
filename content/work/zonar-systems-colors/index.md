@@ -1,8 +1,10 @@
 ---
-title: 'Zonar Systems - Color Design Tokens'
+title: 'Zonar Systems: Color Design Tokens'
 description: 'Building out a modern approach to managing color'
 project_year: 2023
-project_areas: ['design systems', 'design tokens', 'visual design']
+knowledge:
+  ['design systems', 'design tokens', 'user experience', 'ux engineering']
+skills: ['css', 'figma']
 featured_image: featured-image.png
 ---
 
