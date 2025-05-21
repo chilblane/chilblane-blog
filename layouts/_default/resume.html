@@ -11,7 +11,7 @@
         >
           View in Figma
         </a>
-        <a class="button" href="/figma-resume.pdf"> Download PDF </a>
+        <a class="button" href="/resume-20250508.pdf"> Download PDF </a>
       </div>
 
       <div class="xl:flex xl:gap-8">
@@ -64,6 +64,11 @@
               <p class="!m-0">{{ .company }}</p>
               <p class="text-sm !m-0">{{ .startDate }} - {{ .endDate }}</p>
               <p class="text-sm !m-0">{{ .location }}</p>
+              <ul class="list-none !pl-0">
+                {{ range .skills }}
+                  <li class="pill text-sm !my-1">{{ . }}</li>
+                {{ end }}
+              </ul>
             </div>
             <ul class="lg:!mt-2">
               {{ range .summary }}

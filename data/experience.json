@@ -1,5 +1,30 @@
 [
   {
+    "role": "UX Engineer",
+    "company": "Microsoft",
+    "startDate": "April 2024",
+    "endDate": "June 2025",
+    "location": "Remote",
+    "summary": [
+      "Fluent design token, theming integration, and style (Sass) refactoring in OneDrive and Teams product code",
+      "Auditing elements and components across the SharePoint product, for the benefit of designers and engineers",
+      "Prototype work both within the SharePoint product and in standalone React app, enabling design partners to  validate their designs and engineering partners to estimate and plan product work"
+    ],
+    "skills": [
+      "Design Systems",
+      "UX Engineering",
+      "Design Tokens",
+      "Prototyping",
+      "Figma",
+      "React",
+      "TypeScript",
+      "Sass",
+      "Griffel",
+      "Git",
+      "Azure DevOps"
+    ]
+  },
+  {
     "role": "Senior Design Technologist",
     "company": "Zonar Systems",
     "startDate": "August 2022",
@@ -11,6 +36,19 @@
       "Identified and pushed forward the need for a centralized Storybook instance to consolidate documentation for both UX and engineering, and provide isolated code specimens without the need for app deployment",
       "Planned out how to more effectively use design tokens within the design system project, in both the Angular code as well as our Figma library",
       "Worked with the design director on a comprehensive color framework overhaul, incorporating updated branding and design requirements as well as knowledge from the above audits"
+    ],
+    "skills": [
+      "Design Systems",
+      "User Experience",
+      "Design Tokens",
+      "Strategic Thinking",
+      "Product Management",
+      "Figma",
+      "Miro",
+      "Angular",
+      "JavaScript",
+      "CSS",
+      "Jira"
     ]
   },
   {
@@ -24,6 +62,27 @@
       "Designing and building the documentation site in Gatsby alongside the UI Engineering team",
       "Testing various design system React components in non-SPA (single page application) contexts using the documentation site",
       "Planning and initial implementation of design token strategy, with a priority on colors"
+    ],
+    "skills": [
+      "Design Systems",
+      "User Experience",
+      "Design Tokens",
+      "UX Engineering",
+      "Content Strategy",
+      "Product Management",
+      "Wireframing",
+      "Prototyping",
+      "Figma",
+      "Miro",
+      "React",
+      "Gatsby",
+      "JavaScript",
+      "TypeScript",
+      "CSS",
+      "Sass",
+      "Git",
+      "GitLab",
+      "Jira"
     ]
   },
   {
@@ -38,6 +97,30 @@
       "Worked closely with product manager on requirements and general experience of a self-service portal for home-sellers once they accepted our offer, including a significant audit and redesign of the transaction process between a home-seller requesting an offer to moving out of the home",
       "Consultation and exploratory design on Offerpad mobile application",
       "Initiated basic design system (Floorplan)"
+    ],
+    "skills": [
+      "User Experience",
+      "Information Architecture",
+      "UX Engineering",
+      "Content Strategy",
+      "Strategic Thinking",
+      "Product Management",
+      "A/B Testing",
+      "Conversion UX",
+      "Form UX",
+      "Wireframing",
+      "Prototyping",
+      "Process Design",
+      "Mobile Design",
+      "Web Analytics",
+      "Figma",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "CSS",
+      "Sass",
+      "Git",
+      "Azure DevOps"
     ]
   },
   {
@@ -52,6 +135,27 @@
       "Produced graphical assets for GitKraken application launch",
       "Participated in Axosoft product redesign for version 16 launch",
       "Various other marketing, graphic design, and social media tasks"
+    ],
+    "skills": [
+      "User Experience",
+      "Information Architecture",
+      "UX Engineering",
+      "Content Strategy",
+      "Strategic Thinking",
+      "Product Management",
+      "A/B Testing",
+      "Conversion UX",
+      "Form UX",
+      "Wireframing",
+      "Prototyping",
+      "Process Design",
+      "Mobile Design",
+      "Web Analytics",
+      "JavaScript",
+      "CSS",
+      "Sass",
+      "Git",
+      "Github"
     ]
   }
 ]
