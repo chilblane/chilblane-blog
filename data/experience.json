@@ -6,7 +6,8 @@
     "endDate": "June 2025",
     "location": "Remote",
     "summary": [
-      "Fluent design token, theming integration, and style (Sass) refactoring in OneDrive and Teams product code",
+      "UX engineer on the ModeDS team, working between design systems (Fluent Design System, SharePoint Design System) and product (SharePoint, OneDrive, and Teams).",
+      "Fluent design token, theming integration, and SASS refactoring in OneDrive and Teams",
       "Auditing elements and components across the SharePoint product, for the benefit of designers and engineers",
       "Prototype work both within the SharePoint product and in standalone React app, enabling design partners to  validate their designs and engineering partners to estimate and plan product work"
     ],
