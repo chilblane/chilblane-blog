@@ -1,10 +1,10 @@
 {{ define "main" }}
   <main
-    class="c-home max-w-prose mx-auto pb-8 lg:max-w-screen-xl xl:max-w-screen-2xl"
+    class="c-home max-w-prose mx-auto pb-8 lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)"
   >
     <article>
       <section class="flex items-center h-96 xl:h-[55dvh]">
-        <h1 class="text-4xl md:text-6xl xl:text-9xl !m-0 ">
+        <h1 class="text-4xl md:text-6xl xl:text-9xl m-0! ">
           Design system expert, product designer
         </h1>
       </section>
@@ -23,12 +23,12 @@
         </p>
       </section>
       <section
-        class="max-w-prose mx-auto lg:max-w-screen-xl xl:max-w-screen-2xl lg:pb-16 xl:pb-32"
+        class="max-w-prose mx-auto lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl) lg:pb-16 xl:pb-32"
       >
         <h2>Specialties</h2>
         <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
           <div
-            class="px-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
+            class="px-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
           >
             <h3>Design systems</h3>
             <p>
@@ -38,7 +38,7 @@
             </p>
           </div>
           <div
-            class="px-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
+            class="px-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
           >
             <h3>UX ideation</h3>
             <p>
@@ -48,7 +48,7 @@
             </p>
           </div>
           <div
-            class="px-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
+            class="px-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
           >
             <h3>UX/UI web design</h3>
             <p>
@@ -63,7 +63,7 @@
         <h2>Featured work</h2>
         {{ range first 1 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.featured" "=" true) }}
           <div
-            class="p-4 bg-white/50 shadow-sm items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
+            class="p-4 bg-white/50 shadow-xs items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
           >
             <div class="shrink-1 grow-0">
               {{ $title := .Page.Title }}
@@ -74,7 +74,7 @@
               {{ end }}
               {{ with $thumbnail }}
                 <img
-                  class="img-fluid border-2 !m-0"
+                  class="img-fluid border-2 m-0!"
                   srcset="
                   {{ (.Resize "800x").Permalink }} 400w,
                   {{ (.Resize "1600x").Permalink }} 2x"
@@ -84,8 +84,8 @@
               {{ end }}
             </div>
             <div class="shrink-0 grow-1 lg:min-w-96">
-              <p class="!mb-0">{{- .Params.project_year -}}</p>
-              <h3 class="!mt-0">
+              <p class="mb-0!">{{- .Params.project_year -}}</p>
+              <h3 class="mt-0!">
                 <a
                   href="{{ .Permalink }}"
                   class="font-bold no-underline hover:underline focus:underline"

@@ -1,6 +1,6 @@
 {{ define "main" }}
   <main
-    class="c-home max-w-prose mx-auto pb-8 lg:max-w-screen-xl xl:max-w-screen-2xl"
+    class="c-home max-w-prose mx-auto pb-8 lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)"
   >
     <article>
       <h1>{{ .Params.heading }}</h1>
@@ -15,19 +15,19 @@
       </div>
 
       <div class="xl:flex xl:gap-8">
-        <section class="xl:basis-[26rem] shrink-0">
+        <section class="xl:basis-104 shrink-0">
           <h2>Contact</h2>
           <div
-            class="inline-block p-4 mb-8 bg-white/50 shadow-sm -mx-4 md:mx-0 md:rounded-xl xl:block xl:p-8"
+            class="inline-block p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl xl:block xl:p-8"
           >
-            <p class="!m-0">Email: <strong>{{ .Site.Params.email }}</strong></p>
-            <p class="!m-0">
+            <p class="m-0!">Email: <strong>{{ .Site.Params.email }}</strong></p>
+            <p class="m-0!">
               GitHub:
               <a href="{{- .Site.Params.github -}}">
                 {{- strings.TrimPrefix "https://www." .Site.Params.github -}}
               </a>
             </p>
-            <p class="!m-0">
+            <p class="m-0!">
               LinkedIn:
               <a href="{{- .Site.Params.linkedin -}}">
                 {{- strings.TrimPrefix "https://www." .Site.Params.linkedin -}}
@@ -39,13 +39,13 @@
         <section>
           <h2>Skills</h2>
           <div
-            class="inline-block p-4 mb-8 bg-white/50 shadow-sm -mx-4 md:mx-0 md:rounded-xl lg:px-8"
+            class="inline-block p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl lg:px-8"
           >
             {{ range .Site.Data.skills }}
               <h3>{{ .category }}</h3>
-              <ul class="list-none !pl-0">
+              <ul class="list-none pl-0!">
                 {{ range .skills }}
-                  <li class="pill !my-1 md:!text-lg">{{ . }}</li>
+                  <li class="pill my-1! md:text-lg!">{{ . }}</li>
                 {{ end }}
               </ul>
             {{ end }}
@@ -57,20 +57,20 @@
         <h2>Experience</h2>
         {{ range .Site.Data.experience }}
           <div
-            class="p-4 mb-8 bg-white/50 shadow-sm -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row lg:px-8 gap-8"
+            class="p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row lg:px-8 gap-8"
           >
             <div class="basis-64 xl:basis-96 shrink-0">
-              <h3 class="!mb-0 lg:!mt-6">{{ .role }}</h3>
-              <p class="!m-0">{{ .company }}</p>
-              <p class="text-sm !m-0">{{ .startDate }} - {{ .endDate }}</p>
-              <p class="text-sm !m-0">{{ .location }}</p>
-              <ul class="list-none !pl-0">
+              <h3 class="mb-0! lg:mt-6!">{{ .role }}</h3>
+              <p class="m-0!">{{ .company }}</p>
+              <p class="text-sm m-0!">{{ .startDate }} - {{ .endDate }}</p>
+              <p class="text-sm m-0!">{{ .location }}</p>
+              <ul class="list-none pl-0!">
                 {{ range .skills }}
-                  <li class="pill text-sm !my-1">{{ . }}</li>
+                  <li class="pill text-sm my-1!">{{ . }}</li>
                 {{ end }}
               </ul>
             </div>
-            <ul class="lg:!mt-2">
+            <ul class="lg:mt-2!">
               {{ range .summary }}
                 <li>{{ . }}</li>
               {{ end }}
@@ -82,13 +82,13 @@
         <h2>Education</h2>
         {{ range .Site.Data.education }}
           <div
-            class="p-4 mb-8 bg-white/50 shadow-sm -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row lg:px-8 gap-8"
+            class="p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row lg:px-8 gap-8"
           >
             <div class="basis-64 xl:basis-96 shrink-0">
-              <h3 class="!mb-0 lg:!mt-6">{{ .degree }}</h3>
-              <p class="text-sm !mt-2">{{ .startDate }} - {{ .endDate }}</p>
+              <h3 class="mb-0! lg:mt-6!">{{ .degree }}</h3>
+              <p class="text-sm mt-2!">{{ .startDate }} - {{ .endDate }}</p>
             </div>
-            <p class="lg:!mt-2">
+            <p class="lg:mt-2!">
               {{ .institution }}
             </p>
           </div>

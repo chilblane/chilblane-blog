@@ -1,10 +1,10 @@
 {{ define "main" }}
-  <main class="max-w-prose mx-auto lg:max-w-screen-xl xl:max-w-screen-2xl">
+  <main class="max-w-prose mx-auto lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)">
     <h2>Selected work</h2>
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
       {{ range (.Pages.ByParam "project_year").Reverse }}
         <div
-          class="flex p-4 bg-white/50 shadow-sm items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl"
+          class="flex p-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl"
         >
           <article class="shrink-1 grow-0 basis-full">
             {{ $title := .Title }}
@@ -15,7 +15,7 @@
             {{ end }}
             {{ with $thumbnail }}
               <img
-                class="img-fluid border-2 mx-auto !my-0"
+                class="img-fluid border-2 mx-auto my-0!"
                 srcset="
                 {{ (.Resize "400x").Permalink }} 400w,
                 {{ (.Resize "1000x").Permalink }} 2x"
@@ -23,8 +23,8 @@
                 alt="{{ $title }}"
               />
             {{ end }}
-            <p class="!mb-0">{{- .Params.project_year -}}</p>
-            <h3 class="!mt-0">
+            <p class="mb-0!">{{- .Params.project_year -}}</p>
+            <h3 class="mt-0!">
               <a
                 href="{{ .Permalink }}"
                 class="font-bold no-underline hover:underline focus:underline"
