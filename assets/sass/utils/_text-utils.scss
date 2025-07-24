@@ -1,0 +1,9 @@
+@use "../mixins/screen-reader" as sr;
+
+.u-sr-only {
+  @include sr.sr-only;
+}
+
+.u-text-center {
+  text-align: center;
+}

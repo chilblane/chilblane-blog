@@ -1,0 +1,45 @@
+@use "../settings/colors" as c;
+@use "../mixins/containers" as ct;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+
+.c-post {
+  background-color: c.color(gray, dark);
+  @include ct.container();
+  @include s.padding-top(1.5);
+  @include s.padding-bottom(1.5);
+  flex-grow: 1;
+  header {
+    border-bottom: 1px solid c.color(gray);
+    @include s.padding-bottom(2);
+    @include s.margin-bottom(2);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 60rem;
+    time {
+      @include fs.font-size(s);
+    }
+  }
+  &__body {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 60rem;
+    h2 {
+      display: table;
+      white-space: nowrap;
+      @include s.margin-right(1);
+      @include s.margin-top(4);
+      @include s.margin-bottom(2);
+      @include fs.font-size(xxl);
+      &::after {
+        display: table-cell;
+        position: relative;
+        top: 1em;
+        left: 0.5em;
+        border-top: 1px solid c.$text-color;
+        width: 100%;
+        content: "";
+      }
+    }
+  }
+}

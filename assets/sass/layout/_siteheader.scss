@@ -1,0 +1,33 @@
+@use "../settings/typography.scss" as *;
+@use "../mixins/breakpoints.scss" as b;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+
+.c-siteheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @include s.padding-top(1);
+  &__far {
+    @include fs.font-size(xl);
+    order: 2;
+    font-weight: 700;
+    text-align: right;
+    span:first-child {
+      display: block;
+    }
+    span:last-child {
+      display: block;
+      font-weight: 400;
+      font-size: 50%;
+      @include tf.typeface(monospace);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    @include b.breakpoint-lg {
+      @include fs.font-size(xl);
+    }
+  }
+}

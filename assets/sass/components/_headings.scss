@@ -1,0 +1,13 @@
+@use "../settings/typography" as t;
+@use "../typey/mixins/typeface" as tf;
+@use "../typey/mixins/font-size" as fs;
+
+.c-display-1,
+.c-display-2,
+.c-display-3 {
+  @include tf.typeface(heading);
+}
+
+.c-display-1 {
+  @include fs.font-size(xxl);
+}

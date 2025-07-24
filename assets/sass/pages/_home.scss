@@ -1,0 +1,71 @@
+@use "../settings/colors" as c;
+@use "../settings/typography" as t;
+@use "../mixins/breakpoints.scss" as b;
+@use "../mixins/containers.scss" as ct;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+
+.c-home {
+  @include s.padding-top(1);
+  @include b.breakpoint-lg {
+    section {
+      @include s.padding-top(1);
+      @include s.padding-bottom(1);
+    }
+  }
+  &__heading {
+    display: inline-block;
+    background-color: c.color(gray, dark);
+    @include ct.container();
+    @include s.padding-top(1.5);
+    @include s.padding-bottom(1.5);
+    @include s.margin-bottom(2);
+  }
+  &__body {
+    @include ct.container();
+    @include b.breakpoint-md {
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: 0;
+      max-width: 60rem;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    p {
+      @include s.margin(1);
+      @include s.padding-left(1);
+      @include s.padding-right(1);
+      flex: 1 0 auto;
+      text-align: center;
+      @include fs.font-size(l);
+      @include b.breakpoint-xxl {
+        @include fs.font-size(xl);
+      }
+    }
+  }
+  h2 {
+    display: table;
+    white-space: nowrap;
+    @include s.margin-right(1);
+    font-weight: 400;
+    &::after {
+      display: table-cell;
+      position: relative;
+      top: 1em;
+      left: 0.5em;
+      border-top: 1px solid c.$text-color;
+      width: 100%;
+      content: "";
+    }
+  }
+  h3 {
+    margin-top: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}

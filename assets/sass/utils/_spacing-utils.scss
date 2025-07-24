@@ -1,0 +1,81 @@
+@use "../typey/mixins/spacing" as s;
+
+$spacing-palette-data: (
+  nm -1,
+  ns -0.5,
+  nxs -0.25,
+  z 0,
+  xxs 0.25,
+  xs 0.5,
+  s 0.75,
+  m 1,
+  l 1.25,
+  xl 1.5,
+  xxl 2,
+  xxxl 4
+);
+
+@each $size, $length in $spacing-palette-data {
+  .u-margin-#{$size} {
+    @include s.margin($length);
+  }
+  .u-margin-t-#{$size},
+  .u-margin-y-#{$size} {
+    @include s.margin-top($length);
+  }
+  .u-margin-b-#{$size},
+  .u-margin-y-#{$size} {
+    @include s.margin-bottom($length);
+  }
+  .u-margin-l-#{$size},
+  .u-margin-x-#{$size} {
+    @include s.margin-left($length);
+  }
+  .u-margin-r-#{$size},
+  .u-margin-x-#{$size} {
+    @include s.margin-right($length);
+  }
+  .u-padding-#{$size} {
+    @include s.padding($length);
+  }
+  .u-padding-t-#{$size},
+  .u-padding-y-#{$size} {
+    @include s.padding-top($length);
+  }
+  .u-padding-b-#{$size},
+  .u-padding-y-#{$size} {
+    @include s.padding-bottom($length);
+  }
+  .u-padding-l-#{$size},
+  .u-padding-x-#{$size} {
+    @include s.padding-left($length);
+  }
+  .u-padding-r-#{$size},
+  .u-padding-x-#{$size} {
+    @include s.padding-right($length);
+  }
+}
+
+.u-margin-auto {
+  margin: auto;
+}
+
+.u-margin-t-auto,
+.u-margin-y-auto {
+  margin-top: auto;
+}
+
+.u-margin-b-auto,
+.u-margin-y-auto {
+  margin-bottom: auto;
+}
+
+.u-margin-l-auto,
+.u-margin-x-auto {
+  margin-left: auto;
+}
+
+.u-margin-r-auto,
+.u-margin-x-auto {
+  margin-right: auto;
+}

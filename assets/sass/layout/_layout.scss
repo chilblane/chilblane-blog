@@ -1,0 +1,8 @@
+@use "../mixins/containers.scss" as c;
+
+.c-layout {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 50rem;
+  @include c.container();
+}

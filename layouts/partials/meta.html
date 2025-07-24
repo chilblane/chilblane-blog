@@ -1,7 +1,8 @@
 {{/* title */}}
 
 {{ $title := print .Title " | Daniel Singer" }}
-{{ if .IsHome }} {{ $title = .Site.Title }} {{ end }}
+{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+
 
 <title>{{ $title }}</title>
 <meta property="og:title" content="{{ $title }}" />
@@ -9,59 +10,84 @@
 
 {{/* description */}}
 
+
 <meta
   name="description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+  content="{{ with .Description }}
+    {{ . }}
+  {{ else }}
+    {{ if .IsPage }}
+      {{ .Summary }}
+    {{ else }}
+      {{ with .Site.Params.description }}{{ . }}{{ end }}
+    {{ end }}
+  {{ end }}"
 />
 <meta
   property="og:description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+  content="{{ with .Description }}
+    {{ . }}
+  {{ else }}
+    {{ if .IsPage }}
+      {{ .Summary }}
+    {{ else }}
+      {{ with .Site.Params.description }}{{ . }}{{ end }}
+    {{ end }}
+  {{ end }}"
 />
 <meta
   name="twitter:description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+  content="{{ with .Description }}
+    {{ . }}
+  {{ else }}
+    {{ if .IsPage }}
+      {{ .Summary }}
+    {{ else }}
+      {{ with .Site.Params.description }}{{ . }}{{ end }}
+    {{ end }}
+  {{ end }}"
 />
 
 {{/* thumbnail */}}
 
 {{- with $.Params.images -}}
   {{- range first 6 . }}
-    <meta property="og:image" content="{{ . | absURL }}"
-  />{{ end -}}
-  {{- else -}}
+    <meta property="og:image" content="{{ . | absURL }}" />
+  {{ end -}}
+{{- else -}}
   {{- $images := $.Resources.ByType "image" -}}
   {{- $featured := $images.GetMatch "*feature*" -}}
   {{- if not $featured }}
-    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
+    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}
+  {{ end -}}
 
   {{- with $featured -}}
     <meta property="og:image" content="{{ $featured.Permalink }}" />
-    {{- else -}}
+  {{- else -}}
     {{- with $.Site.Params.images }}
-      <meta property="og:image" content="{{ index . 0 | absURL }}"
-    />{{ end -}}
+      <meta property="og:image" content="{{ index . 0 | absURL }}" />
+    {{ end -}}
   {{- end -}}
 {{- end -}}
 
 {{- with $.Params.images -}}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="{{ index . 0 | absURL }}" />
-  {{ else -}}
+{{ else -}}
   {{- $images := $.Resources.ByType "image" -}}
   {{- $featured := $images.GetMatch "*feature*" -}}
   {{- if not $featured }}
-    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
+    {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}
+  {{ end -}}
 
   {{- with $featured -}}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="{{ $featured.Permalink }}" />
-    {{- else -}}
+  {{- else -}}
     {{- with $.Site.Params.images -}}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="{{ index . 0 | absURL }}" />
-      {{ else -}}
+    {{ else -}}
       <meta name="twitter:card" content="summary" />
     {{- end -}}
   {{- end -}}
@@ -73,23 +99,27 @@
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <meta property="article:section" content="{{ .Section }}" />
   {{ with .PublishDate }}
-    <meta property="article:published_time" content="{{ .Format $iso8601 }}"
-  />{{ end }}
+    <meta property="article:published_time" content="{{ .Format $iso8601 }}" />
+  {{ end }}
   {{ with .Lastmod }}
-    <meta property="article:modified_time" content="{{ .Format $iso8601 }}"
-  />{{ end }}
+    <meta property="article:modified_time" content="{{ .Format $iso8601 }}" />
+  {{ end }}
 
   {{/* author */}}
 
-  {{- range .Site.Authors }}
+  {{- range .Site.Params.Author }}
     {{ with .Social.facebook }}
-      <meta property="article:author" content="https://www.facebook.com/{{ . }}"
-    />{{ end }}
-    {{ with .Site.Social.facebook }}
+      <meta
+        property="article:author"
+        content="https://www.facebook.com/{{ . }}"
+      />
+    {{ end }}
+    {{ with .Site.Params.Social.facebook }}
       <meta
         property="article:publisher"
         content="https://www.facebook.com/{{ . }}"
-    />{{ end }}
+      />
+    {{ end }}
     {{- with .Params.tags }}
       {{ range first 6 . }}
         <meta property="article:tag" content="{{ . }}" />
@@ -98,10 +128,10 @@
   {{- end -}}
 {{- end -}}
 
-{{ with .Site.Social.twitter -}}
+{{ with .Site.Params.Social.twitter -}}
   <meta name="twitter:site" content="@{{ . }}" />
 {{ end -}}
-{{ range .Site.Authors }}
+{{ range .Site.Params.Author }}
   {{ with .twitter -}}
     <meta name="twitter:creator" content="@{{ . }}" />
   {{ end -}}
@@ -109,16 +139,17 @@
 
 {{/* misc */}}
 
-{{- with .Params.audio }}<meta property="og:audio" content="{{ . }}"/>{{ end }}
+{{- with .Params.audio }}<meta property="og:audio" content="{{ . }}" />{{ end }}
 {{- with .Params.locale }}
-  <meta property="og:locale" content="{{ . }}"
-/>{{ end }}
+  <meta property="og:locale" content="{{ . }}" />
+{{ end }}
 {{- with .Site.Params.title }}
-  <meta property="og:site_name" content="{{ . }}"
-/>{{ end }}
+  <meta property="og:site_name" content="{{ . }}" />
+{{ end }}
 {{- with .Params.videos }}
   {{- range . }}
-    <meta property="og:video" content="{{ . | absURL }}" /> {{ end }}
+    <meta property="og:video" content="{{ . | absURL }}" />
+  {{ end }}
 {{ end }}
 
 {{- /* If it is part of a series, link to related articles */}}
@@ -129,12 +160,13 @@
     {{- $series := index $siteSeries ($name | urlize) }}
     {{- range $page := first 6 $series.Pages }}
       {{- if ne $page.Permalink $permalink }}
-        <meta property="og:see_also" content="{{ $page.Permalink }}"
-      />{{ end }}
-    {{- end }} {{ end }}
+        <meta property="og:see_also" content="{{ $page.Permalink }}" />
+      {{ end }}
+    {{- end }}
+  {{ end }}
 {{ end }}
 
 {{- /* Facebook Page Admin ID for Domain Insights */}}
-{{- with .Site.Social.facebook_admin }}
-  <meta property="fb:admins" content="{{ . }}"
-/>{{ end }}
+{{- with .Site.Params.Social.facebook_admin }}
+  <meta property="fb:admins" content="{{ . }}" />
+{{ end }}

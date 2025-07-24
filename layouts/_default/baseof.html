@@ -4,11 +4,7 @@
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
   {{- partial "head.html" . -}}
-  <body
-    class="prose prose-chilblane bg-gray-100 bg-gradient {{ if .IsHome }}
-      bg-gradient-animated
-    {{ end }} md:prose-lg lg:prose-xl max-w-none p-4 md:px-8"
-  >
+  <body>
     <div class="c-layout">
       {{- partial "siteheader.html" . -}}
       <div id="content">

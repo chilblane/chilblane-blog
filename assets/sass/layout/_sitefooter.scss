@@ -1,0 +1,26 @@
+@use "../mixins/breakpoints.scss" as b;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+
+.c-sitefooter {
+  @include tf.typeface(monospace);
+  @include fs.font-size(s);
+  @include s.padding(1.5 1);
+  p {
+    margin: 0;
+  }
+}
+
+@include b.breakpoint-lg {
+  .c-sitefooter {
+    display: flex;
+    column-gap: 1rem;
+    justify-content: space-between;
+    &__near {
+      display: flex;
+      column-gap: 1rem;
+      justify-content: space-between;
+    }
+  }
+}

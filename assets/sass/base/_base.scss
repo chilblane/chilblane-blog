@@ -1,0 +1,47 @@
+@use "../settings/colors" as c;
+@use "../settings/typography" as t;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+@use "../mixins/state" as state;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.25) 0,
+      rgba(0, 0, 0, 0.25) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    linear-gradient(c.$background-color, c.color(blue, darker));
+  background-size:
+    auto 5px,
+    auto auto;
+  background-attachment: fixed, fixed;
+  background-color: c.$background-color;
+  color: c.$text-color;
+  line-height: 1.4;
+  @include tf.typeface(body);
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: c.$action-color;
+  text-decoration: none;
+  @include state.hover {
+    color: c.$action-color-hover;
+    text-decoration: underline;
+  }
+}
+
+li {
+  @include s.margin(1 0);
+}
