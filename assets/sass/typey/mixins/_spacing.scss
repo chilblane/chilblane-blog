@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "../../settings/typography" as t;
+@use "../functions/validators" as v;
 
 // Define spacing (with fallbacks).
 //
@@ -16,32 +17,28 @@
 //   value in px.
 @mixin spacing($property, $spacing, $context: t.$base-font-size) {
   $allowed-types: "multiplier", "px", "list";
-  $type: typey-validator($spacing, $allowed-types);
+  $type: v.typey-validator($spacing, $allowed-types);
 
-  $px-fallback-list: [];
-  $converted-list: [];
+  $px-fallback-list: ();
+  $converted-list: ();
 
   @each $x in $spacing {
     @if t.$base-unit == rem {
       $allowed-types: "multiplier", "px", "auto";
-      $type: typey-validator($x, $allowed-types);
+      $type: v.typey-validator($x, $allowed-types);
       @if $type == "multiplier" {
-        $spacing: $x * $base-line-height;
-        $px-fallback-list: list.join(
-          $px-fallback-list,
-          $spacing,
-          $separator: space
-        );
+        $spacing: $x * t.$base-line-height;
+        $px-fallback-list: join($px-fallback-list, $spacing, $separator: space);
       }
       @if $type == "px" {
-        $px-fallback-list: list.join($px-fallback-list, $x, $separator: space);
+        $px-fallback-list: join($px-fallback-list, $x, $separator: space);
       }
       @if $type == "auto" {
-        $px-fallback-list: list.join($px-fallback-list, $x, $separator: space);
+        $px-fallback-list: join($px-fallback-list, $x, $separator: space);
       }
     }
     $spacing: spacing($x, $context);
-    $converted-list: list.join($converted-list, $spacing, $separator: space);
+    $converted-list: join($converted-list, $spacing, $separator: space);
   }
 
   @if t.$base-unit == rem {
