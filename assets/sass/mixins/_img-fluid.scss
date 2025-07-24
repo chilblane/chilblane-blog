@@ -1,6 +1,6 @@
 @mixin img-fluid {
-    align-self: flex-start;
-    display: block;
-    height: auto;
-    max-width: 100%;
+  display: block;
+  align-self: flex-start;
+  max-width: 100%;
+  height: auto;
 }

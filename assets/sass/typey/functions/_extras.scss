@@ -14,12 +14,10 @@
   @if meta.type-of($weight) == "string" {
     @if map.has-key(defaults.$font-weight, $weight) {
       @return map.get(defaults.$font-weight, $weight);
-    }
-    @else {
+    } @else {
       @error "'#{$weight}' not found in $font-weight map";
     }
-  }
-  @else {
+  } @else {
     @error "Weight specified for weight() is not a string";
   }
 }

@@ -1,17 +1,16 @@
 {{ define "main" }}
-<article class="c-post">
+  <article class="c-post">
     <header>
-        <h1 class="c-post__title">
-            {{- .Title -}}
-        </h1>
-        <p>{{- .Description -}}</p>
-        <time>
-            Posted&nbsp;{{- .Date.Format "January 2, 2006" -}}
-        </time>
+      <h1 class="c-post__title">
+        {{- .Title -}}
+      </h1>
+      <p>{{- .Description -}}</p>
+      <time>
+        Posted&nbsp;{{- .Date.Format "January 2, 2006" -}}
+      </time>
     </header>
     <section class="c-post__body">
-        {{- .Content -}}
+      {{- .Content -}}
     </section>
-</article>
-
+  </article>
 {{ end }}

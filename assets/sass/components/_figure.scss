@@ -12,9 +12,9 @@
   }
   img {
     @include if.img-fluid;
+    @include s.margin(0, "auto");
     opacity: 80%;
     border: 1px solid c.color(gray);
-    @include s.margin(0, "auto");
     max-height: 40rem;
     max-height: 70vh;
   }

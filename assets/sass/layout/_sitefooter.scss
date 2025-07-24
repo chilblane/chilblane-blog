@@ -4,9 +4,9 @@
 @use "../typey/mixins/typeface" as tf;
 
 .c-sitefooter {
-  @include tf.typeface(monospace);
   @include fs.font-size(s);
   @include s.padding(1.5 1);
+  @include tf.typeface(monospace);
   p {
     margin: 0;
   }

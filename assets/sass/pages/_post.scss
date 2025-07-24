@@ -4,17 +4,17 @@
 @use "../typey/mixins/spacing" as s;
 
 .c-post {
-  background-color: c.color(gray, dark);
   @include ct.container();
-  @include s.padding-top(1.5);
   @include s.padding-bottom(1.5);
+  @include s.padding-top(1.5);
   flex-grow: 1;
+  background-color: c.color(gray, dark);
   header {
-    border-bottom: 1px solid c.color(gray);
-    @include s.padding-bottom(2);
     @include s.margin-bottom(2);
+    @include s.padding-bottom(2);
     margin-right: auto;
     margin-left: auto;
+    border-bottom: 1px solid c.color(gray);
     max-width: 60rem;
     time {
       @include fs.font-size(s);
@@ -25,12 +25,12 @@
     margin-left: auto;
     max-width: 60rem;
     h2 {
-      display: table;
-      white-space: nowrap;
+      @include fs.font-size(xxl);
+      @include s.margin-bottom(2);
       @include s.margin-right(1);
       @include s.margin-top(4);
-      @include s.margin-bottom(2);
-      @include fs.font-size(xxl);
+      display: table;
+      white-space: nowrap;
       &::after {
         display: table-cell;
         position: relative;

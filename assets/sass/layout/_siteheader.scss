@@ -5,11 +5,11 @@
 @use "../typey/mixins/typeface" as tf;
 
 .c-siteheader {
+  @include s.padding-top(1);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  @include s.padding-top(1);
   &__far {
     @include fs.font-size(xl);
     order: 2;
@@ -19,10 +19,10 @@
       display: block;
     }
     span:last-child {
+      @include tf.typeface(monospace);
       display: block;
       font-weight: 400;
       font-size: 50%;
-      @include tf.typeface(monospace);
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }

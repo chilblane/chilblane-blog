@@ -3,20 +3,20 @@
 @use "../mixins/breakpoints" as b;
 
 .c-row {
-  display: flex;
-  flex-wrap: wrap;
   @include s.margin-left(-0.5);
   @include s.margin-right(-0.5);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .c-col,
 .c-col-4,
 .c-col-6 {
+  @include s.padding-left(0.5);
+  @include s.padding-right(0.5);
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  @include s.padding-left(0.5);
-  @include s.padding-right(0.5);
 }
 
 @include b.breakpoint-lg {

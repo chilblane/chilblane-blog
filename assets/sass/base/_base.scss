@@ -5,8 +5,9 @@
 @use "../mixins/state" as state;
 
 html {
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  @include tf.typeface(body);
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.25) 0,
@@ -22,7 +23,6 @@ html {
   background-color: c.$background-color;
   color: c.$text-color;
   line-height: 1.4;
-  @include tf.typeface(body);
   letter-spacing: 0.01em;
   text-rendering: optimizeLegibility;
 }

@@ -1,12 +1,12 @@
 @mixin hover {
-    &:hover {
-        @content;
-    }
+  &:hover {
+    @content;
+  }
 }
 
 @mixin hover-focus {
-    &:focus,
-    &:hover {
-        @content;
-    }
+  &:focus,
+  &:hover {
+    @content;
+  }
 }

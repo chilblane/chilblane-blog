@@ -1,5 +1,7 @@
 {{ define "main" }}
-  <main class="max-w-prose mx-auto lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)">
+  <main
+    class="max-w-prose mx-auto lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)"
+  >
     <h2>Selected work</h2>
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
       {{ range (.Pages.ByParam "project_year").Reverse }}

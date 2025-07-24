@@ -9,7 +9,10 @@
 //   (optional) The line-height. Use to set to anything other than $base-line-height.
 //   Set to a ratio when $line-height-as-ratio is true. Will default to $base-line-height-ratio.
 //   Set to false if you do not want to change a ratio of line-height already set.
-@mixin define-type-sizing($size: defaults.$base-font-size, $line-height: defaults.$base-line-height) {
+@mixin define-type-sizing(
+  $size: defaults.$base-font-size,
+  $line-height: defaults.$base-line-height
+) {
   @if defaults.$base-unit == rem or defaults.$base-unit == em {
     font-size: calc($size / defaults.$browser-font-size) * 100%;
   }
@@ -23,8 +26,7 @@
         $line-height: defaults.$base-line-height-ratio;
       }
       line-height: $line-height;
-    }
-    @else {
+    } @else {
       @if defaults.$base-unit == rem or defaults.$base-unit == em {
         // In the html element, rem means relative to browser default font size; em means relative to html's font size.
         line-height: em-calculators.calculate-em-px($line-height, $size);
@@ -40,9 +42,8 @@
       @media print {
         font-size: defaults.$print-font-size;
       }
-    }
-    @else {
-      @warn "As you are not using a relative base unit (rem or em) automatic print media sizing will not work. Set $auto-print-sizing to false to hide this warning"
+    } @else {
+      @warn "As you are not using a relative base unit (rem or em) automatic print media sizing will not work. Set $auto-print-sizing to false to hide this warning";
     }
   }
 }

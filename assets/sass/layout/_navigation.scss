@@ -3,10 +3,10 @@
 @use "../typey/mixins/spacing" as s;
 
 .c-navigation {
+  @include fs.font-size(s);
   display: flex;
   row-gap: 1rem;
   flex-direction: column;
-  @include fs.font-size(s);
   a {
     display: block;
   }
