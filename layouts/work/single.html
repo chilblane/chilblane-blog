@@ -1,51 +1,41 @@
 {{ define "main" }}
-  <article
-    class="bg-white/50 shadow-xs p-4 -mx-4 md:p-8 md:mx-auto md:rounded-xl lg:max-w-240"
-  >
-    <header class="border-b-2 pb-8 mb-8">
+  <article class="p-single">
+    <header>
       {{ $title := .Title }}
-      {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
-
-      {{ if $featured_image }}
-        {{ with $featured_image }}
-          <img
-            class="img-fluid mask-image mx-auto my-0!"
-            srcset="
-              {{ (.Resize "320x").RelPermalink }}  320w,
-              {{ (.Resize "800x").RelPermalink }}  800w,
-              {{ (.Resize "1440x").RelPermalink }} 1440w
-            "
-            src="{{ (.Resize "810x").RelPermalink }}"
-            alt="{{ $title }}"
-          />
-        {{ end }}
-      {{ end }}
-      <div class="-mt-16 sm:-mt-32">
-        <p class="lead mb-0!">{{- .Params.project_year -}}</p>
-        <h1 class="pt-2 md:pt-8 mb-4!">
+      <div class="">
+        <time>{{- .Params.project_year -}}</time>
+        <h1 class="c-display c-display--1">
           {{- $title -}}
         </h1>
-        <p class="lead">{{- .Description -}}</p>
+        <p class="c-lead">{{- .Description -}}</p>
         {{ if .Params.project_url }}
-          <a class="button" href="{{- .Params.project_url -}}">Project Link</a>
+          <div class="u-margin-b-m">
+            <a
+              class="c-button"
+              href="{{- .Params.project_url -}}"
+              data-button-label="Project Link"
+            >
+              <span class="c-button__label">Project Link</span>
+            </a>
+          </div>
         {{ end }}
-        <div class="mt-4">
+        <div>
           {{ $knowledge := "knowledge" }}
           {{ $skills := "skills" }}
           {{ with .Param $knowledge }}
             {{ range $index, $tag := . }}
-              <span class="pill mr-1 my-1 md:text-base">{{ $tag }}</span>
+              <span class="c-tag">{{ $tag }}</span>
             {{- end -}}
           {{- end -}}
           {{ with .Param $skills }}
             {{ range $index, $tag := . }}
-              <span class="pill mr-1 my-1 md:text-base">{{ $tag }}</span>
+              <span class="c-tag">{{ $tag }}</span>
             {{- end -}}
           {{- end -}}
         </div>
       </div>
     </header>
-    <section class="c-post__body">
+    <section class="p-single__body">
       {{- .Content -}}
     </section>
   </article>

@@ -1,0 +1,21 @@
+@use "../settings/colors" as c;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+
+.c-tag {
+  @include fs.font-size(xs);
+  @include s.margin(0.25 0.25 0.25 0);
+  @include s.padding(0.25 0.5);
+  display: inline-block;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 0.25rem),
+    calc(100% - 0.25rem) 100%,
+    0 100%
+  );
+  background-color: c.color(gray, dark);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

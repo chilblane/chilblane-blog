@@ -1,56 +1,44 @@
 {{ define "main" }}
-  <main
-    class="max-w-prose mx-auto lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)"
-  >
-    <h2>Selected work</h2>
-    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+  <main class="p-list">
+    <h2 class="c-display c-display--1">Selected work</h2>
+    <div class="p-list__grid">
       {{ range (.Pages.ByParam "project_year").Reverse }}
-        <div
-          class="flex p-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl"
-        >
-          <article class="shrink-1 grow-0 basis-full">
-            {{ $title := .Title }}
-            {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
-            {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
-            {{ if $featured_image }}
-              {{ $thumbnail = $featured_image }}
-            {{ end }}
-            {{ with $thumbnail }}
-              <img
-                class="img-fluid border-2 mx-auto my-0!"
-                srcset="
-                {{ (.Resize "400x").Permalink }} 400w,
-                {{ (.Resize "1000x").Permalink }} 2x"
-                src="{{ (.Resize "500x").Permalink }}"
-                alt="{{ $title }}"
-              />
-            {{ end }}
-            <p class="mb-0!">{{- .Params.project_year -}}</p>
-            <h3 class="mt-0!">
-              <a
-                href="{{ .Permalink }}"
-                class="font-bold no-underline hover:underline focus:underline"
-              >
-                {{- $title -}}
-              </a>
-            </h3>
-            <p class="text-base">{{- .Description -}}</p>
-            <div class="c-list__tags">
-              {{ $knowledge := "knowledge" }}
-              {{ $skills := "skills" }}
-              {{ with .Param $knowledge }}
-                {{ range $index, $tag := . }}
-                  <span class="pill mr-0.5 my-0.5">{{ $tag }}</span>
-                {{- end -}}
+        <article class="p-list__item">
+          {{ $title := .Title }}
+          {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
+          {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
+          {{ if $featured_image }}
+            {{ $thumbnail = $featured_image }}
+          {{ end }}
+          {{ with $thumbnail }}
+            <img src="{{ .Permalink }}" alt="{{ $title }}" />
+          {{ end }}
+          <span class="c-tag">{{- .Params.project_year -}}</span>
+          <h3>
+            <a
+              class="c-button"
+              href="{{ .Permalink }}"
+              data-button-label="{{- $title -}}"
+            >
+              <span class="c-button__label">{{- $title -}}</span>
+            </a>
+          </h3>
+          <p>{{- .Description -}}</p>
+          <div>
+            {{ $knowledge := "knowledge" }}
+            {{ $skills := "skills" }}
+            {{ with .Param $knowledge }}
+              {{ range $index, $tag := . }}
+                <span class="c-tag">{{ $tag }}</span>
               {{- end -}}
-              {{ with .Param $skills }}
-                {{ range $index, $tag := . }}
-                  <span class="pill mr-0.5 my-0.5">{{ $tag }}</span>
-                {{- end -}}
+            {{- end -}}
+            {{ with .Param $skills }}
+              {{ range $index, $tag := . }}
+                <span class="c-tag">{{ $tag }}</span>
               {{- end -}}
-            </div>
-          </article>
-        </div>
+            {{- end -}}
+          </div>
+        </article>
       {{- end -}}
     </div>
   </main>

@@ -2,6 +2,7 @@
 @use "sass:map";
 @use "sass:meta";
 @use "../../settings/typography" as t;
+@use "../functions/extras" as x;
 
 // Embed a typeface.
 //
@@ -94,7 +95,7 @@
     }
   }
   @if $weight {
-    font-weight: weight($weight);
+    font-weight: x.weight($weight);
   }
   @if $style {
     font-style: $style;

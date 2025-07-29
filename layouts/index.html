@@ -1,29 +1,27 @@
 {{ define "main" }}
-  <main class="c-home">
+  <main class="p-home">
     <article>
       <section class="">
-        <h1 class="c-display-1">Design system expert and product designer</h1>
+        <h1>Design system expert and product designer.</h1>
       </section>
-      <section class="pb-8">
-        <p class="lead">
-          I'm <strong>Daniel Singer</strong> (aka chilblane), a senior design
-          technologist and product designer with nearly 15 years of experience
-          in web-based UI/UX design and development, and over 5 years working on
-          design systems and CSS frameworks.
+      <section>
+        <p class="c-lead">
+          I'm <strong>Daniel Singer</strong>, a design technologist and product
+          designer with nearly 15 years of experience in web-based UI/UX design
+          and development, and over 5 years working on design systems and CSS
+          frameworks.
         </p>
-        <p class="lead">
+        <p class="c-lead">
           My career has included UX design, UX engineering, content strategy,
           content design, product management, product ownership, graphic design,
           A/B testing, UX research, social media management, and a sprinkling of
           games modding.
         </p>
       </section>
-      <section class="mx-auto">
-        <h2>Specialties</h2>
-        <div class="grid grid-cols-1 gap-4">
-          <div
-            class="px-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
-          >
+      <section>
+        <h2 class="c-display c-display--2">Specialties</h2>
+        <div>
+          <div>
             <h3>Design systems</h3>
             <p>
               Collaborated with developers, branding, and product to plan out
@@ -31,9 +29,7 @@
               design tool and code contexts, along with detailed documentation.
             </p>
           </div>
-          <div
-            class="px-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
-          >
+          <div>
             <h3>UX ideation</h3>
             <p>
               Worked with product and other stakeholders to architect new and
@@ -41,9 +37,7 @@
               and commonly-accepted best practices.
             </p>
           </div>
-          <div
-            class="px-4 bg-white/50 shadow-xs items-stretch justify-stretch -mx-4 md:mx-0 md:rounded-xl md:px-8"
-          >
+          <div>
             <h3>UX/UI web design</h3>
             <p>
               Designed and built content and marketing websites using a variety
@@ -54,12 +48,12 @@
         </div>
       </section>
       <section>
-        <h2>Featured work</h2>
+        <h2 class="c-display c-display--2">Featured work</h2>
         {{ range first 1 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.featured" "=" true) }}
           <div
-            class="p-4 bg-white/50 shadow-xs items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
+            class="c-featured p-4 bg-white/50 shadow-xs items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
           >
-            <div class="shrink-1 grow-0">
+            <div class="c-featured__thumbnail shrink-1 grow-0">
               {{ $title := .Page.Title }}
               {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
               {{ $featured_image := (.Page.Resources.ByType "image").GetMatch "featured-image*" }}
@@ -67,38 +61,43 @@
                 {{ $thumbnail = $featured_image }}
               {{ end }}
               {{ with $thumbnail }}
+                {{ $imageSm := .Resize "320x" }}
+                {{ $imageMd := .Resize "600x" }}
+                {{ $imageLg := .Resize "1200x" }}
                 <img
-                  class="img-fluid border-2 m-0!"
                   srcset="
-                  {{ (.Resize "800x").Permalink }} 400w,
-                  {{ (.Resize "1600x").Permalink }} 2x"
-                  src="{{ (.Resize "800x").Permalink }}"
+                    {{ $imageSm.RelPermalink }}  320w,
+                    {{ $imageMd.RelPermalink }}  600w,
+                    {{ $imageLg.RelPermalink }} 1200w
+                  "
+                  src="{{ $imageLg.RelPermalink }}"
                   alt="{{ $title }}"
                 />
               {{ end }}
             </div>
-            <div class="shrink-0 grow-1 lg:min-w-96">
-              <p class="mb-0!">{{- .Params.project_year -}}</p>
-              <h3 class="mt-0!">
+            <div class="c-featured__metadata shrink-0 grow-1 lg:min-w-96">
+              <span class="c-tag">{{- .Params.project_year -}}</span>
+              <h3>
                 <a
+                  class="c-button"
                   href="{{ .Permalink }}"
-                  class="font-bold no-underline hover:underline focus:underline"
+                  data-button-label="{{- $title -}}"
                 >
-                  {{- $title -}}
+                  <span class="c-button__label">{{- $title -}}</span>
                 </a>
               </h3>
               <p class="text-base">{{- .Page.Description -}}</p>
-              <div class="c-list__tags">
+              <div>
                 {{ $knowledge := "knowledge" }}
                 {{ $skills := "skills" }}
                 {{ with .Param $knowledge }}
                   {{ range $index, $tag := . }}
-                    <span class="pill mr-0.5 my-0.5">{{ $tag }}</span>
+                    <span class="c-tag">{{ $tag }}</span>
                   {{- end -}}
                 {{- end -}}
                 {{ with .Param $skills }}
                   {{ range $index, $tag := . }}
-                    <span class="pill mr-0.5 my-0.5">{{ $tag }}</span>
+                    <span class="c-tag">{{ $tag }}</span>
                   {{- end -}}
                 {{- end -}}
               </div>

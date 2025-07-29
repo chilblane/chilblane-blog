@@ -20,33 +20,22 @@
   $type: v.typey-validator($spacing, $allowed-types);
 
   $px-fallback-list: ();
-  $converted-list: ();
 
   @each $x in $spacing {
-    @if t.$base-unit == rem {
-      $allowed-types: "multiplier", "px", "auto";
-      $type: v.typey-validator($x, $allowed-types);
-      @if $type == "multiplier" {
-        $spacing: $x * t.$base-line-height;
-        $px-fallback-list: join($px-fallback-list, $spacing, $separator: space);
-      }
-      @if $type == "px" {
-        $px-fallback-list: join($px-fallback-list, $x, $separator: space);
-      }
-      @if $type == "auto" {
-        $px-fallback-list: join($px-fallback-list, $x, $separator: space);
-      }
+    $allowed-types: "multiplier", "px", "auto";
+    $type: v.typey-validator($x, $allowed-types);
+    @if $type == "multiplier" {
+      $spacing: $x * t.$base-line-height;
+      $px-fallback-list: join($px-fallback-list, $spacing, $separator: space);
     }
-    $spacing: spacing($x, $context);
-    $converted-list: join($converted-list, $spacing, $separator: space);
-  }
-
-  @if t.$base-unit == rem {
-    @if t.$rem-fallback == true {
-      #{$property}: $px-fallback-list;
+    @if $type == "px" {
+      $px-fallback-list: join($px-fallback-list, $x, $separator: space);
+    }
+    @if $type == "auto" {
+      $px-fallback-list: join($px-fallback-list, $x, $separator: space);
     }
   }
-  #{$property}: $converted-list;
+  #{$property}: $px-fallback-list;
 }
 
 // Wrapper mixins for various spacing properties.

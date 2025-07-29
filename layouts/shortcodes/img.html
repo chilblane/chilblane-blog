@@ -3,16 +3,12 @@
 {{ $altText := .Get "alt" }}
 {{ $caption := .Get "caption" }}
 {{ with $.Page.Resources.GetMatch (.Get "name") }}
-  {{ $imageSm := .Resize "320x" }}
+  {{/* {{ $imageSm := .Resize "320x" }}
   {{ $imageMd := .Resize "600x" }}
   {{ $imageLg := .Resize "1200x" }}
-  <figure>
-    <a
-      class="inline-block border-2 hover:border-(--tw-prose-links-hover) focus:border-(--tw-prose-links-hover)"
-      href="{{ .RelPermalink }}"
-    >
+  <figure class="c-figure">
+    <a href="{{ .RelPermalink }}">
       <img
-        class="img-fluid my-0! max-h-[50dvh]"
         srcset="
           {{ $imageSm.RelPermalink }}  320w,
           {{ $imageMd.RelPermalink }}  600w,
@@ -21,6 +17,13 @@
         src="{{ $imageLg.RelPermalink }}"
         alt="{{ $altText }}"
       />
+    </a>
+    <figcaption>{{ $caption }}</figcaption>
+  </figure>
+  */}}
+  <figure class="c-figure">
+    <a href="{{ .RelPermalink }}">
+      <img src="{{ .RelPermalink }}" alt="{{ $altText }}" />
     </a>
     <figcaption>{{ $caption }}</figcaption>
   </figure>

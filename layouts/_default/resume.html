@@ -1,76 +1,86 @@
 {{ define "main" }}
-  <main
-    class="c-home max-w-prose mx-auto pb-8 lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)"
-  >
+  <main class="p-resume">
     <article>
-      <h1>{{ .Params.heading }}</h1>
-      <div>
-        <a
-          class="button mr-4"
-          href="https://www.figma.com/file/leUdyaUZWfSXKxZ1FxC1vR/Resume?type=design&mode=design"
-        >
-          View in Figma
-        </a>
-        <a class="button" href="/resume-20250715.pdf"> Download PDF </a>
-      </div>
+      <header>
+        <div>
+          <h1 class="c-display c-display--1">{{ .Params.heading }}</h1>
+          <div>
+            <a
+              class="c-button"
+              href="https://www.figma.com/file/leUdyaUZWfSXKxZ1FxC1vR/Resume?type=design&mode=design"
+              data-button-label="View in Figma"
+            >
+              <span class="c-button__label">View in Figma</span>
+            </a>
+            <a
+              class="c-button"
+              href="/resume-20250715.pdf"
+              data-button-label="Download PDF"
+            >
+              <span class="c-button__label">Download PDF </span></a
+            >
+          </div>
+        </div>
 
-      <div class="xl:flex xl:gap-8">
-        <section class="xl:basis-104 shrink-0">
-          <h2>Contact</h2>
-          <div
-            class="inline-block p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl xl:block xl:p-8"
-          >
-            <p class="m-0!">Email: <strong>{{ .Site.Params.email }}</strong></p>
-            <p class="m-0!">
-              GitHub:
+        <section class="p-contactoptions">
+          <h2 class="u-sr-only">Contact</h2>
+          <dl>
+            <dt>Email</dt>
+            <dd>
+              {{ .Site.Params.email }}
+            </dd>
+            <dt>GitHub</dt>
+            <dd>
               <a href="{{- .Site.Params.github -}}">
                 {{- strings.TrimPrefix "https://www." .Site.Params.github -}}
               </a>
-            </p>
-            <p class="m-0!">
-              LinkedIn:
+            </dd>
+            <dt>LinkedIn</dt>
+            <dd>
               <a href="{{- .Site.Params.linkedin -}}">
                 {{- strings.TrimPrefix "https://www." .Site.Params.linkedin -}}
               </a>
-            </p>
-          </div>
+            </dd>
+          </dl>
         </section>
-
-        <section>
-          <h2>Skills</h2>
-          <div
-            class="inline-block p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl lg:px-8"
-          >
-            {{ range .Site.Data.skills }}
-              <h3>{{ .category }}</h3>
-              <ul class="list-none pl-0!">
-                {{ range .skills }}
-                  <li class="pill my-1! md:text-lg!">{{ . }}</li>
-                {{ end }}
-              </ul>
-            {{ end }}
-          </div>
-        </section>
-      </div>
-
+      </header>
       <section>
+        <h2>Skills</h2>
+        <div>
+          {{ range .Site.Data.skills }}
+            <h3>{{ .category }}</h3>
+            <ul class="u-padding-l-z">
+              {{ range .skills }}
+                <li class="c-tag">{{ . }}</li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
+      </section>
+
+      <section class="p-experience">
         <h2>Experience</h2>
         {{ range .Site.Data.experience }}
-          <div
-            class="p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row lg:px-8 gap-8"
-          >
-            <div class="basis-64 xl:basis-96 shrink-0">
-              <h3 class="mb-0! lg:mt-6!">{{ .role }}</h3>
-              <p class="m-0!">{{ .company }}</p>
-              <p class="text-sm m-0!">{{ .startDate }} - {{ .endDate }}</p>
-              <p class="text-sm m-0!">{{ .location }}</p>
-              <ul class="list-none pl-0!">
+          <div class="u-margin-b-xxxl">
+            <div class="p-experience__header">
+              <div>
+                <h3>
+                  {{ .role }},
+                  <span class="u-weight-normal">{{ .company }}</span>
+                </h3>
+                <p class="u-fontsize-s u-margin-z">
+                  {{ .startDate }} -
+                  {{ .endDate }}
+                </p>
+                <p class="u-fontsize-s u-margin-z">{{ .location }}</p>
+              </div>
+              <ul class="u-padding-l-z">
                 {{ range .skills }}
-                  <li class="pill text-sm my-1!">{{ . }}</li>
+                  <li class="c-tag">{{ . }}</li>
                 {{ end }}
               </ul>
             </div>
-            <ul class="lg:mt-2!">
+            <ul>
               {{ range .summary }}
                 <li>{{ . }}</li>
               {{ end }}
@@ -78,17 +88,17 @@
           </div>
         {{ end }}
       </section>
-      <section>
+      <section class="p-experience">
         <h2>Education</h2>
         {{ range .Site.Data.education }}
-          <div
-            class="p-4 mb-8 bg-white/50 shadow-xs -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row lg:px-8 gap-8"
-          >
-            <div class="basis-64 xl:basis-96 shrink-0">
-              <h3 class="mb-0! lg:mt-6!">{{ .degree }}</h3>
-              <p class="text-sm mt-2!">{{ .startDate }} - {{ .endDate }}</p>
+          <div class="u-margin-b-xxxl">
+            <div>
+              <h3>{{ .degree }}</h3>
             </div>
-            <p class="lg:mt-2!">
+            <p class="u-fontsize-s u-margin-z">
+              {{ .startDate }} - {{ .endDate }}
+            </p>
+            <p class="u-fontsize-s u-margin-z">
               {{ .institution }}
             </p>
           </div>

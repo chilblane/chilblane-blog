@@ -27,6 +27,7 @@ $base-unit: rem !default;
 // The base font size will be used for most calculations involving font-size.
 // Allowed units: px
 $base-font-size: 16px !default;
+$base-font-size-large: 20px !default;
 
 // The base line height will be used for most calculations involving height.
 // Allowed units: px
@@ -73,6 +74,7 @@ $font-size: (
 // setting and retrieving static font weights.
 $font-weight: (
   bold: 700,
+  semibold: 600,
   normal: 400,
   lighter: 200,
 ) !default;
@@ -113,7 +115,7 @@ $typefaces: (
   ),
   heading: (
     font-family: $font-heading,
-    weight: normal,
+    weight: semibold,
   ),
   monospace: (
     font-family: $font-monospace,

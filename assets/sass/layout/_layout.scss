@@ -1,8 +1,10 @@
-@use "../mixins/containers.scss" as c;
+@use "../mixins/breakpoints" as b;
+@use "../mixins/containers" as c;
+@use "../mixins/cssvars" as cv;
 
-.c-layout {
+.l-layout {
   @include c.container();
   margin-right: auto;
   margin-left: auto;
-  max-width: 50rem;
+  max-width: cv.cssvar(sizes-content-width);
 }

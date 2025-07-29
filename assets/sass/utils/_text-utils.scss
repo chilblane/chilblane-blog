@@ -1,3 +1,6 @@
+@use "../settings/typography" as t;
+@use "../typey/functions/extras" as x;
+@use "../typey/mixins/font-size" as fs;
 @use "../mixins/screen-reader" as sr;
 
 .u-sr-only {
@@ -6,4 +9,16 @@
 
 .u-text-center {
   text-align: center;
+}
+
+@each $weight, $value in t.$font-weight {
+  .u-weight-#{$weight} {
+    font-weight: x.weight($weight);
+  }
+}
+
+@each $size, $value in t.$font-size {
+  .u-fontsize-#{$size} {
+    @include fs.font-size($size);
+  }
 }

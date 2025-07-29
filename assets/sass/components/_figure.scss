@@ -2,30 +2,29 @@
 @use "../mixins/img-fluid" as if;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
 
 .c-figure {
-  margin-right: 0;
-  margin-left: 0;
+  @include s.margin(1 0);
   text-align: center;
   a {
     display: inline-block;
   }
   img {
     @include if.img-fluid;
-    @include s.margin(0, "auto");
     opacity: 80%;
-    border: 1px solid c.color(gray);
-    max-height: 40rem;
-    max-height: 70vh;
+    margin: 0 auto;
   }
   figcaption {
-    @include fs.font-size(s);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: cv.cssvar(sizes-content-width);
+    font-style: italic;
   }
 
   a:hover {
     img {
-      opacity: 1;
-      border-color: c.color(gray, light);
+      opacity: 100%;
     }
   }
 }

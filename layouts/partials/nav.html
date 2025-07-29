@@ -1,5 +1,7 @@
-<nav class="c-navigation">
+<nav class="l-navigation">
   {{ range .Site.Menus.main }}
-    <a class="block" href="{{ .URL }}">{{ .Name }}</a>
+    <a class="c-button" href="{{ .URL }}" data-button-label="{{ .Name }}">
+      <span class="c-button__label">{{ .Name }}</span>
+    </a>
   {{ end }}
 </nav>

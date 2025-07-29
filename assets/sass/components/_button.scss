@@ -1,0 +1,77 @@
+@use "../settings/colors" as c;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+@use "../mixins/state" as st;
+
+$button-background-color: c.color(gray, dark);
+$button-border-color: c.color(blue);
+$button-border-color-hover: c.color(blue, lighter);
+
+.c-button {
+  display: inline-flex;
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 0.25rem),
+    calc(100% - 0.25rem) 100%,
+    0 100%
+  );
+  transition-duration: 0.2s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  background-color: $button-border-color;
+  padding: 1px 1px 1px 4px;
+  line-height: 1;
+  @include tf.typeface(heading);
+  &__label {
+    display: none;
+  }
+  &::before {
+    display: inline-block;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 0.25rem),
+      calc(100% - 0.25rem) 100%,
+      0 100%
+    );
+    transition-duration: 0.2s;
+    transition-property: color;
+    transition-timing-function: ease-out;
+    background-color: $button-background-color;
+    padding: 0.5em 3em 0.5em 0.5em;
+    width: 100%;
+    height: 100%;
+    content: attr(data-button-label);
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    right: 1em;
+    opacity: 50%;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transition-duration: 0.2s, 0.2s;
+    transition-property: background-color, right;
+    transition-timing-function: ease-out, ease-out;
+    background-color: $button-border-color;
+    width: 0.5em;
+    height: 1em;
+    content: "";
+  }
+  @include st.hover {
+    transition-timing-function: ease-in;
+    background-color: $button-border-color-hover;
+    text-decoration: none;
+    &::before {
+      transition-timing-function: ease-in;
+    }
+    &::after {
+      right: 0.5em;
+      transition-timing-function: ease-in, ease-in;
+      background-color: $button-border-color-hover;
+    }
+  }
+}
