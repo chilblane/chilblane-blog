@@ -1,0 +1,24 @@
+@use "../mixins/breakpoints.scss" as b;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+
+.l-navigation {
+  @include fs.font-size(s);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  a {
+    display: block;
+  }
+}
+
+@include b.breakpoint-lg {
+  .l-navigation {
+    @include fs.font-size(m);
+    @include s.padding-bottom(1);
+    @include s.padding-top(1);
+    flex-direction: row;
+    align-items: center;
+    align-items: flex-start;
+  }
+}

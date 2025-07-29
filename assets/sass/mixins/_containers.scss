@@ -1,0 +1,6 @@
+@use "../typey/mixins/spacing" as *;
+
+@mixin container() {
+  @include padding-left(1);
+  @include padding-right(1);
+}

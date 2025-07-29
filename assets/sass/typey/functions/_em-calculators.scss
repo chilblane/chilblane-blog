@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "../../settings/typography" as t;
+@use "helpers" as h;
+@use "validators" as v;
+
+// Calculate relative sizing for em when a px value is used.
+//
+// @param number $number
+//   The px value
+// @param number|string $context
+//   The relative value to perform the calculation.
+//
+// @return number
+//   The calculated value in the base unit.
+@function calculate-em-px($x, $context) {
+  $allowed-types: "font-size", "px";
+  $type: v.typey-validator($context, $allowed-types);
+  @if $type == "font-size" {
+    $context-map-size: map.get(t.$font-size, $context);
+    @return h.typey-output-in-unit(calc($x / $context-map-size), em);
+  }
+  @if $type == "px" {
+    @return h.typey-output-in-unit(calc($x / $context), em);
+  }
+}
+
+// Calculate relative sizing for em when a multiplier is used.
+//
+// @param number $number
+//   Multiple of line height to be used.
+// @param number|string $context
+//   The relative value to perform the calculation.
+//
+// @return number
+//   The calculated value in the base unit.
+@function calculate-em-multiplier($x, $context) {
+  $allowed-types: "font-size", "px";
+  $type: v.typey-validator($context, $allowed-types);
+  @if $type == "font-size" {
+    $context-map-size: map.get(t.$font-size, $context);
+    @return h.typey-output-in-unit(
+      calc(($x * t.$base-line-height) / $context-map-size),
+      em
+    );
+  }
+  @if $type == "px" {
+    @return h.typey-output-in-unit(
+      calc(($x * t.$base-line-height) / $context),
+      em
+    );
+  }
+}

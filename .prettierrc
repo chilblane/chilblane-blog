@@ -2,16 +2,18 @@
   "printWidth": 80,
   "tabWidth": 2,
   "singleQuote": true,
-  "plugins": [
-    "prettier-plugin-go-template"
-  ],
+  "plugins": ["prettier-plugin-go-template", "prettier-plugin-css-order"],
   "overrides": [
     {
-      "files": [
-        "*.html"
-      ],
+      "files": ["*.html"],
       "options": {
         "parser": "go-template"
+      }
+    },
+    {
+      "files": ["**/*.css", "**/*.scss", "**/*.html"],
+      "options": {
+        "singleQuote": false
       }
     }
   ]

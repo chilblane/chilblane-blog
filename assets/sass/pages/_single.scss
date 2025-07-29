@@ -1,0 +1,63 @@
+@use "../settings/colors" as c;
+@use "../mixins/breakpoints" as b;
+@use "../mixins/containers" as ct;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/typeface" as tf;
+@use "../typey/mixins/spacing" as s;
+
+.p-single {
+  flex-grow: 1;
+  @include s.margin-top(2);
+  header {
+    @include s.margin-bottom(2);
+    @include s.padding-bottom(2);
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: 1px solid c.color(gray);
+    time {
+      @include fs.font-size(l);
+      @include tf.typeface(heading);
+      @include s.padding(0 0.5);
+      display: inline-block;
+      border: 2px solid c.color(gray);
+      border-radius: 0.5rem;
+    }
+    h1 {
+      @include s.margin(0.5 0);
+    }
+  }
+
+  &__body {
+    margin-right: auto;
+    margin-left: auto;
+    h2 {
+      @include tf.typeface(heading);
+      @include fs.font-size(xl);
+      @include s.margin-bottom(2);
+      @include s.margin-right(1);
+      @include s.margin-top(4);
+      display: table;
+      white-space: nowrap;
+      &::after {
+        display: table-cell;
+        position: relative;
+        top: 1em;
+        left: 0.5em;
+        border-top: 1px solid c.color(gray);
+        width: 100%;
+        content: "";
+      }
+    }
+  }
+
+  @include b.breakpoint-lg {
+    .c-figure {
+      margin-right: min(-1.5rem, (100vw - 50rem) / -2);
+      margin-left: min(-1.5em, (100vw - 50rem) / -2);
+      img {
+        max-height: 60rem;
+        max-height: 90vh;
+      }
+    }
+  }
+}

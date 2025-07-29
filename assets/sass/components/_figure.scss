@@ -1,0 +1,30 @@
+@use "../settings/colors" as c;
+@use "../mixins/img-fluid" as if;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
+
+.c-figure {
+  @include s.margin(1 0);
+  text-align: center;
+  a {
+    display: inline-block;
+  }
+  img {
+    @include if.img-fluid;
+    opacity: 80%;
+    margin: 0 auto;
+  }
+  figcaption {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: cv.cssvar(sizes-content-width);
+    font-style: italic;
+  }
+
+  a:hover {
+    img {
+      opacity: 100%;
+    }
+  }
+}

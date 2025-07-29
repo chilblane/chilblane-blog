@@ -1,11 +1,11 @@
 {{ define "main" }}
   <main class="c-container">
     <h2>Recent posts</h2>
-    <div class="c-row c-list">
+    <div class="l-row p-list">
       {{ range .Pages.ByPublishDate.Reverse }}
-        <div class="c-list__column">
-          <article class="c-list__item">
-            <a href="{{ .Permalink }}" class="c-list__image">
+        <div class="p-list__column">
+          <article class="p-list__item">
+            <a href="{{ .Permalink }}" class="p-list__image">
               {{ $title := .Title }}
               {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
               {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
@@ -24,10 +24,10 @@
                 />
               {{ end }}
             </a>
-            <h3 class="c-list__title">
+            <h3 class="p-list__title">
               <a href="{{ .Permalink }}">{{- $title -}}</a>
             </h3>
-            <time class="c-list__tag">
+            <time class="p-list__tag">
               {{- .Date.Format "January 2, 2006" -}}
             </time>
             <p>{{- .Description -}}</p>

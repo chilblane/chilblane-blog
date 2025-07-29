@@ -1,0 +1,74 @@
+@use "../settings/colors" as c;
+@use "../settings/typography" as t;
+@use "../mixins/breakpoints.scss" as b;
+@use "../mixins/containers.scss" as ct;
+@use "../mixins/img-fluid" as if;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+
+.p-home {
+  @include s.padding-top(1);
+  @include b.breakpoint-lg {
+    section {
+      @include s.padding-top(1);
+      @include s.padding-bottom(1);
+    }
+  }
+  h1 {
+    @include tf.typeface(heading);
+    @include fs.font-size(xxl);
+    text-transform: none;
+    @include b.breakpoint-xxl {
+      @include fs.font-size(xxxl);
+    }
+  }
+  &__body {
+    @include ct.container();
+    @include b.breakpoint-md {
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: 0;
+      max-width: 60rem;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    p {
+      @include fs.font-size(l);
+      @include s.margin(1);
+      @include s.padding-left(1);
+      @include s.padding-right(1);
+      flex: 1 0 auto;
+      text-align: center;
+      @include b.breakpoint-xxl {
+        @include fs.font-size(xl);
+      }
+    }
+  }
+}
+
+.c-featured {
+  display: flex;
+  flex-direction: column;
+  &__thumbnail {
+    flex: 1 0 auto;
+    img {
+      @include s.margin-bottom(1);
+      @include if.img-fluid();
+    }
+  }
+  &__metadata {
+    flex: 0 1 auto;
+  }
+  h3 {
+    @include s.margin(0.5 0);
+    @include fs.font-size(l);
+    .c-button {
+      display: flex;
+    }
+  }
+}

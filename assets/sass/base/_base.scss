@@ -1,0 +1,57 @@
+@use "../settings/colors" as c;
+@use "../settings/variables" as v;
+@use "../settings/typography" as t;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/typeface" as tf;
+@use "../mixins/breakpoints" as b;
+@use "../mixins/state" as state;
+@use "../mixins/cssvars" as cv;
+
+@include cv.cssvars(
+  (
+    sizes-content-width: #{v.$sizes-content-width},
+  )
+);
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: t.$base-font-size;
+  text-rendering: optimizeLegibility;
+  @include b.breakpoint-xl {
+    font-size: t.$base-font-size-large;
+  }
+}
+
+body {
+  @include tf.typeface(body);
+  @include fs.font-size(m);
+  background-color: c.$background-color;
+  color: c.$text-color;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: c.$action-color;
+  text-decoration: none;
+  @include state.hover {
+    color: c.$action-color-hover;
+    text-decoration: underline;
+  }
+}
+
+li {
+  @include s.margin(1 0);
+}

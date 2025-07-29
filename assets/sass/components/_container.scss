@@ -1,0 +1,5 @@
+@use "../mixins/containers" as c;
+
+.c-container {
+  @include c.container();
+}

@@ -1,0 +1,131 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "../defaults";
+@use "../functions/em-calculators";
+@use "../functions/extras";
+@use "debug";
+@use "font-size";
+@use "line-height";
+
+// Typeset your type.
+//
+// @param string $typestyle
+//   A type style from the $typestyles map.
+// @param number|string $context
+//   (optional) Only used if em is the $base-unit. The value of the
+//   elements/parents font-size if it differs from $base-font-size.
+//   Specified as a t-shirt size or value in px.
+@mixin typeset($typestyle, $context: defaults.$base-font-size) {
+  $typestyle: map.get(defaults.$typestyles, $typestyle);
+
+  $font-size: false;
+  $line-height: false;
+  $weight: false;
+  $style: false;
+  $case: false;
+  $letter-spacing: false;
+
+  // Assign values to variables when $typestyle is a keyed map.
+  @if meta.type-of($typestyle) == "map" {
+    @if map.has-key($typestyle, font-size) {
+      $font-size: map.get($typestyle, font-size);
+    }
+    @if map.has-key($typestyle, line-height) {
+      $line-height: map.get($typestyle, line-height);
+    }
+    @if map.has-key($typestyle, weight) {
+      $weight: map.get($typestyle, weight);
+    }
+    @if map.has-key($typestyle, style) {
+      $style: map.get($typestyle, style);
+    }
+    @if map.has-key($typestyle, case) {
+      $case: map.get($typestyle, case);
+    }
+    @if map.has-key($typestyle, letter-spacing) {
+      $letter-spacing: map.get($typestyle, letter-spacing);
+    }
+  }
+
+  // Assign values to variables when $typestyle is shorthand.
+  @if meta.type-of($typestyle) == "list" {
+    @each $value in $typestyle {
+      // The first value is always font-size.
+      @if list.index($typestyle, $value) == 1 {
+        $font-size: $value;
+      }
+      // This is a line-height value.
+      @else if
+        meta.type-of($value) ==
+        "number" and
+        list.index($typestyle, $value) ==
+        2
+      {
+        $line-height: $value;
+      }
+      // This is a font-weight value.
+      @else if map.has-key(defaults.$font-weight, $value) {
+        $weight: $value;
+      }
+      // This is a case value.
+      @else if
+        meta.type-of($value) ==
+        "string" and
+        list.index(defaults.$text-transform-values, $value) !=
+        null
+      {
+        $case: $value;
+      }
+      // This is a style value.
+      @else if
+        meta.type-of($value) ==
+        "string" and
+        list.index(defaults.$font-style-values, $value) !=
+        null
+      {
+        $style: $value;
+      }
+      // This is a letter-spacing value.
+      @else if
+        meta.type-of($value) ==
+        "number" and
+        list.index($typestyle, $value) !=
+        2 and
+        list.index($typestyle, $value) !=
+        1
+      {
+        $letter-spacing: $value;
+      }
+    }
+  }
+
+  // $typestyle may also be a solitary font-size.
+  @if meta.type-of($typestyle) != "map" and meta.type-of($typestyle) != "list" {
+    $font-size: $typestyle;
+  }
+
+  // Output properties.
+  @if $font-size {
+    @include font-size.font-size($font-size, $context);
+  }
+  @if $line-height {
+    @include debug.typey-debug-grid($line-height, $font-size);
+    @include line-height.line-height($line-height, $font-size);
+  } @else {
+    // Using default line-height so set debug grid accordingly.
+    @include debug.typey-debug-grid(defaults.$base-line-height, $font-size);
+  }
+  @if $weight {
+    font-weight: extras.weight($weight);
+  }
+  @if $style {
+    font-style: $style;
+  }
+  @if $case {
+    text-transform: $case;
+  }
+  @if $letter-spacing {
+    letter-spacing: em-calculators.calculate-em-px($letter-spacing, $font-size);
+  }
+}

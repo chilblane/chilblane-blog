@@ -1,0 +1,56 @@
+@use "sass:math";
+@use "../settings/colors" as c;
+@use "../mixins/breakpoints" as b;
+@use "../mixins/img-fluid" as if;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+
+.p-list {
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+    @include b.breakpoint-xl {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__item {
+    img {
+      @include if.img-fluid;
+      opacity: 80%;
+      @include s.margin(1 0);
+      &:hover {
+        opacity: 1;
+      }
+    }
+    h3 {
+      @include s.margin(0.5 0);
+      @include fs.font-size(l);
+      .c-button {
+        display: flex;
+      }
+    }
+    p:last-of-type {
+      @include fs.font-size(s);
+    }
+  }
+
+  // &__item {
+  //   @include s.margin-bottom(1);
+  //   @include s.padding(1.5);
+  //   flex: 0 0 100%;
+  //   background-color: c.color(gray, dark);
+  // }
+  // &__image {
+  //   img {
+  //     @include if.img-fluid;
+  //     opacity: 80%;
+  //     border: 1px solid c.color(gray);
+  //   }
+  //   &:hover {
+  //     img {
+  //       opacity: 1;
+  //       border-color: c.color(gray, light);
+  //     }
+  //   }
+  // }
+}

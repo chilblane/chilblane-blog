@@ -1,24 +1,25 @@
 {{ define "main" }}
-<main class="c-list">
-    <h2 class="c-list__heading">Recent {{ .Type }}</h2>
+  <main class="p-list">
+    <h2 class="p-list__heading">Recent {{ .Type }}</h2>
     {{ range .Pages.ByPublishDate.Reverse }}
-    <article class="c-post">
+      <article class="c-post">
         <header>
-            <h3 class="c-post__title">
-                <a href="{{ .Permalink }}">{{- .Title -}}</a>
-            </h3>
-            <p>{{- .Description -}}</p>
-            <time>
-                Posted&nbsp;{{- .Date.Format "January 2, 2006" -}}
-            </time>
+          <h3 class="c-post__title">
+            <a href="{{ .Permalink }}">{{- .Title -}}</a>
+          </h3>
+          <p>{{- .Description -}}</p>
+          <time>
+            Posted&nbsp;{{- .Date.Format "January 2, 2006" -}}
+          </time>
         </header>
         <section class="c-post__body">
-            {{- if eq .Type "updates"}} {{- .Content -}} {{- else }}
+          {{- if eq .Type "updates" }}
+            {{- .Content -}}
+          {{- else }}
             <a href="{{ .Permalink }}">Read more</a>
-            {{- end }}
+          {{- end }}
         </section>
-    </article>
+      </article>
     {{- end -}}
-</main>
-
+  </main>
 {{ end }}

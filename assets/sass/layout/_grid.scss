@@ -1,0 +1,31 @@
+@use "sass:math";
+@use "../typey/mixins/spacing" as s;
+@use "../mixins/breakpoints" as b;
+
+.l-row {
+  @include s.margin-left(-0.5);
+  @include s.margin-right(-0.5);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.l-col,
+.l-col-4,
+.l-col-6 {
+  @include s.padding-left(0.5);
+  @include s.padding-right(0.5);
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@include b.breakpoint-lg {
+  .l-col-4 {
+    flex: 0 0 auto;
+    width: math.div(1, 3) * 100%;
+  }
+  .l-col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}

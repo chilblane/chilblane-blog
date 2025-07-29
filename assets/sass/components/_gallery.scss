@@ -1,0 +1,12 @@
+@use "../typey/mixins/spacing" as s;
+
+.gallery-wrapper {
+  @include s.margin-top(1);
+  @include s.margin-bottom(1);
+  .galleryImg {
+    opacity: 80%;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

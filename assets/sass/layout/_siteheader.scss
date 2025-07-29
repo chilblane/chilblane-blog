@@ -1,0 +1,17 @@
+@use "../settings/typography.scss" as *;
+@use "../mixins/breakpoints.scss" as b;
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/spacing" as s;
+@use "../typey/mixins/typeface" as tf;
+
+.l-siteheader {
+  @include s.padding-top(1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &__far {
+    order: 2;
+    text-align: right;
+  }
+}

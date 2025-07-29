@@ -1,29 +1,9 @@
-@import 'settings/typography';
-@import 'settings/color';
-@import 'settings/spacing';
+@use "base";
 
-@import 'mixins/breakpoints';
-@import 'mixins/container';
-@import 'mixins/screen-reader';
-@import 'mixins/state';
-@import 'mixins/img-fluid';
+@use "layout";
 
-@import 'core/normalize';
-@import 'core/core';
+@use "components";
 
-@import 'components/grid';
-@import 'components/layout';
-@import 'components/container';
-@import 'components/siteheader';
-@import 'components/sitefooter';
-@import 'components/featuredposts';
-@import 'components/navigation';
-@import 'components/alert';
-@import 'components/post';
-@import 'components/figure';
-@import 'components/gallery';
-@import 'components/list';
-@import 'components/home';
+@use "pages";
 
-@import 'utils/spacing';
-@import 'utils/text';
+@use "utils";
