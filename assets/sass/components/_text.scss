@@ -5,7 +5,7 @@
 
 .c-display {
   @include tf.typeface(heading);
-  text-shadow: cv.cssvar(shadow-text-glow);
+  text-shadow: cv.cv(shadow-text-glow);
   &--1 {
     @include fs.font-size(xxxl);
     line-height: 1;

@@ -8,6 +8,6 @@ $cv-prefix: r12;
   }
 }
 
-@function cssvar($name, $prefix: $cv-prefix) {
+@function cv($name, $prefix: $cv-prefix) {
   @return var(--#{$prefix}-#{$name});
 }

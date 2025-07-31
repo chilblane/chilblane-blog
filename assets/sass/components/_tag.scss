@@ -14,7 +14,7 @@
     calc(100% - 0.25rem) 100%,
     0 100%
   );
-  background-color: cv.cssvar(color-fill-neutral);
+  background-color: cv.cv(color-fill-neutral);
   line-height: 1;
   letter-spacing: 0.05em;
   text-transform: uppercase;

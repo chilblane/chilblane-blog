@@ -18,7 +18,7 @@
   figcaption {
     margin-right: auto;
     margin-left: auto;
-    max-width: cv.cssvar(sizes-content-width);
+    max-width: cv.cv(sizes-content-width);
     font-style: italic;
   }
 

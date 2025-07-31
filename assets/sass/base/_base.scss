@@ -48,10 +48,10 @@ body {
 }
 
 html {
-  font-size: cv.cssvar(base-font-size);
+  font-size: cv.cv(base-font-size);
   text-rendering: optimizeLegibility;
   @include b.breakpoint-xl {
-    font-size: cv.cssvar(base-font-size-large);
+    font-size: cv.cv(base-font-size-large);
   }
 }
 
@@ -60,18 +60,18 @@ body {
   @include fs.font-size(m);
   background-image:
     linear-gradient(
-      cv.cssvar(color-fill-neutral) 0,
-      cv.cssvar(color-fill-neutral) 1px,
+      cv.cv(color-fill-neutral) 0,
+      cv.cv(color-fill-neutral) 1px,
       transparent 1px,
       transparent 5px
     ),
-    linear-gradient(cv.cssvar(color-surface), cv.cssvar(color-surface-alt));
+    linear-gradient(cv.cv(color-surface), cv.cv(color-surface-alt));
   background-size:
     auto 5px,
     auto auto;
   background-attachment: fixed, fixed;
-  background-color: cv.cssvar(color-surface);
-  color: cv.cssvar(color-text);
+  background-color: cv.cv(color-surface);
+  color: cv.cv(color-text);
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
@@ -83,10 +83,10 @@ body {
 }
 
 a {
-  color: cv.cssvar(color-text-interactive-primary);
+  color: cv.cv(color-text-interactive-primary);
   text-decoration: none;
   @include state.hover {
-    color: cv.cssvar(color-text-interactive-primary-hover);
+    color: cv.cv(color-text-interactive-primary-hover);
     text-decoration: underline;
   }
 }

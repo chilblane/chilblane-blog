@@ -17,9 +17,9 @@
   transition-duration: 0.2s;
   transition-property: background-color;
   transition-timing-function: ease-out;
-  background-color: cv.cssvar(color-interactive-border-basic);
+  background-color: cv.cv(color-interactive-border-basic);
   padding: 1px 1px 1px 4px;
-  color: cv.cssvar(color-text-interactive);
+  color: cv.cv(color-text-interactive);
   line-height: 1;
   @include tf.typeface(heading);
   &__label {
@@ -37,7 +37,7 @@
     transition-duration: 0.2s;
     transition-property: color;
     transition-timing-function: ease-out;
-    background-color: cv.cssvar(color-interactive-fill-basic);
+    background-color: cv.cv(color-interactive-fill-basic);
     padding: 0.5em 3em 0.5em 0.5em;
     width: 100%;
     height: 100%;
@@ -53,38 +53,38 @@
     transition-duration: 0.2s, 0.2s;
     transition-property: background-color, right;
     transition-timing-function: ease-out, ease-out;
-    background-color: cv.cssvar(color-interactive-border-basic);
+    background-color: cv.cv(color-interactive-border-basic);
     width: 0.5em;
     height: 1em;
     content: "";
   }
   @include st.hover {
     transition-timing-function: ease-in;
-    background-color: cv.cssvar(color-interactive-border-basic-hover);
-    color: cv.cssvar(color-text-interactive);
+    background-color: cv.cv(color-interactive-border-basic-hover);
+    color: cv.cv(color-text-interactive);
     text-decoration: none;
     &::before {
       transition-timing-function: ease-in;
-      color: cv.cssvar(color-text-interactive);
+      color: cv.cv(color-text-interactive);
     }
     &::after {
       right: 0.5em;
       transition-timing-function: ease-in, ease-in;
-      background-color: cv.cssvar(color-interactive-border-basic-hover);
+      background-color: cv.cv(color-interactive-border-basic-hover);
     }
   }
   &--primary {
-    background-color: cv.cssvar(color-interactive-border-primary);
+    background-color: cv.cv(color-interactive-border-primary);
     &::before {
-      background-color: cv.cssvar(color-interactive-fill-primary);
+      background-color: cv.cv(color-interactive-fill-primary);
     }
     &::after {
-      background-color: cv.cssvar(color-interactive-border-primary);
+      background-color: cv.cv(color-interactive-border-primary);
     }
     @include st.hover {
-      background-color: cv.cssvar(color-interactive-border-primary-hover);
+      background-color: cv.cv(color-interactive-border-primary-hover);
       &::after {
-        background-color: cv.cssvar(color-interactive-border-primary-hover);
+        background-color: cv.cv(color-interactive-border-primary-hover);
       }
     }
   }

@@ -15,7 +15,7 @@
     gap: 1rem 2rem;
     margin-right: auto;
     margin-left: auto;
-    border-bottom: 1px solid cv.cssvar(color-surface-divider);
+    border-bottom: 1px solid cv.cv(color-surface-divider);
     & > div:first-child > div {
       display: flex;
       justify-content: space-between;
@@ -40,14 +40,14 @@
     @include s.margin-right(1);
     @include s.margin-top(4);
     display: table;
-    text-shadow: cv.cssvar(shadow-text-glow);
+    text-shadow: cv.cv(shadow-text-glow);
     white-space: nowrap;
     &::after {
       display: table-cell;
       position: relative;
       top: 1em;
       left: 0.5em;
-      border-top: 1px solid cv.cssvar(color-surface-divider);
+      border-top: 1px solid cv.cv(color-surface-divider);
       width: 100%;
       content: "";
     }

@@ -18,7 +18,7 @@
   h1 {
     @include tf.typeface(heading);
     @include fs.font-size(xxl);
-    text-shadow: cv.cssvar(shadow-text-glow);
+    text-shadow: cv.cv(shadow-text-glow);
     text-transform: none;
     @include b.breakpoint-xxl {
       @include fs.font-size(xxxl);
