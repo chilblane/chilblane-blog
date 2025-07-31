@@ -3,7 +3,7 @@
     <h2 class="c-display c-display--1">Selected work</h2>
     <div class="p-list__grid">
       {{ range (.Pages.ByParam "project_year").Reverse }}
-        <article class="p-list__item">
+        <article class="p-list__item c-card">
           {{ $title := .Title }}
           {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
           {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
@@ -24,7 +24,7 @@
             </a>
           </h3>
           <p>{{- .Description -}}</p>
-          <div>
+          <div class="p-list__tags">
             {{ $knowledge := "knowledge" }}
             {{ $skills := "skills" }}
             {{ with .Param $knowledge }}

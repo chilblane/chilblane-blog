@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../settings/colors" as c;
 @use "../settings/variables" as v;
 @use "../settings/typography" as t;
@@ -11,6 +12,32 @@
 @include cv.cssvars(
   (
     sizes-content-width: #{v.$sizes-content-width},
+
+    base-font-size: #{t.$base-font-size},
+    base-font-size-large: #{t.$base-font-size-large},
+
+    color-surface: #{c.$color-surface},
+    color-surface-alt: #{c.$color-surface-alt},
+    color-surface-raised: #{c.$color-surface-alt},
+    color-text: #{c.$color-text},
+    color-text-interactive-basic: #{c.$color-text-interactive-basic},
+    color-text-interactive-primary: #{c.$color-text-interactive-primary},
+    color-text-interactive-primary-hover:
+      #{c.$color-text-interactive-primary-hover},
+    color-surface-border: #{c.$color-surface-border},
+    color-surface-divider: #{c.$color-surface-divider},
+    color-fill-neutral: #{c.$color-fill-neutral},
+    color-interactive-fill-basic: #{c.$color-interactive-fill-basic},
+    color-interactive-fill-primary: #{c.$color-interactive-fill-primary},
+    color-interactive-border-basic: #{c.$color-interactive-border-basic},
+    color-interactive-border-basic-hover:
+      #{c.$color-interactive-border-basic-hover},
+    color-interactive-border-primary: #{c.$color-interactive-border-primary},
+    color-interactive-border-primary-hover:
+      #{c.$color-interactive-border-primary-hover},
+
+    shadow-raised: #{c.$shadow-raised},
+    shadow-text-glow: #{c.$shadow-text-glow},
   )
 );
 
@@ -21,10 +48,10 @@ body {
 }
 
 html {
-  font-size: t.$base-font-size;
+  font-size: cv.cssvar(base-font-size);
   text-rendering: optimizeLegibility;
   @include b.breakpoint-xl {
-    font-size: t.$base-font-size-large;
+    font-size: cv.cssvar(base-font-size-large);
   }
 }
 
@@ -33,18 +60,18 @@ body {
   @include fs.font-size(m);
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.5) 0,
-      rgba(0, 0, 0, 0.5) 1px,
+      cv.cssvar(color-fill-neutral) 0,
+      cv.cssvar(color-fill-neutral) 1px,
       transparent 1px,
       transparent 5px
     ),
-    linear-gradient(c.$background-color, c.color(blue, darker));
+    linear-gradient(cv.cssvar(color-surface), cv.cssvar(color-surface-alt));
   background-size:
     auto 5px,
     auto auto;
   background-attachment: fixed, fixed;
-  background-color: c.$background-color;
-  color: c.$text-color;
+  background-color: cv.cssvar(color-surface);
+  color: cv.cssvar(color-text);
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
@@ -56,10 +83,10 @@ body {
 }
 
 a {
-  color: c.$action-color;
+  color: cv.cssvar(color-text-interactive-primary);
   text-decoration: none;
   @include state.hover {
-    color: c.$action-color-hover;
+    color: cv.cssvar(color-text-interactive-primary-hover);
     text-decoration: underline;
   }
 }

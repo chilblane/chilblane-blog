@@ -1,11 +1,11 @@
 @use "../settings/colors" as c;
-@use "../settings/typography" as t;
 @use "../mixins/breakpoints.scss" as b;
 @use "../mixins/containers.scss" as ct;
 @use "../mixins/img-fluid" as if;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
+@use "../mixins/cssvars" as cv;
 
 .p-home {
   @include s.padding-top(1);
@@ -18,6 +18,7 @@
   h1 {
     @include tf.typeface(heading);
     @include fs.font-size(xxl);
+    text-shadow: cv.cssvar(shadow-text-glow);
     text-transform: none;
     @include b.breakpoint-xxl {
       @include fs.font-size(xxxl);

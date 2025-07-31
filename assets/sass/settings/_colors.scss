@@ -1,53 +1,74 @@
+@use "sass:color";
 @use "sass:map";
 @use "sass:meta";
 
-$color-palette-data: (
-  white: (
-    base: #fff,
-  ),
-  gray: (
-    lighter: #d7e3f0,
-    light: #afbfcf,
-    base: #3d5168,
-    dark: #122337,
-    darker: #101924,
-  ),
-  blue: (
-    lighter: #aecef5,
-    light: #348ffd,
-    base: #0073ff,
-    dark: #004291,
-    darker: #001835,
-  ),
-  orange: (
-    lighter: #ffe0ae,
-    light: #ffa922,
-    base: #ff9c00,
-    dark: #dd8700,
-    darker: #513100,
-  ),
-  purple: (
-    base: #ff00f2,
-    dark: #910189,
-  ),
-);
+// CRAYONS
 
-@function color($hue, $value: base) {
-  $fetched-color: map.get(map.get($color-palette-data, $hue), $value);
-  @if map.has-key($color-palette-data, $fetched-color) {
-    $fetched-color: map.get(
-      map.get($color-palette-data, $fetched-color),
-      $value
-    );
-  }
-  @if meta.type-of($fetched-color) == color {
-    @return $fetched-color;
-  } @else {
-    @error 'Color `#{$hue} - #{$value}` not found.';
-  }
-}
+$color-gray-010: #d8dce1;
+$color-gray-020: #bec5cd;
+$color-gray-030: #9ea8b4;
+$color-gray-040: #7e8b9a;
+$color-gray-050: #5d6e81;
+$color-gray-060: #3d5168;
+$color-gray-070: #334457;
+$color-gray-080: #293645;
+$color-gray-090: #1f2934;
+$color-gray-100: #141b23;
+$color-gray-110: #0c1015;
 
-$background-color: color(gray, darker);
-$text-color: color(gray, lighter);
-$action-color: color(blue, light);
-$action-color-hover: color(blue, lighter);
+$color-blue-010: #cce3ff;
+$color-blue-020: #aad0ff;
+$color-blue-030: #80b9ff;
+$color-blue-040: #55a2ff;
+$color-blue-050: #2a8aff;
+$color-blue-060: #0073ff;
+$color-blue-070: #0060d5;
+$color-blue-080: #004daa;
+$color-blue-090: #003a80;
+$color-blue-100: #002655;
+$color-blue-110: #001733;
+
+$color-orange-010: #ffebcc;
+$color-orange-020: #ffdeaa;
+$color-orange-030: #ffce80;
+$color-orange-040: #ffbd55;
+$color-orange-050: #ffad2a;
+$color-orange-060: #ff9c00;
+$color-orange-070: #d58200;
+$color-orange-080: #aa6800;
+$color-orange-090: #804e00;
+$color-orange-100: #553400;
+$color-orange-110: #331f00;
+
+// SEMANTIC
+
+$color-surface: $color-gray-100;
+$color-surface-alt: $color-blue-110;
+$color-surface-raised: color.adjust($color-gray-080, $alpha: -0.7);
+
+$color-text: $color-gray-020;
+
+$color-text-interactive-basic: $color-gray-020;
+$color-text-interactive-primary: $color-blue-050;
+$color-text-interactive-primary-hover: $color-blue-040;
+
+$color-surface-border: $color-gray-080;
+$color-surface-divider: $color-gray-060;
+
+$color-fill-neutral: color.adjust($color-gray-110, $alpha: -0.1);
+
+$color-interactive-fill-basic: $color-gray-100;
+$color-interactive-fill-primary: $color-blue-100;
+
+$color-interactive-border-basic: $color-gray-060;
+$color-interactive-border-basic-hover: $color-gray-050;
+$color-interactive-border-primary: $color-blue-060;
+$color-interactive-border-primary-hover: $color-blue-050;
+
+$shadow-raised:
+  0px 0px 0px $color-gray-110,
+  0px 8px 12px color.adjust($color-gray-110, $alpha: -0.5),
+  0px 0px 1px color.adjust($color-gray-110, $alpha: -0.5);
+$shadow-text-glow:
+  0 0 2em currentColor,
+  0 0 0.25em currentColor;

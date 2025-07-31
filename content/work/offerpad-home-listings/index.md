@@ -1,7 +1,6 @@
 ---
 title: 'Offerpad: Home Listings'
 description: 'Design mockups and planning for buy.offerpad.com'
-project_url: https://buy.offerpad.com/
 project_year: 2019
 knowledge:
   [

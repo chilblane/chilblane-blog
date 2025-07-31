@@ -1,9 +1,9 @@
-@use "../settings/colors" as c;
 @use "../mixins/breakpoints" as b;
 @use "../mixins/containers" as ct;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
 
 .p-single {
   flex-grow: 1;
@@ -13,13 +13,13 @@
     @include s.padding-bottom(2);
     margin-right: auto;
     margin-left: auto;
-    border-bottom: 1px solid c.color(gray);
+    border-bottom: 1px solid cv.cssvar(color-surface-divider);
     time {
       @include fs.font-size(l);
       @include tf.typeface(heading);
       @include s.padding(0 0.5);
       display: inline-block;
-      border: 2px solid c.color(gray);
+      border: 2px solid cv.cssvar(color-surface-border);
       border-radius: 0.5rem;
     }
     h1 {
@@ -37,13 +37,14 @@
       @include s.margin-right(1);
       @include s.margin-top(4);
       display: table;
+      text-shadow: cv.cssvar(shadow-text-glow);
       white-space: nowrap;
       &::after {
         display: table-cell;
         position: relative;
         top: 1em;
         left: 0.5em;
-        border-top: 1px solid c.color(gray);
+        border-top: 1px solid cv.cssvar(color-surface-divider);
         width: 100%;
         content: "";
       }

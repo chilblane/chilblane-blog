@@ -1,17 +1,11 @@
-@use "../settings/colors" as c;
-@use "../settings/typography" as t;
 @use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
 
 .c-display {
   @include tf.typeface(heading);
-  &--bordered {
-    @include s.padding(0 0.5);
-    display: inline-block;
-    border: 2px solid c.color(gray);
-    border-radius: 0.5rem;
-  }
+  text-shadow: cv.cssvar(shadow-text-glow);
   &--1 {
     @include fs.font-size(xxxl);
     line-height: 1;

@@ -1,0 +1,9 @@
+@use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
+
+.c-card {
+  box-shadow: cv.cssvar(shadow-raised);
+  border: 1px solid cv.cssvar(color-surface-border);
+  border-radius: 0.25rem;
+  background-color: cv.cssvar(color-surface-raised);
+}
