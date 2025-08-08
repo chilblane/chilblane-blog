@@ -10,9 +10,6 @@
     "prettier-plugin-go-template": "^0.0.15",
     "stylelint-plugin-defensive-css": "^1.0.4"
   },
-  "dependencies": {
-    "normalize-scss": "^8.0.0"
-  },
   "scripts": {
     "dev": "hugo server -D",
     "build": "hugo --gc --minify"
