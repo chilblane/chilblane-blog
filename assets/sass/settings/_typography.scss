@@ -7,10 +7,10 @@ $font-system:
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $font-monospace:
-  "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+  "Roboto Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
   monospace;
 
-$font-body: join("Titillium Web", $font-system, comma);
+$font-body: join("Rubik", $font-system, comma);
 $font-heading: join("Rajdhani", $font-system, comma);
 
 // These variables come from Typey and Normalize.

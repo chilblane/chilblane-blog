@@ -1,0 +1,22 @@
+@use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
+
+.c-highlight {
+  @include s.margin(2 0);
+  box-shadow: cv.cv(shadow-raised);
+  border: 1px solid cv.cv(color-surface-border);
+  background-color: cv.cv(color-surface-raised);
+  pre {
+    margin: 0;
+  }
+  pre code {
+    display: block;
+    background: none;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    @include s.padding(1);
+    min-width: 100px;
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+}

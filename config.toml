@@ -42,5 +42,10 @@ timeout = 60000
   [services.googleAnalytics]
     ID = 'G-LH45RPKL08'
 
+[markup]
+  [markup.highlight]
+    style = 'github-dark'
+    wrapperClass = 'c-highlight'
+
 
 

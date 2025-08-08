@@ -5,7 +5,7 @@
 @use "../mixins/cssvars" as cv;
 
 .c-figure {
-  @include s.margin(1 0);
+  @include s.margin(2 0);
   text-align: center;
   a {
     display: inline-block;

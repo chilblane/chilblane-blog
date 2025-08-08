@@ -69,6 +69,4 @@ $shadow-raised:
   0px 0px 0px $crayon-gray-110,
   0px 8px 12px color.adjust($crayon-gray-110, $alpha: -0.5),
   0px 0px 1px color.adjust($crayon-gray-110, $alpha: -0.5);
-$shadow-text-glow:
-  0 0 3em currentColor,
-  0 0 0.5em currentColor;
+$shadow-text-glow: 0 0 0.25em color.adjust($crayon-gray-010, $alpha: -0.5);

@@ -48,7 +48,7 @@
         </div>
       </section>
       <section>
-        <h2 class="c-display c-display--2">Featured work</h2>
+        <h2 class="c-display c-display--2">Featured article</h2>
         {{ range first 1 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.featured" "=" true) }}
           <div
             class="c-featured p-4 bg-white/50 shadow-xs items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
