@@ -42,20 +42,25 @@ $crayon-orange-110: #331f00;
 
 // SEMANTIC
 
-$color-surface: $crayon-gray-100;
-$color-surface-alt: $crayon-blue-110;
-$color-surface-raised: color.adjust($crayon-gray-080, $alpha: -0.7);
+$color-canvas: color.adjust($crayon-gray-110, $alpha: -0.2);
+$color-canvas-alt: color.adjust($crayon-blue-100, $alpha: -0.2);
+$color-canvas-line: color.adjust($crayon-blue-040, $alpha: -0.8);
+
+$color-surface: color.adjust($crayon-gray-110, $alpha: -0.4);
+$color-surface-raised: color.adjust($crayon-gray-080, $alpha: -0.5);
+$color-surface-border: $crayon-gray-070;
+$color-surface-divider: $crayon-gray-060;
+$color-surface-stripe: color.adjust($crayon-gray-060, $alpha: -0.5);
 
 $color-text: $crayon-gray-020;
+$color-text-logo: $crayon-gray-090;
 
 $color-text-interactive-basic: $crayon-gray-020;
 $color-text-interactive-primary: $crayon-orange-050;
 $color-text-interactive-primary-hover: $crayon-orange-040;
 
-$color-surface-border: $crayon-gray-080;
-$color-surface-divider: $crayon-gray-060;
-
-$color-fill-neutral: color.adjust($crayon-gray-110, $alpha: -0.1);
+$color-fill-code: $crayon-gray-110;
+$color-fill-neutral: color.adjust($crayon-gray-080, $alpha: -0.1);
 
 $color-interactive-fill-basic: $crayon-gray-100;
 $color-interactive-fill-primary: $crayon-orange-100;
@@ -63,10 +68,13 @@ $color-interactive-fill-primary: $crayon-orange-100;
 $color-interactive-border-basic: $crayon-gray-060;
 $color-interactive-border-basic-hover: $crayon-gray-050;
 $color-interactive-border-primary: $crayon-orange-060;
-$color-interactive-border-primary-hover: $crayon-orange-050;
+$color-interactive-border-primary-hover: $crayon-orange-040;
 
 $shadow-raised:
   0px 0px 0px $crayon-gray-110,
-  0px 8px 12px color.adjust($crayon-gray-110, $alpha: -0.5),
+  0px 4px 6px color.adjust($crayon-gray-110, $alpha: -0.5),
   0px 0px 1px color.adjust($crayon-gray-110, $alpha: -0.5);
-$shadow-text-glow: 0 0 0.25em color.adjust($crayon-gray-010, $alpha: -0.5);
+$shadow-text-sunken:
+  -1px -1px 1px $crayon-gray-110,
+  1px 1px 1px $crayon-gray-060;
+$shadow-text-raised: 1px 1px 1px $crayon-gray-110;

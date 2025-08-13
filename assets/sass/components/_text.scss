@@ -5,7 +5,8 @@
 
 .c-display {
   @include tf.typeface(heading);
-  text-shadow: cv.cv(shadow-text-glow);
+  line-height: 1;
+  text-transform: uppercase;
   &--1 {
     @include fs.font-size(xxxl);
     line-height: 1;
@@ -19,6 +20,6 @@
 }
 
 .c-lead {
-  @include fs.font-size(l);
+  @include fs.font-size(s);
   line-height: 1.5;
 }

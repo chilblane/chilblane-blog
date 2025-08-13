@@ -1,31 +1,53 @@
 @use "../mixins/breakpoints.scss" as b;
+@use "../mixins/containers" as c;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
 
 .l-sitefooter {
-  @include fs.font-size(s);
-  @include s.padding(1 0);
+  @include tf.typeface(heading);
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-top: 2px solid cv.cv(color-surface-divider);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid cv.cv(color-surface-border);
+  background-color: cv.cv(color-surface-raised);
   text-transform: uppercase;
-  @include s.margin-top(1);
-  p {
-    margin: 0;
+  > :first-child {
+    @include fs.font-size(l);
+  }
+  &__links {
+    @include fs.font-size(m);
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid cv.cv(color-surface-border);
+    a {
+      @include s.padding(0.5 1);
+      display: block;
+      &:not(:last-child) {
+        border-bottom: 1px solid cv.cv(color-surface-border);
+      }
+    }
   }
 }
 
 @include b.breakpoint-lg {
   .l-sitefooter {
-    flex-direction: row;
-    justify-content: space-between;
-    &__near {
-      display: flex;
-      column-gap: 1rem;
-      justify-content: space-between;
+    @include c.container();
+    &__links {
+      @include s.padding-bottom(1);
+      @include s.padding-top(1);
+      @include s.margin-left(1);
+      flex-direction: row;
+      align-items: center;
+      border-left: 0;
+      a {
+        display: block;
+        &:not(:last-child) {
+          border-bottom: 0;
+        }
+      }
     }
   }
 }

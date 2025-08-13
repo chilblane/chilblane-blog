@@ -1,8 +1,7 @@
 <section class="l-siteheader">
   <div class="l-siteheader__far">
-    <span class="c-display c-display--3 c-display--bordered">
-      {{ .Site.Params.navTitle }}
-    </span>
+    <div>{{ .Site.Params.navTitle }}</div>
+    <div>{{ .Site.Params.navSubTitle }}</div>
   </div>
   {{ partial "nav.html" . }}
 </section>

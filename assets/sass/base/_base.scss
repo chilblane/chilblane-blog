@@ -11,22 +11,30 @@
 
 @include cv.cssvars(
   (
+    sizes-layout-width: #{v.$sizes-layout-width},
     sizes-content-width: #{v.$sizes-content-width},
 
-    base-font-size: #{t.$base-font-size},
-    base-font-size-large: #{t.$base-font-size-large},
+    color-canvas: #{c.$color-canvas},
+    color-canvas-alt: #{c.$color-canvas-alt},
+    color-canvas-line: #{c.$color-canvas-line},
 
     color-surface: #{c.$color-surface},
-    color-surface-alt: #{c.$color-surface-alt},
     color-surface-raised: #{c.$color-surface-raised},
+    color-surface-border: #{c.$color-surface-border},
+    color-surface-divider: #{c.$color-surface-divider},
+    color-surface-stripe: #{c.$color-surface-stripe},
+
     color-text: #{c.$color-text},
+    color-text-logo: #{c.$color-text-logo},
+
     color-text-interactive-basic: #{c.$color-text-interactive-basic},
     color-text-interactive-primary: #{c.$color-text-interactive-primary},
     color-text-interactive-primary-hover:
       #{c.$color-text-interactive-primary-hover},
-    color-surface-border: #{c.$color-surface-border},
-    color-surface-divider: #{c.$color-surface-divider},
+
+    color-fill-code: #{c.$color-fill-code},
     color-fill-neutral: #{c.$color-fill-neutral},
+
     color-interactive-fill-basic: #{c.$color-interactive-fill-basic},
     color-interactive-fill-primary: #{c.$color-interactive-fill-primary},
     color-interactive-border-basic: #{c.$color-interactive-border-basic},
@@ -37,7 +45,8 @@
       #{c.$color-interactive-border-primary-hover},
 
     shadow-raised: #{c.$shadow-raised},
-    shadow-text-glow: #{c.$shadow-text-glow},
+    shadow-text-sunken: #{c.$shadow-text-sunken},
+    shadow-text-raised: #{c.$shadow-text-raised},
   )
 );
 
@@ -48,31 +57,32 @@ body {
 }
 
 html {
-  font-size: cv.cv(base-font-size);
   text-rendering: optimizeLegibility;
-  @include b.breakpoint-xl {
-    font-size: cv.cv(base-font-size-large);
-  }
 }
 
 body {
   @include tf.typeface(body);
-  @include fs.font-size(m);
+  @include fs.font-size(xs);
   background-image:
-    linear-gradient(
-      cv.cv(color-fill-neutral) 0,
-      cv.cv(color-fill-neutral) 1px,
-      transparent 1px,
-      transparent 5px
-    ),
-    linear-gradient(cv.cv(color-surface), cv.cv(color-surface-alt));
+    radial-gradient(cv.cv(color-canvas-line) 12%, transparent 13%),
+    linear-gradient(cv.cv(color-canvas), cv.cv(color-canvas-alt)),
+    url("/background.jpg");
+  background-position:
+    0 0,
+    0 0,
+    center center;
+  // background source https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
   background-size:
-    auto 5px,
-    auto auto;
-  background-attachment: fixed, fixed;
-  background-color: cv.cv(color-surface);
+    1rem 1rem,
+    auto auto,
+    cover;
+  background-attachment: fixed, fixed, fixed;
+  background-color: cv.cv(color-canvas);
   color: cv.cv(color-text);
   line-height: 1.5;
+  @include b.breakpoint-xl {
+    @include s.padding-top(1);
+  }
 }
 
 *,
@@ -90,6 +100,7 @@ a {
   }
 }
 
+p,
 li {
   @include s.margin(1 0);
 }
@@ -106,6 +117,6 @@ li > code {
   box-shadow: cv.cv(shadow-raised);
   border: 1px solid cv.cv(color-surface-border);
   border-radius: 0.25rem;
-  background-color: cv.cv(color-fill-neutral);
+  background-color: cv.cv(color-fill-code);
   @include s.padding(0.125 0.25);
 }

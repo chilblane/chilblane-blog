@@ -6,55 +6,67 @@
 @use "../mixins/cssvars" as cv;
 
 .p-single {
-  flex-grow: 1;
-  @include s.margin-top(2);
+  @include s.padding(1 0);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: cv.cv(sizes-content-width);
+  header,
+  section {
+    @include ct.container();
+  }
   header {
-    @include s.margin-bottom(2);
-    @include s.padding-bottom(2);
-    margin-right: auto;
-    margin-left: auto;
-    border-bottom: 1px solid cv.cv(color-surface-divider);
-    time {
-      @include fs.font-size(l);
-      @include tf.typeface(heading);
-      @include s.padding(0 0.5);
-      display: inline-block;
-      border: 2px solid cv.cv(color-surface-border);
-      border-radius: 0.5rem;
-    }
+    @include s.padding-top(1);
+    @include s.padding-bottom(1);
     h1 {
       @include s.margin(0.5 0);
     }
   }
+  section {
+    @include s.padding-top(1);
+    @include s.padding-bottom(1);
+    &:not(:last-child) {
+      border-bottom: 1px solid cv.cv(color-surface-border);
+    }
+  }
 
-  &__body {
-    margin-right: auto;
-    margin-left: auto;
-    h2 {
-      @include tf.typeface(heading);
-      @include fs.font-size(xl);
-      @include s.margin-bottom(2);
-      @include s.margin-right(1);
-      @include s.margin-top(4);
-      display: table;
-      text-shadow: cv.cv(shadow-text-glow);
-      white-space: nowrap;
-      &::after {
-        display: table-cell;
-        position: relative;
-        top: 1em;
-        left: 0.5em;
-        border-top: 1px solid cv.cv(color-surface-divider);
-        width: 100%;
-        content: "";
-      }
+  h2 {
+    @include tf.typeface(heading);
+    @include fs.font-size(xxl);
+    @include s.margin-top(2);
+    display: flex;
+    column-gap: 1rem;
+    line-height: 1;
+    text-transform: uppercase;
+    &:first-child {
+      @include s.margin-top(1);
+    }
+    &::after {
+      display: block;
+      flex-grow: 1;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 16px,
+        cv.cv(color-surface-stripe) 16px,
+        cv.cv(color-surface-stripe) 24px
+      );
+      content: "";
     }
   }
 
   @include b.breakpoint-lg {
+    .c-figure,
+    .gallery-wrapper {
+      margin-right: min(
+        -1.5rem,
+        (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2
+      );
+      margin-left: min(
+        -1.5em,
+        (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2
+      );
+    }
     .c-figure {
-      margin-right: min(-1.5rem, (100vw - 50rem) / -2);
-      margin-left: min(-1.5em, (100vw - 50rem) / -2);
       img {
         max-height: 60rem;
         max-height: 90vh;

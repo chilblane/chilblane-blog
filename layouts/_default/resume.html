@@ -22,7 +22,7 @@
           </div>
         </div>
 
-        <section class="p-contactoptions">
+        <div class="p-contactoptions c-card">
           <h2 class="u-sr-only">Contact</h2>
           <dl>
             <dt>Email</dt>
@@ -42,7 +42,7 @@
               </a>
             </dd>
           </dl>
-        </section>
+        </div>
       </header>
       <section>
         <h2>Skills</h2>
@@ -61,28 +61,27 @@
       <section class="p-experience">
         <h2>Experience</h2>
         {{ range .Site.Data.experience }}
-          <div class="u-margin-b-xxl c-card u-padding-x-l u-padding-y-m">
+          <div>
             <div class="p-experience__header">
               <div>
                 <h3>
-                  {{ .role }},
-                  <span class="u-weight-normal">{{ .company }}</span>
+                  {{ .role }}, {{ .company }}</span>
                 </h3>
-                <p class="u-fontsize-s u-margin-z">
+                <p class="u-margin-z">
                   {{ .startDate }} -
                   {{ .endDate }}
                 </p>
-                <p class="u-fontsize-s u-margin-z">{{ .location }}</p>
+                <p class="u-margin-z">{{ .location }}</p>
               </div>
-              <ul class="u-padding-l-z">
-                {{ range .skills }}
-                  <li class="c-tag">{{ . }}</li>
-                {{ end }}
-              </ul>
             </div>
             <ul>
               {{ range .summary }}
                 <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+            <ul class="u-padding-l-z">
+              {{ range .skills }}
+                <li class="c-tag">{{ . }}</li>
               {{ end }}
             </ul>
           </div>
@@ -95,11 +94,11 @@
             <div>
               <h3>{{ .degree }}</h3>
             </div>
-            <p class="u-fontsize-s u-margin-z">
+            <p class="u-margin-z">
               {{ .startDate }} -
               {{ .endDate }}
             </p>
-            <p class="u-fontsize-s u-margin-z">
+            <p class="u-margin-z">
               {{ .institution }}
             </p>
           </div>

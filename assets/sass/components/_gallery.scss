@@ -1,8 +1,13 @@
 @use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
 
 .gallery-wrapper {
   @include s.margin-top(1);
   @include s.margin-bottom(1);
+  box-shadow: cv.cv(shadow-raised);
+  border: 1px solid cv.cv(color-surface-border);
+  background-color: cv.cv(color-surface-raised);
+  @include s.padding(0.25);
   .galleryImg {
     opacity: 80%;
     &:hover {

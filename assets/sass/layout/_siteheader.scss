@@ -1,17 +1,40 @@
 @use "../settings/typography.scss" as *;
 @use "../mixins/breakpoints.scss" as b;
+@use "../mixins/containers" as c;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
+@use "../mixins/cssvars" as cv;
 
 .l-siteheader {
-  @include s.padding-top(1);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid cv.cv(color-surface-border);
+  background-color: cv.cv(color-surface-raised);
   &__far {
+    @include s.padding(1);
+    @include tf.typeface(heading);
+    @include fs.font-size(xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     order: 2;
+    font-style: italic;
+    line-height: 1;
     text-align: right;
+    text-shadow: cv.cv(shadow-text-raised);
+    text-transform: uppercase;
+    :last-child {
+      color: cv.cv(color-text-logo);
+      font-size: 66%;
+      text-shadow: cv.cv(shadow-text-sunken);
+    }
+  }
+  @include b.breakpoint-md {
+    &__far {
+      @include fs.font-size(xxl);
+    }
   }
 }

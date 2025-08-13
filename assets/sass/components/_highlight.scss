@@ -2,7 +2,7 @@
 @use "../mixins/cssvars" as cv;
 
 .c-highlight {
-  @include s.margin(2 0);
+  @include s.margin(1 0);
   box-shadow: cv.cv(shadow-raised);
   border: 1px solid cv.cv(color-surface-border);
   background-color: cv.cv(color-surface-raised);

@@ -10,7 +10,7 @@ $font-monospace:
   "Roboto Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
   monospace;
 
-$font-body: join("Rubik", $font-system, comma);
+$font-body: join("Verdana", $font-system, comma);
 $font-heading: join("Rajdhani", $font-system, comma);
 
 // These variables come from Typey and Normalize.
@@ -27,7 +27,6 @@ $base-unit: rem !default;
 // The base font size will be used for most calculations involving font-size.
 // Allowed units: px
 $base-font-size: 16px !default;
-$base-font-size-large: 20px !default;
 
 // The base line height will be used for most calculations involving height.
 // Allowed units: px
@@ -74,8 +73,7 @@ $font-size: (
 // This map and accompanying function help provide granular control over
 // setting and retrieving static font weights.
 $font-weight: (
-  bold: 700,
-  semibold: 600,
+  bold: 900,
   normal: 400,
   lighter: 200,
 ) !default;
@@ -116,7 +114,7 @@ $typefaces: (
   ),
   heading: (
     font-family: $font-heading,
-    weight: semibold,
+    weight: bold,
   ),
   monospace: (
     font-family: $font-monospace,

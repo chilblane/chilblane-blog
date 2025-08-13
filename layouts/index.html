@@ -1,8 +1,8 @@
 {{ define "main" }}
   <main class="p-home">
     <article>
-      <section class="">
-        <h1>Design system expert and product designer.</h1>
+      <section>
+        <h1 class="c-display">Design system expert and product designer.</h1>
       </section>
       <section>
         <p class="c-lead">
@@ -19,9 +19,9 @@
         </p>
       </section>
       <section>
-        <h2 class="c-display c-display--2">Specialties</h2>
-        <div>
-          <div>
+        <h2 class="c-display c-display--3">Specialties</h2>
+        <div class="p-home-panels">
+          <div class="c-card">
             <h3>Design systems</h3>
             <p>
               Collaborated with developers, branding, and product to plan out
@@ -29,7 +29,7 @@
               design tool and code contexts, along with detailed documentation.
             </p>
           </div>
-          <div>
+          <div class="c-card">
             <h3>UX ideation</h3>
             <p>
               Worked with product and other stakeholders to architect new and
@@ -37,7 +37,7 @@
               and commonly-accepted best practices.
             </p>
           </div>
-          <div>
+          <div class="c-card">
             <h3>UX/UI web design</h3>
             <p>
               Designed and built content and marketing websites using a variety
@@ -47,13 +47,13 @@
           </div>
         </div>
       </section>
+    </article>
+    <div>
       <section>
-        <h2 class="c-display c-display--2">Featured article</h2>
+        <h2 class="c-display c-display--3">Featured</h2>
         {{ range first 1 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.featured" "=" true) }}
-          <div
-            class="c-featured p-4 bg-white/50 shadow-xs items-center -mx-4 md:mx-0 md:rounded-xl lg:flex lg:flex-row gap-8"
-          >
-            <div class="c-featured__thumbnail shrink-1 grow-0">
+          <div class="p-home-featured">
+            <div class="p-home-featured__thumbnail">
               {{ $title := .Page.Title }}
               {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
               {{ $featured_image := (.Page.Resources.ByType "image").GetMatch "featured-image*" }}
@@ -75,7 +75,7 @@
                 />
               {{ end }}
             </div>
-            <div class="c-featured__metadata shrink-0 grow-1 lg:min-w-96">
+            <div class="p-home-featured__metadata shrink-0 grow-1 lg:min-w-96">
               <span class="c-tag">{{- .Params.project_year -}}</span>
               <h3>
                 <a
@@ -87,7 +87,7 @@
                 </a>
               </h3>
               <p class="text-base">{{- .Page.Description -}}</p>
-              <div>
+              <div class="p-home-featured__tags">
                 {{ $knowledge := "knowledge" }}
                 {{ $skills := "skills" }}
                 {{ with .Param $knowledge }}
@@ -105,6 +105,6 @@
           </div>
         {{ end }}
       </section>
-    </article>
+    </div>
   </main>
 {{ end }}

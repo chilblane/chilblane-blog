@@ -1,10 +1,16 @@
 @use "../mixins/breakpoints" as b;
-@use "../mixins/containers" as c;
 @use "../mixins/cssvars" as cv;
+@use "../typey/mixins/spacing" as s;
 
 .l-layout {
-  @include c.container();
   margin-right: auto;
   margin-left: auto;
-  max-width: cv.cv(sizes-content-width);
+  background-color: cv.cv(color-surface);
+  @include b.breakpoint-xl {
+    box-shadow: cv.cv(shadow-raised);
+    border: 1px solid cv.cv(color-surface-border);
+    border-radius: 0.5rem;
+    max-width: cv.cv(sizes-layout-width);
+    overflow: hidden;
+  }
 }

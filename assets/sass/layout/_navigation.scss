@@ -1,25 +1,35 @@
 @use "../mixins/breakpoints.scss" as b;
 @use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/spacing" as s;
+@use "../mixins/cssvars" as cv;
 
 .l-navigation {
-  @include fs.font-size(s);
+  @include fs.font-size(m);
+  @include tf.typeface(heading);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  border-right: 1px solid cv.cv(color-surface-border);
   text-transform: uppercase;
   a {
+    @include s.padding(0.5 1);
     display: block;
+    &:not(:last-child) {
+      border-bottom: 1px solid cv.cv(color-surface-border);
+    }
   }
 }
 
 @include b.breakpoint-lg {
   .l-navigation {
-    @include fs.font-size(m);
-    @include s.padding-bottom(1);
-    @include s.padding-top(1);
     flex-direction: row;
     align-items: center;
-    align-items: flex-start;
+    border-right: 0;
+    a {
+      display: block;
+      &:not(:last-child) {
+        border-bottom: 0;
+      }
+    }
   }
 }

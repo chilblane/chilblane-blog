@@ -1,7 +1,7 @@
 {{ define "main" }}
   <main class="p-list">
-    <h2 class="c-display c-display--1">Selected work</h2>
-    <div class="p-list__grid">
+    <header><h1 class="c-display c-display--1">Selected work</h1></header>
+    <section class="p-list__grid">
       {{ range (.Pages.ByParam "project_year").Reverse }}
         <article class="p-list__item c-card">
           {{ $title := .Title }}
@@ -40,6 +40,6 @@
           </div>
         </article>
       {{- end -}}
-    </div>
+    </section>
   </main>
 {{ end }}

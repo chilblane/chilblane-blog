@@ -6,7 +6,6 @@ knowledge:
   ['content strategy', 'design systems', 'process design', 'product management']
 skills: ['figma', 'miro']
 featured_image: featured-image.png
-featured: true
 ---
 
 I was brought on to Zonar Systems' UX team (a subsidiary of Continental) as senior design technologist to help grow their nascent design system (DSPLY). As someone whose prior experience included working on a mature design system (Smartsheet) as well as building my own initial version (Offerpad), my role was crucial for elevating a pattern library codebase and Figma design library into a unified entity to benefit the product organization.

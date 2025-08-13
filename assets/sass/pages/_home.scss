@@ -8,51 +8,66 @@
 @use "../mixins/cssvars" as cv;
 
 .p-home {
-  @include s.padding-top(1);
-  @include b.breakpoint-lg {
-    section {
-      @include s.padding-top(1);
-      @include s.padding-bottom(1);
+  @include b.breakpoint-xl {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    article {
+      border-right: 1px solid cv.cv(color-surface-border);
+    }
+  }
+  section {
+    @include s.padding(1);
+    &:not(:last-child) {
+      border-bottom: 1px solid cv.cv(color-surface-border);
     }
   }
   h1 {
     @include tf.typeface(heading);
     @include fs.font-size(xxl);
-    text-shadow: cv.cv(shadow-text-glow);
-    text-transform: none;
-    @include b.breakpoint-xxl {
-      @include fs.font-size(xxxl);
-    }
   }
-  &__body {
-    @include ct.container();
-    @include b.breakpoint-md {
-      margin-right: auto;
-      margin-left: auto;
-      padding-right: 0;
-      padding-left: 0;
-      max-width: 60rem;
-    }
-  }
-  &__links {
+  h2 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    p {
-      @include fs.font-size(l);
-      @include s.margin(1);
-      @include s.padding-left(1);
-      @include s.padding-right(1);
-      flex: 1 0 auto;
-      text-align: center;
-      @include b.breakpoint-xxl {
-        @include fs.font-size(xl);
-      }
+    column-gap: 1rem;
+    &::after {
+      display: block;
+      flex-grow: 1;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 16px,
+        cv.cv(color-surface-stripe) 16px,
+        cv.cv(color-surface-stripe) 24px
+      );
+      content: "";
     }
   }
 }
 
-.c-featured {
+.p-home-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .c-card {
+    @include s.padding(0.25 1);
+  }
+  h3 {
+    @include s.padding-bottom(0.25);
+    border-bottom: 1px solid cv.cv(color-surface-border);
+  }
+  @include b.breakpoint-lg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    h3 {
+      @include fs.font-size(xs);
+    }
+    p {
+      @include fs.font-size(xxs);
+    }
+  }
+}
+
+.p-home-featured {
   display: flex;
   flex-direction: column;
   &__thumbnail {
@@ -65,6 +80,7 @@
   &__metadata {
     flex: 0 1 auto;
   }
+
   h3 {
     @include s.margin(0.5 0);
     @include fs.font-size(l);
