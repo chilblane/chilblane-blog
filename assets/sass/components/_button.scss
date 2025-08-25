@@ -21,7 +21,7 @@
   padding: 1px 1px 1px 4px;
   color: cv.cv(color-text-interactive);
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: lowercase;
   @include fs.font-size(m);
   @include tf.typeface(heading);
   &__label {

@@ -53,6 +53,7 @@
   h3 {
     @include s.padding-bottom(0.25);
     border-bottom: 1px solid cv.cv(color-surface-border);
+    text-transform: lowercase;
   }
   @include b.breakpoint-lg {
     display: grid;

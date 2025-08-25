@@ -16,25 +16,17 @@
   &__far {
     @include s.padding(1);
     @include tf.typeface(heading);
-    @include fs.font-size(xl);
+    @include fs.font-size(l);
     display: flex;
     flex-direction: column;
     justify-content: center;
     order: 2;
-    font-style: italic;
     line-height: 1;
     text-align: right;
     text-shadow: cv.cv(shadow-text-raised);
-    text-transform: uppercase;
+    text-transform: lowercase;
     :last-child {
-      color: cv.cv(color-text-logo);
       font-size: 66%;
-      text-shadow: cv.cv(shadow-text-sunken);
-    }
-  }
-  @include b.breakpoint-md {
-    &__far {
-      @include fs.font-size(xxl);
     }
   }
 }

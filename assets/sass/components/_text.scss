@@ -6,7 +6,7 @@
 .c-display {
   @include tf.typeface(heading);
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: lowercase;
   &--1 {
     @include fs.font-size(xxxl);
     line-height: 1;
