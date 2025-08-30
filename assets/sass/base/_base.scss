@@ -50,15 +50,11 @@
   )
 );
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-html {
-  text-rendering: optimizeLegibility;
-}
+// html,
+// body {
+//   width: 100%;
+//   height: 100%;
+// }
 
 body {
   @include tf.typeface(body);
@@ -80,9 +76,6 @@ body {
   background-color: cv.cv(color-canvas);
   color: cv.cv(color-text);
   line-height: 1.5;
-  @include b.breakpoint-xl {
-    @include s.padding-top(1);
-  }
 }
 
 *,

@@ -7,6 +7,8 @@
   margin-left: auto;
   background-color: cv.cv(color-surface);
   @include b.breakpoint-xl {
+    @include s.margin-top(1);
+    @include s.margin-bottom(1);
     box-shadow: cv.cv(shadow-raised);
     border: 1px solid cv.cv(color-surface-border);
     border-radius: 0.5rem;

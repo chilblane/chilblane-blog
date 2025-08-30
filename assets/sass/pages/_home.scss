@@ -12,13 +12,28 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     article {
-      border-right: 1px solid cv.cv(color-surface-border);
+      @include s.padding-bottom(2);
     }
   }
   section {
     @include s.padding(1);
     &:not(:last-child) {
       border-bottom: 1px solid cv.cv(color-surface-border);
+    }
+  }
+  &__title {
+    &::before {
+      content: '<section class="p-home__title" />';
+    }
+  }
+  &__intro {
+    &::before {
+      content: '<section class="p-home__intro" />';
+    }
+  }
+  &__specialties {
+    &::before {
+      content: '<section class="p-home__specialties" />';
     }
   }
   h1 {
@@ -39,6 +54,18 @@
         cv.cv(color-surface-stripe) 24px
       );
       content: "";
+    }
+  }
+  aside {
+    border-top: 1px solid cv.cv(color-surface-border);
+    @include s.margin-top(1);
+    &::before {
+      content: "<aside />";
+    }
+    @include b.breakpoint-xl {
+      margin: 0;
+      border-top: 0;
+      border-left: 1px solid cv.cv(color-surface-border);
     }
   }
 }

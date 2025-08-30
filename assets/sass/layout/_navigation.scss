@@ -14,9 +14,6 @@
   a {
     @include s.padding(0.5 1);
     display: block;
-    &:not(:last-child) {
-      border-bottom: 1px solid cv.cv(color-surface-border);
-    }
   }
 }
 

@@ -12,6 +12,7 @@ $font-monospace:
 
 $font-body: join("Verdana", $font-system, comma);
 $font-heading: join("Rajdhani", $font-system, comma);
+$font-accent: join("Silkscreen", $font-system, comma);
 
 // These variables come from Typey and Normalize.
 
@@ -67,6 +68,7 @@ $font-size: (
   s: 14px,
   xs: 12px,
   xxs: 10px,
+  xxxs: 8px,
 ) !default;
 
 // Default font weights
@@ -115,6 +117,9 @@ $typefaces: (
   heading: (
     font-family: $font-heading,
     weight: bold,
+  ),
+  accent: (
+    font-family: $font-accent,
   ),
   monospace: (
     font-family: $font-monospace,

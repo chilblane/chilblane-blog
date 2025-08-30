@@ -1,10 +1,10 @@
 {{ define "main" }}
   <main class="p-home">
     <article>
-      <section>
-        <h1 class="c-display">Design system expert and product designer</h1>
+      <section class="p-home__title c-accent">
+        <h1 class="c-display">The design system architect</h1>
       </section>
-      <section>
+      <section class="p-home__intro c-accent">
         <p class="c-lead">
           I'm <strong>Daniel Singer</strong>, a design technologist and product
           designer who has built my 15-year career in the intersection between
@@ -20,7 +20,7 @@
           in my projects. I strongly take initiative where I see it.
         </p>
       </section>
-      <section>
+      <section class="p-home__specialties c-accent">
         <h2 class="c-display c-display--3">Specialties</h2>
         <div class="p-home-panels">
           <div class="c-card">
@@ -50,7 +50,7 @@
         </div>
       </section>
     </article>
-    <div>
+    <aside class="c-accent">
       <section>
         <h2 class="c-display c-display--3">Featured</h2>
         {{ range first 1 (where (where .Site.RegularPages "Type" "in" site.Params.mainSections) ".Params.featured" "=" true) }}
@@ -107,6 +107,6 @@
           </div>
         {{ end }}
       </section>
-    </div>
+    </aside>
   </main>
 {{ end }}

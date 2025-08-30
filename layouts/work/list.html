@@ -1,9 +1,11 @@
 {{ define "main" }}
   <main class="p-list">
-    <header><h1 class="c-display c-display--1">Selected work</h1></header>
+    <header class="c-accent">
+      <h1 class="c-display c-display--1">Selected work</h1>
+    </header>
     <section class="p-list__grid">
       {{ range (.Pages.ByParam "project_year").Reverse }}
-        <article class="p-list__item c-card">
+        <div class="p-list__item c-card c-accent">
           {{ $title := .Title }}
           {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
           {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
@@ -38,7 +40,7 @@
               {{- end -}}
             {{- end -}}
           </div>
-        </article>
+        </div>
       {{- end -}}
     </section>
   </main>

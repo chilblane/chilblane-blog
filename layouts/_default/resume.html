@@ -1,7 +1,7 @@
 {{ define "main" }}
-  <main class="p-resume">
+  <main class="p-resume c-accent">
     <article>
-      <header>
+      <header class="c-accent">
         <div>
           <h1 class="c-display c-display--1">{{ .Params.heading }}</h1>
           <div>
@@ -44,7 +44,7 @@
           </dl>
         </div>
       </header>
-      <section>
+      <section class="c-accent">
         <h2>Skills</h2>
         <div>
           {{ range .Site.Data.skills }}
@@ -58,7 +58,7 @@
         </div>
       </section>
 
-      <section class="p-experience">
+      <section class="p-experience c-accent">
         <h2>Experience</h2>
         {{ range .Site.Data.experience }}
           <div>
@@ -87,10 +87,10 @@
           </div>
         {{ end }}
       </section>
-      <section class="p-experience">
+      <section class="p-experience c-accent">
         <h2>Education</h2>
         {{ range .Site.Data.education }}
-          <div class="u-margin-b-xxxl">
+          <div>
             <div>
               <h3>{{ .degree }}</h3>
             </div>

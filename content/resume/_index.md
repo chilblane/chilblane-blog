@@ -1,6 +1,6 @@
 ---
 title: 'Resume'
 url: '/resume/'
-heading: 'Current resume'
+heading: 'Resume'
 layout: resume
 ---

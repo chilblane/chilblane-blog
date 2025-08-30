@@ -1,0 +1,18 @@
+@use "../typey/mixins/font-size" as fs;
+@use "../typey/mixins/typeface" as tf;
+
+.c-accent {
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    @include tf.typeface(accent);
+    @include fs.font-size(xxxs);
+    opacity: 40%;
+    pointer-events: none;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: none;
+  }
+}

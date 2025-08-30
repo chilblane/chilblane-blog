@@ -7,14 +7,18 @@
 @use "../mixins/cssvars" as cv;
 
 .l-siteheader {
+  @include s.padding(1 0);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid cv.cv(color-surface-border);
   background-color: cv.cv(color-surface-raised);
+  &::before {
+    content: "<header />";
+  }
   &__far {
-    @include s.padding(1);
+    @include s.padding(0 1);
     @include tf.typeface(heading);
     @include fs.font-size(l);
     display: flex;

@@ -4,9 +4,10 @@
 @use "../mixins/cssvars" as cv;
 
 .c-tag {
-  @include fs.font-size(xxs);
-  @include s.margin(0.25 0.25 0.25 0);
-  @include s.padding(0.25 0.5);
+  @include fs.font-size(xxxs);
+  @include tf.typeface(accent);
+  @include s.margin(0.125 0.25 0.125 0);
+  @include s.padding(0.125 0.25);
   display: inline-block;
   clip-path: polygon(
     0 0,
@@ -16,8 +17,10 @@
     0 100%
   );
   background-color: cv.cv(color-fill-neutral);
-  font-weight: bold;
   line-height: 1;
   letter-spacing: 0.05em;
   text-transform: lowercase;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: none;
 }

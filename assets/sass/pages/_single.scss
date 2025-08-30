@@ -6,26 +6,33 @@
 @use "../mixins/cssvars" as cv;
 
 .p-single {
-  @include s.padding(1 0);
-  margin-right: auto;
-  margin-left: auto;
-  max-width: cv.cv(sizes-content-width);
-  header,
-  section {
-    @include ct.container();
+  @include s.padding(1);
+  article {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: cv.cv(sizes-content-width);
+  }
+  &::before {
+    content: "<article />";
   }
   header {
     @include s.padding-top(1);
     @include s.padding-bottom(1);
+    border-bottom: 1px solid cv.cv(color-surface-border);
     h1 {
       @include s.margin(0.5 0);
+    }
+    &::before {
+      left: 0;
+      content: "<header />";
     }
   }
   section {
     @include s.padding-top(1);
     @include s.padding-bottom(1);
-    &:not(:last-child) {
-      border-bottom: 1px solid cv.cv(color-surface-border);
+    &::before {
+      left: 0;
+      content: "<section />";
     }
   }
 

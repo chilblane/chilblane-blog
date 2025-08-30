@@ -6,7 +6,7 @@
 @use "../mixins/cssvars" as cv;
 
 .l-sitefooter {
-  @include tf.typeface(heading);
+  @include s.padding(1 0);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,27 +15,29 @@
   background-color: cv.cv(color-surface-raised);
   text-transform: lowercase;
   > :first-child {
-    @include fs.font-size(l);
+    @include tf.typeface(accent);
+    @include fs.font-size(xxxs);
     @include s.margin-left(1);
+  }
+  &::before {
+    content: "<footer />";
   }
   &__links {
     @include fs.font-size(m);
+    @include tf.typeface(heading);
     display: flex;
     flex-direction: column;
-    border-left: 1px solid cv.cv(color-surface-border);
     a {
       @include s.padding(0.5 1);
       display: block;
       white-space: nowrap;
-      &:not(:last-child) {
-        border-bottom: 1px solid cv.cv(color-surface-border);
-      }
     }
   }
 }
 
 @include b.breakpoint-lg {
   .l-sitefooter {
+    @include s.padding(0);
     &__links {
       @include s.padding-bottom(1);
       @include s.padding-top(1);

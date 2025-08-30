@@ -1,42 +1,44 @@
 {{ define "main" }}
-  <article class="p-single">
-    <header>
-      {{ $title := .Title }}
-      <div class="">
-        <time class="c-tag">{{- .Params.project_year -}}</time>
-        <h1 class="c-display c-display--1">
-          {{- $title -}}
-        </h1>
-        <p class="c-lead">{{- .Description -}}</p>
-        {{ if .Params.project_url }}
-          <div class="u-margin-b-m">
-            <a
-              class="c-button c-button--primary"
-              href="{{- .Params.project_url -}}"
-              data-button-label="Project Link"
-            >
-              <span class="c-button__label">Project Link</span>
-            </a>
+  <main class="p-single c-accent">
+    <article>
+      <header class="c-accent">
+        {{ $title := .Title }}
+        <div class="">
+          <time class="c-tag">{{- .Params.project_year -}}</time>
+          <h1 class="c-display c-display--1">
+            {{- $title -}}
+          </h1>
+          <p class="c-lead">{{- .Description -}}</p>
+          {{ if .Params.project_url }}
+            <div class="u-margin-b-m">
+              <a
+                class="c-button c-button--primary"
+                href="{{- .Params.project_url -}}"
+                data-button-label="Project Link"
+              >
+                <span class="c-button__label">Project Link</span>
+              </a>
+            </div>
+          {{ end }}
+          <div>
+            {{ $knowledge := "knowledge" }}
+            {{ $skills := "skills" }}
+            {{ with .Param $knowledge }}
+              {{ range $index, $tag := . }}
+                <span class="c-tag">{{ $tag }}</span>
+              {{- end -}}
+            {{- end -}}
+            {{ with .Param $skills }}
+              {{ range $index, $tag := . }}
+                <span class="c-tag">{{ $tag }}</span>
+              {{- end -}}
+            {{- end -}}
           </div>
-        {{ end }}
-        <div>
-          {{ $knowledge := "knowledge" }}
-          {{ $skills := "skills" }}
-          {{ with .Param $knowledge }}
-            {{ range $index, $tag := . }}
-              <span class="c-tag">{{ $tag }}</span>
-            {{- end -}}
-          {{- end -}}
-          {{ with .Param $skills }}
-            {{ range $index, $tag := . }}
-              <span class="c-tag">{{ $tag }}</span>
-            {{- end -}}
-          {{- end -}}
         </div>
-      </div>
-    </header>
-    <section class="p-single__body">
-      {{- .Content -}}
-    </section>
-  </article>
+      </header>
+      <section class="p-single__body c-accent">
+        {{- .Content -}}
+      </section>
+    </article>
+  </main>
 {{ end }}
