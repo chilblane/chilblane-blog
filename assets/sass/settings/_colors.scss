@@ -42,11 +42,11 @@ $crayon-orange-110: #331f00;
 
 // SEMANTIC
 
-$color-canvas: color.adjust($crayon-gray-110, $alpha: -0.2);
-$color-canvas-alt: color.adjust($crayon-blue-100, $alpha: -0.2);
+$color-canvas: color.adjust($crayon-gray-110, $alpha: -0.4);
+$color-canvas-alt: color.adjust($crayon-blue-100, $alpha: -0.4);
 $color-canvas-line: color.adjust($crayon-blue-040, $alpha: -0.8);
 
-$color-surface: color.adjust($crayon-gray-110, $alpha: -0.4);
+$color-surface: color.adjust($crayon-gray-110, $alpha: -0.9);
 $color-surface-raised: color.adjust($crayon-gray-080, $alpha: -0.5);
 $color-surface-border: $crayon-gray-070;
 $color-surface-divider: $crayon-gray-060;

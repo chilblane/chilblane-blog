@@ -77,7 +77,7 @@
                 />
               {{ end }}
             </div>
-            <div class="p-home-featured__metadata shrink-0 grow-1 lg:min-w-96">
+            <div class="p-home-featured__metadata">
               <span class="c-tag">{{- .Params.project_year -}}</span>
               <h3>
                 <a
@@ -106,6 +106,33 @@
             </div>
           </div>
         {{ end }}
+        <hr />
+        <h2 class="c-display c-display--3">Current Project</h2>
+        <div class="p-home-featured">
+          <div class="p-home-featured__metadata">
+            <h3>
+              <a
+                class="c-button c-button--primary"
+                href="{{ .Permalink }}"
+                data-button-label="Warcraft Race/Class Compendium"
+              >
+                <span class="c-button__label"
+                  >Warcraft Race/Class Compendium</span
+                >
+              </a>
+            </h3>
+            <p class="text-base">
+              A Hugo/Tailwind/Markdown project to document all possible playable
+              race and class combinations in the MMO <em>World of Warcraft</em>.
+            </p>
+            <div class="p-home-featured__tags">
+              <span class="c-tag">content strategy</span>
+              <span class="c-tag">information architecture</span>
+              <span class="c-tag">hugo</span>
+              <span class="c-tag">tailwind css</span>
+            </div>
+          </div>
+        </div>
       </section>
     </aside>
   </main>

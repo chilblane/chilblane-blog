@@ -3,6 +3,7 @@
 @use "../typey/mixins/spacing" as s;
 
 .l-layout {
+  backdrop-filter: blur(8px) brightness(0.65);
   margin-right: auto;
   margin-left: auto;
   background-color: cv.cv(color-surface);
