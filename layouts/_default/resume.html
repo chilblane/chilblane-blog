@@ -1,6 +1,20 @@
 {{ define "main" }}
   <main class="p-resume c-accent">
     <article>
+      {{/* Print/PDF only. The real email address renders only in the "pdf"
+        environment (npm run pdf), so the live page never carries it. */}}
+      <div class="p-resume__print-header u-print-only">
+        <p class="p-resume__name">{{ .Site.Params.navTitle }}</p>
+        <p>Design systems designer &middot; Tempe, Arizona</p>
+        <p>
+          {{ if eq hugo.Environment "pdf" }}
+            {{ printf "%s@%s" "daniel" "chilblane.com" }} &middot;
+          {{ end }}
+          {{ strings.TrimPrefix "https://www." .Site.Params.linkedin }}
+          &middot;
+          {{ strings.TrimPrefix "https://www." .Site.Params.github }}
+        </p>
+      </div>
       <header class="c-accent">
         <div>
           <h1 class="c-display c-display--1">{{ .Params.heading }}</h1>
@@ -14,7 +28,7 @@
             </a>
             <a
               class="c-button"
-              href="/resume-20251007.pdf"
+              href="/Daniel-Singer-Resume.pdf"
               data-button-label="Download PDF"
             >
               <span class="c-button__label">Download PDF </span></a

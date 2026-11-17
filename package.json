@@ -12,7 +12,8 @@
   },
   "scripts": {
     "dev": "hugo server -D",
-    "build": "hugo --gc --minify"
+    "build": "hugo --gc --minify",
+    "pdf": "node scripts/resume-pdf.mjs"
   },
   "repository": {
     "type": "git",

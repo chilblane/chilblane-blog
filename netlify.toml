@@ -15,3 +15,9 @@ command = """\
   git config core.quotepath false && \
   hugo --gc --minify \
   """
+
+# Old dated resume link, still in applications already sent
+[[redirects]]
+from = "/resume-20251007.pdf"
+to = "/Daniel-Singer-Resume.pdf"
+status = 301
