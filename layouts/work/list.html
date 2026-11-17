@@ -13,7 +13,11 @@
             {{ $thumbnail = $featured_image }}
           {{ end }}
           {{ with $thumbnail }}
-            <img src="{{ .Permalink }}" alt="{{ $title }}" />
+            {{ partial "responsive-image.html" (dict
+              "img" .
+              "alt" $title
+              "sizes" "(min-width: 60rem) 29rem, 100vw"
+            ) }}
           {{ end }}
           <span class="c-tag">{{- .Params.project_year -}}</span>
           <h3>

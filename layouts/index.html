@@ -71,18 +71,12 @@
                 {{ $thumbnail = $featured_image }}
               {{ end }}
               {{ with $thumbnail }}
-                {{ $imageSm := .Resize "320x" }}
-                {{ $imageMd := .Resize "600x" }}
-                {{ $imageLg := .Resize "1200x" }}
-                <img
-                  srcset="
-                    {{ $imageSm.RelPermalink }}  320w,
-                    {{ $imageMd.RelPermalink }}  600w,
-                    {{ $imageLg.RelPermalink }} 1200w
-                  "
-                  src="{{ $imageLg.RelPermalink }}"
-                  alt="{{ $title }}"
-                />
+                {{ partial "responsive-image.html" (dict
+                  "img" .
+                  "alt" $title
+                  "sizes" "(min-width: 60rem) 19rem, 100vw"
+                  "loading" "eager"
+                ) }}
               {{ end }}
             </div>
             <div class="p-home-featured__metadata">
