@@ -1,12 +1,12 @@
 baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
-title = "Daniel Singer | Product designer & design technologist"
+title = "Daniel Singer | Design systems designer"
 theme = ["hugo-shortcode-gallery"]
 timeout = 60000
 
 
 [params]
-    description = "Daniel Singer is a product designer and design technologist based in Phoenix, Arizona."
+    description = "Daniel Singer is a design systems designer and design technologist based in Tempe, Arizona."
     navTitle = "Daniel Singer"
     navSubTitle = "chilblane"
     email = "daniel at chilblane dot com"
