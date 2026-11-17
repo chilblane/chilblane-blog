@@ -2,6 +2,7 @@
 title: 'About this website'
 description: 'An overview of how this website and portfolio was designed and built, including my thinking process'
 project_year: 2025
+side_project: true
 knowledge:
   [
     'content strategy',

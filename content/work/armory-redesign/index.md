@@ -2,6 +2,7 @@
 title: 'World of Warcraft Armory Redesign'
 description: 'Unsolicited redesign, working with the design direction and code of an existing site to create an updated user experience'
 project_year: 2017
+side_project: true
 knowledge:
   ['unsolicited redesign', 'prototyping', 'user experience', 'ux engineering']
 skills: ['css', 'javascript']
