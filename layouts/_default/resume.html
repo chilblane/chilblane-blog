@@ -71,7 +71,11 @@
                   {{ .startDate }} -
                   {{ .endDate }}
                 </p>
-                <p class="u-margin-z">{{ .location }}</p>
+                <p class="u-margin-z">
+                  {{ .location }}{{ with .employmentType }}
+                    &middot; {{ . }}
+                  {{ end }}
+                </p>
               </div>
             </div>
             <ul>

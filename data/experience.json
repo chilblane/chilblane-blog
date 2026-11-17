@@ -1,13 +1,37 @@
 [
   {
+    "role": "Senior Experience Designer",
+    "company": "PNC",
+    "startDate": "December 2025",
+    "endDate": "Present",
+    "location": "Remote",
+    "employmentType": "Contract",
+    "summary": [
+      "Designer on the Ledger Design System team",
+      "Maintain design system components in the Figma library, including releases and release communication",
+      "Write dev specs for design system engineers, work alongside them on dev stories, and review stories for design adherence",
+      "Run governance ceremonies with the broader design org",
+      "Contribute to strategy and implementation for design system documentation",
+      "Contribute to strategy and planning for the design token system"
+    ],
+    "skills": [
+      "Design Systems",
+      "Design Tokens",
+      "User Experience",
+      "Figma"
+    ]
+  },
+  {
     "role": "UX Engineer",
     "company": "Microsoft",
     "startDate": "April 2024",
     "endDate": "June 2025",
     "location": "Remote",
+    "employmentType": "Contract",
     "summary": [
       "UX engineer on the ModeDS team, working between design systems (Fluent Design System, SharePoint Design System) and product (SharePoint, OneDrive, and Teams).",
-      "Fluent design token, theming integration, and SASS refactoring in OneDrive and Teams",
+      "Fluent design token and theming integration in OneDrive and Teams",
+      "Refactored a performance-focused CSS foundation, built up over time by many teams, into one cohesive Sass framework. It shipped to production and other teams built on it.",
       "Auditing elements and components across the SharePoint product, for the benefit of designers and engineers",
       "Prototype work both within the SharePoint product and in standalone React app, enabling design partners to  validate their designs and engineering partners to estimate and plan product work"
     ],
@@ -58,6 +82,7 @@
     "startDate": "April 2021",
     "endDate": "July 2022",
     "location": "Remote",
+    "employmentType": "Contract",
     "summary": [
       "Planning and content strategy for a documentation site for the Lodestar design system",
       "Designing and building the documentation site in Gatsby alongside the UI Engineering team",
