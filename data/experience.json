@@ -33,7 +33,7 @@
       "Fluent design token and theming integration in OneDrive and Teams",
       "Refactored a performance-focused CSS foundation, built up over time by many teams, into one cohesive Sass framework. It shipped to production and other teams built on it.",
       "Auditing elements and components across the SharePoint product, for the benefit of designers and engineers",
-      "Prototype work both within the SharePoint product and in standalone React app, enabling design partners to  validate their designs and engineering partners to estimate and plan product work"
+      "Prototype work both within the SharePoint product and in standalone React app, enabling design partners to validate their designs and engineering partners to estimate and plan product work"
     ],
     "skills": [
       "Design Systems",
@@ -181,7 +181,7 @@
       "CSS",
       "Sass",
       "Git",
-      "Github"
+      "GitHub"
     ]
   }
 ]

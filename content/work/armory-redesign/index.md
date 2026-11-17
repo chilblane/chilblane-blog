@@ -11,7 +11,7 @@ skills: ['css', 'javascript']
 
 In July 2016, Blizzard Entertainment introduced a new World of Warcraft website in preparation for the launch of their newest expansion, _Legion_. The new website featured a significant number of improvements, including more responsive web design and a modular CSS system. Unfortunately, several features of the old site remained behind on the existing `battle.net` domain, including the Armory.
 
-The Armory was created as way for players to view their characters, sharing their progress and evaluating others. The last major update to the Armory was in 2010, with the release of the _Cataclysm_ expansion. Since that time, the Armory pages have had some minor updates but no significant change with regards to modern web design or development.
+The Armory was created as a way for players to view their characters, sharing their progress and evaluating others. The last major update to the Armory was in 2010, with the release of the _Cataclysm_ expansion. Since that time, the Armory pages have had some minor updates but no significant change with regards to modern web design or development.
 
 {{< img name="armory-old.jpg" alt="Screen capture of the Cataclysm-era Armory design" caption="The Cataclysm-era Armory design" >}}
 

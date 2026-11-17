@@ -22,7 +22,7 @@ At the beginning of 2019, I began work on the buy 2.0 project with our web devel
 
 {{< img name="buy-page-map.png" alt="Content map of pages in the buy site experience" caption="Planning chart for the three core page types plus additional content on a redesigned buy.offerpad.com" >}}
 
-Here's early low-fidelity (no color) mockups of the search results page. High fidelity mockups can be found in this [Figma document](https://www.figma.com/file/B0v7djr0x1os8kxJjSTSvk/Daniel-s-buy-mocks).
+Here are early low-fidelity (no color) mockups of the search results page. High fidelity mockups can be found in this [Figma document](https://www.figma.com/file/B0v7djr0x1os8kxJjSTSvk/Daniel-s-buy-mocks).
 
 {{< gallery match="low-fidelity/*" >}}
 
