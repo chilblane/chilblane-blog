@@ -4,6 +4,9 @@
     <header class="c-accent">
       <h1 class="c-display c-display--1">Selected work</h1>
     </header>
+    <header class="c-accent">
+      <h2 class="c-display c-display--2">Client work</h2>
+    </header>
     <section class="p-list__grid">
       {{ range where $pages "Params.side_project" "!=" true }}
         {{ partial "work-card.html" . }}
