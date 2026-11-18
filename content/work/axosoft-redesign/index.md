@@ -5,7 +5,7 @@ project_year: 2016
 knowledge: ['user experience']
 ---
 
-I sought to redesign Axosoft's project management application for two reasons: bring it in line with our current branding and trade dress, and continue to remove legacy aspects of its Windows desktop roots along with bringing in some much-needed UX improvements. My intent with this redesign, is that much of the design work would rely on the same CSS and style framework we use on our product and support sites.
+I sought to redesign Axosoft's project management application for two reasons: bring it in line with our current branding and trade dress, and continue to remove legacy aspects of its Windows desktop roots along with bringing in some much-needed UX improvements. My intent with this redesign is that much of the design work would rely on the same CSS and style framework we use on our product and support sites.
 
 {{< img name="main-workspace-list-view.png" alt="Screenshot of the main workspace in Axosoft" caption="The main workspace in Axosoft" >}}
 
@@ -21,7 +21,7 @@ I also had to figure out the design of the Card View mode, which turns the works
 
 {{< img name="main-workspace-full-add.png" alt="Screenshot of adding a new item in Axosoft" caption="Adding a new item using the item template" >}}
 
-Once of the most critical components of Axosoft is the "item template", where individual work items are "filled out" in a form that is customizable by each team. However, the current item template is a low contrast, full-width interface that can be difficult to use and gain information from. So my primary design objective here was to condense the item template into a fixed-width modal, as well as set aside special fields like the title and description.
+One of the most critical components of Axosoft is the "item template", where individual work items are "filled out" in a form that is customizable by each team. However, the current item template is a low contrast, full-width interface that can be difficult to use and gain information from. So my primary design objective here was to condense the item template into a fixed-width modal, as well as set aside special fields like the title and description.
 
 {{< img name="main-workspace-view-item.png" alt="Screenshot of viewing an item in Axosoft" caption="Viewing the item once it is made, with additional data" >}}
 
@@ -37,7 +37,7 @@ The field template editor is one of the most complicated and potentially confusi
 
 {{< img name="field-template-editor-fields.png" alt="Screenshot of the field template editor in Axosoft, managing field properties" caption="Managing fields used in a field template" >}}
 
-And this is where you manage the properties of each field in the template, as well as creating custom fields. Ultimately this approach traded one type of complexity for another, and it did not make it in the release. This mockup still had some use as this table pattern I redesigned is used in many other parts of the UI.
+And this is where you manage the properties of each field in the template, as well as creating custom fields. Ultimately this approach traded one type of complexity for another, and it did not make it into the release. This mockup still had some use as this table pattern I redesigned is used in many other parts of the UI.
 
 {{< img name="user-options.png" alt="Screenshot of the settings modal in Axosoft" caption="Settings for the basic user type" >}}
 

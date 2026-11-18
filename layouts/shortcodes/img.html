@@ -1,31 +1,23 @@
-{{/* Source: https://nilsnh.no/2018/06/10/hugo-how-to-add-support-for-responsive-images-trough-image-processing-and-page-bundles-3/ */}}
-
-{{ $altText := .Get "alt" }}
-{{ $caption := .Get "caption" }}
+{{/* Case study image. Links to the full-size original; with JS the link
+  opens the page lightbox instead (assets/js/main.js), using a WebP copy.
+*/}}
 {{ with $.Page.Resources.GetMatch (.Get "name") }}
-  {{/* {{ $imageSm := .Resize "320x" }}
-  {{ $imageMd := .Resize "600x" }}
-  {{ $imageLg := .Resize "1200x" }}
+  {{ $full := . }}
+  {{ if gt .Width 1920 }}
+    {{ $full = .Resize "1920x webp q85" }}
+  {{ else }}
+    {{ $full = .Resize (printf "%dx webp q85" .Width) }}
+  {{ end }}
   <figure class="c-figure">
-    <a href="{{ .RelPermalink }}">
-      <img
-        srcset="
-          {{ $imageSm.RelPermalink }}  320w,
-          {{ $imageMd.RelPermalink }}  600w,
-          {{ $imageLg.RelPermalink }} 1200w
-        "
-        src="{{ $imageLg.RelPermalink }}"
-        alt="{{ $altText }}"
-      />
+    <a href="{{ .RelPermalink }}" data-lightbox-src="{{ $full.RelPermalink }}">
+      {{ partial "responsive-image.html" (dict
+        "img" .
+        "alt" ($.Get "alt")
+        "sizes" "(min-width: 40rem) 40rem, 100vw"
+        )
+      }}
     </a>
-    <figcaption>{{ $caption }}</figcaption>
-  </figure>
-  */}}
-  <figure class="c-figure">
-    <a href="{{ .RelPermalink }}">
-      <img src="{{ .RelPermalink }}" alt="{{ $altText }}" />
-    </a>
-    <figcaption>{{ $caption }}</figcaption>
+    <figcaption>{{ $.Get "caption" }}</figcaption>
   </figure>
 {{ else }}
   could not find image

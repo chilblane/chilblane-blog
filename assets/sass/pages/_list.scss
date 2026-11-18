@@ -5,25 +5,33 @@
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
+@use "../mixins/code-label" as cl;
+@use "../mixins/title-bar" as tb;
 
 .p-list {
   header,
   section {
     @include ct.container();
-    @include s.padding-bottom(2);
+    @include cb.content-block;
   }
   header {
-    @include s.padding-top(2);
     h1 {
-      @include s.margin(0.5 0);
+      margin: 0;
+    }
+    h2 {
+      @include tb.title-bar;
+      margin: 0;
+    }
+    // Section title bars: room for the code label above, none below.
+    &:has(> h2) {
+      padding-bottom: 0;
     }
     &::before {
-      content: "<header />";
+      @include cl.code-label("<header />");
     }
   }
-  section {
-    @include s.padding-top(1);
-  }
+
   &__grid {
     display: grid;
     gap: 1.5rem;
@@ -34,13 +42,20 @@
   &__item {
     @include s.padding(0 1 1);
     &::before {
-      content: '<div class="c-card" />';
+      @include cl.code-label('<div class="c-card" />');
     }
     img {
       @include if.img-fluid;
-      opacity: 80%;
-      @include s.margin(1 0);
-      &:hover {
+      margin: 1rem 0;
+    }
+    @media (hover: hover) {
+      img {
+        opacity: 88%;
+        transition: opacity 0.2s;
+      }
+      a:hover img,
+      a:focus-visible img,
+      img:hover {
         opacity: 1;
       }
     }
@@ -51,8 +66,9 @@
         @include fs.font-size(l);
       }
     }
-    p:last-of-type {
-      @include fs.font-size(s);
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.55;
     }
   }
 }

@@ -1,15 +1,22 @@
+@use "../settings/typography" as t;
 @use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
 
 .c-display {
-  @include tf.typeface(heading);
+  @include tf.typeface(display);
   line-height: 1;
+  font-size-adjust: t.$font-display-size-adjust;
   text-transform: lowercase;
   &--1 {
     @include fs.font-size(xxxl);
+    // Michroma is wide: on small phones a long word ("experience") is wider
+    // than the column at 60px. Scale with the column (viewport minus the 3rem
+    // page gutters) below ~390px; break a word only if it still can't fit.
+    font-size: min(3.75rem, calc((100vw - 3rem) * 0.19));
     line-height: 1;
+    overflow-wrap: break-word;
   }
   &--2 {
     @include fs.font-size(xxl);
@@ -20,6 +27,6 @@
 }
 
 .c-lead {
-  @include fs.font-size(s);
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.55;
 }

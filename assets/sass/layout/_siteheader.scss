@@ -5,27 +5,30 @@
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/code-label" as cl;
 
 .l-siteheader {
-  @include s.padding(1 0);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid cv.cv(color-surface-border);
   background-color: cv.cv(color-surface-raised);
+  // 0.75rem keeps the <header /> label clear of the nav text.
+  padding: 0.75rem 0;
   &::before {
-    content: "<header />";
+    @include cl.code-label("<header />");
   }
   &__far {
     @include s.padding(0 1);
-    @include tf.typeface(heading);
+    @include tf.typeface(display);
     @include fs.font-size(l);
     display: flex;
     flex-direction: column;
     justify-content: center;
     order: 2;
     line-height: 1;
+    font-size-adjust: $font-display-size-adjust;
     text-align: right;
     text-shadow: cv.cv(shadow-text-raised);
     text-transform: lowercase;

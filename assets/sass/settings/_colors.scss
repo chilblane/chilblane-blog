@@ -41,20 +41,28 @@ $crayon-orange-100: #553400;
 $crayon-orange-110: #331f00;
 
 // SEMANTIC
+//
+// Color principles (design-direction.md, agreed 2026-11-17):
+// 1. Orange (amber) = interactive only: links, buttons, focus rings.
+// 2. Blue = system chrome: title-bar glyphs, dot fills, code labels.
+// 3. Gray lightness = hierarchy: headings 010, body 020, metadata 030.
+// 4. Neutrals cover ~90% of a view; blue and amber stay rare.
+// 5. Contrast floors are measured over the lightest background area.
 
 $color-canvas: color.adjust($crayon-gray-110, $alpha: -0.4);
-$color-canvas-alt: color.adjust($crayon-blue-100, $alpha: -0.4);
-$color-canvas-line: color.adjust($crayon-blue-040, $alpha: -0.8);
 
-$color-surface: color.adjust($crayon-gray-110, $alpha: -0.9);
+// Glass panel: 50% tint over the blurred background (min 6.57:1 text
+// contrast measured over background-r10-orbit.webp).
+$color-surface: color.adjust($crayon-gray-110, $alpha: -0.5);
 $color-surface-raised: color.adjust($crayon-gray-080, $alpha: -0.5);
 $color-surface-border: $crayon-gray-070;
 $color-surface-divider: $crayon-gray-060;
-$color-surface-stripe: color.adjust($crayon-gray-060, $alpha: -0.5);
 
 $color-text: $crayon-gray-020;
-$color-text-logo: $crayon-gray-090;
+$color-text-heading: $crayon-gray-010;
 
+// Button label text, on the amber or gray button fill.
+$color-text-interactive: $crayon-gray-010;
 $color-text-interactive-basic: $crayon-gray-020;
 $color-text-interactive-primary: $crayon-orange-050;
 $color-text-interactive-primary-hover: $crayon-orange-040;
@@ -69,6 +77,18 @@ $color-interactive-border-basic: $crayon-gray-060;
 $color-interactive-border-basic-hover: $crayon-gray-050;
 $color-interactive-border-primary: $crayon-orange-060;
 $color-interactive-border-primary-hover: $crayon-orange-040;
+$color-focus: $crayon-orange-050;
+
+// System chrome (blue, decorative, never carries meaning)
+$color-chrome-glyph: $crayon-blue-040;
+$color-chrome-label: $crayon-blue-030;
+$color-chrome-dots: color.adjust($crayon-blue-040, $alpha: -0.72);
+
+// Title bars. Keep the fill at or under 5.5% white so gray-010 text
+// stays above 4.5:1 over the brightest part of the background.
+$color-titlebar-fill: rgba(255, 255, 255, 0.055);
+$color-titlebar-highlight: rgba(255, 255, 255, 0.16);
+$color-titlebar-shadow: rgba(0, 0, 0, 0.55);
 
 $shadow-raised:
   0px 0px 0px $crayon-gray-110,

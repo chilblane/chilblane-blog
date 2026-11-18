@@ -4,6 +4,9 @@
 @use "../mixins/breakpoints" as b;
 @use "../mixins/containers" as ct;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
+@use "../mixins/code-label" as cl;
+@use "../mixins/title-bar" as tb;
 
 .p-resume {
   @include s.padding(1);
@@ -13,18 +16,17 @@
     max-width: cv.cv(sizes-content-width);
   }
   &::before {
-    content: "<article />";
+    @include cl.code-label("<article />");
   }
   header {
-    @include s.padding-top(1);
-    @include s.padding-bottom(1);
+    @include cb.content-block;
     display: flex;
     flex-direction: column;
     gap: 1rem 2rem;
     border-bottom: 1px solid cv.cv(color-surface-border);
     &::before {
       left: 0;
-      content: "<header />";
+      @include cl.code-label("<header />");
     }
     h1 {
       @include s.margin(0.5 0);
@@ -47,36 +49,17 @@
     @include s.margin(0.5 0 2);
   }
   section {
-    @include s.padding-top(1);
-    @include s.padding-bottom(1);
+    @include cb.content-block;
     &:not(:last-child) {
       border-bottom: 1px solid cv.cv(color-surface-border);
     }
     &::before {
       left: 0;
-      content: "<section />";
+      @include cl.code-label("<section />");
     }
   }
   section > h2 {
-    @include tf.typeface(heading);
-    @include fs.font-size(xxl);
-    @include s.margin-top(2);
-    display: flex;
-    column-gap: 1rem;
-    line-height: 1;
-    text-transform: lowercase;
-    &::after {
-      display: block;
-      flex-grow: 1;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 16px,
-        cv.cv(color-surface-stripe) 16px,
-        cv.cv(color-surface-stripe) 24px
-      );
-      content: "";
-    }
+    @include tb.title-bar;
   }
 }
 
@@ -104,12 +87,22 @@
 }
 .p-experience {
   > div:not(:last-child) {
-    @include s.margin-bottom(3);
+    margin-bottom: 2.5rem;
   }
   h3 {
     @include tf.typeface(heading);
-    @include fs.font-size(l);
-    line-height: 1;
+    margin: 0 0 0.4rem;
+    font-size: 1.1875rem;
+    line-height: 1.2;
+    letter-spacing: 0;
     text-transform: lowercase;
   }
+  li:not(.c-tag) {
+    margin: 0.35rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+.p-experience__header p {
+  font-size: 0.875rem;
 }

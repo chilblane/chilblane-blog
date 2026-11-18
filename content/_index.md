@@ -1,3 +1,3 @@
 ---
-title: 'Daniel Singer | Design system expert, product designer'
+title: 'Daniel Singer | Design systems designer'
 ---

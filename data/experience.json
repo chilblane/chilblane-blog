@@ -7,12 +7,10 @@
     "location": "Remote",
     "employmentType": "Contract",
     "summary": [
-      "Designer on the Ledger Design System team",
-      "Maintain design system components in the Figma library, including releases and release communication",
+      "Maintain Ledger Design System components in Figma, including releases and release communication",
       "Write dev specs for design system engineers, work alongside them on dev stories, and review stories for design adherence",
-      "Run governance ceremonies with the broader design org",
-      "Contribute to strategy and implementation for design system documentation",
-      "Contribute to strategy and planning for the design token system"
+      "Run governance ceremonies with the wider design org",
+      "Contribute to strategy for design system documentation and the design token system"
     ],
     "skills": [
       "Design Systems",
@@ -29,11 +27,11 @@
     "location": "Remote",
     "employmentType": "Contract",
     "summary": [
-      "UX engineer on the ModeDS team, working between design systems (Fluent Design System, SharePoint Design System) and product (SharePoint, OneDrive, and Teams).",
-      "Fluent design token and theming integration in OneDrive and Teams",
-      "Refactored a performance-focused CSS foundation, built up over time by many teams, into one cohesive Sass framework. It shipped to production and other teams built on it.",
-      "Auditing elements and components across the SharePoint product, for the benefit of designers and engineers",
-      "Prototype work both within the SharePoint product and in standalone React app, enabling design partners to  validate their designs and engineering partners to estimate and plan product work"
+      "UX engineer on ModeDS, the team working between design systems (Fluent, SharePoint Design System) and product (SharePoint, OneDrive, Teams)",
+      "Integrated Fluent design tokens and theming into OneDrive and Teams, shipped to production",
+      "Refactored a performance-focused CSS foundation, which many teams had added to over time, into one cohesive Sass framework. It shipped to production, other teams built on it, and it was easier to maintain",
+      "Audited elements and components across SharePoint for designers and engineers",
+      "Built prototypes in SharePoint and in a standalone React app, so designers could validate their work and engineers could estimate it"
     ],
     "skills": [
       "Design Systems",
@@ -56,11 +54,11 @@
     "endDate": "November 2023",
     "location": "Remote",
     "summary": [
-      "Worked with the UX organization and product/engineering teams at Zonar to evaluate the current state of their design system (DSPLY) and pattern library and identify opportunities for improvement and development",
-      "Audited the Angular-based pattern library, documenting for the first time how every team used its components in their product work",
-      "Identified and pushed forward the need for a centralized Storybook instance to consolidate documentation for both UX and engineering, and provide isolated code specimens without the need for app deployment",
-      "Planned out how to more effectively use design tokens within the design system project, in both the Angular code as well as our Figma library",
-      "Worked with the design director on a comprehensive color framework overhaul, incorporating updated branding and design requirements as well as knowledge from the above audits"
+      "Evaluated the DSPLY design system and pattern library with UX, product, and engineering teams, and found where to improve it",
+      "Audited the Angular pattern library, documenting for the first time how every team used its components",
+      "Made the case for a central Storybook holding UX and engineering documentation, with isolated code examples that didn't need an app deploy",
+      "Planned how design tokens would work in both the Angular code and the Figma library",
+      "Overhauled the color framework with the design director, using updated branding and what the audits found"
     ],
     "skills": [
       "Design Systems",
@@ -84,10 +82,10 @@
     "location": "Remote",
     "employmentType": "Contract",
     "summary": [
-      "Planning and content strategy for a documentation site for the Lodestar design system",
-      "Designing and building the documentation site in Gatsby alongside the UI Engineering team",
-      "Testing various design system React components in non-SPA (single page application) contexts using the documentation site",
-      "Planning and initial implementation of design token strategy, with a priority on colors"
+      "Planned content strategy for the Lodestar design system documentation site",
+      "Designed and built the documentation site in Gatsby with the UI Engineering team",
+      "Tested design system React components outside single-page apps, using the documentation site",
+      "Planned and started the design token strategy, beginning with color"
     ],
     "skills": [
       "Design Systems",
@@ -118,11 +116,11 @@
     "endDate": "May 2020",
     "location": "Chandler, Arizona",
     "summary": [
-      "Designed, built, and maintained marketing site, Home Offer Request experience, and worked with engineering team on home listings experience",
-      "Wrote proposal for a complete revamp of Home Offer Request experience, including major changes to UX, architecture, user outcomes, and more",
-      "Worked closely with product manager on requirements and general experience of a self-service portal for home-sellers once they accepted our offer, including a significant audit and redesign of the transaction process between a home-seller requesting an offer to moving out of the home",
-      "Consultation and exploratory design on Offerpad mobile application",
-      "Initiated basic design system (Floorplan)"
+      "Started Floorplan, a basic design system",
+      "Designed, built, and maintained the marketing site and the Home Offer Request experience",
+      "Wrote a proposal to revamp Home Offer Request, covering UX, architecture, and user outcomes",
+      "Worked with the product manager on a self-service portal for sellers after accepting an offer, including an audit and redesign of the whole transaction, from offer request to move-out",
+      "Worked with engineering on home listings, and did exploratory design for the mobile app"
     ],
     "skills": [
       "User Experience",
@@ -156,11 +154,10 @@
     "endDate": "October 2016",
     "location": "Scottsdale, Arizona",
     "summary": [
-      "Primary webmaster (design and code) for Axosoft and GitKraken marketing sites",
-      "Worked on WordPress theme for Axosoft blogs, including writing a CSS framework to share code and design language between blogs and marketing sites",
-      "Produced graphical assets for GitKraken application launch",
-      "Participated in Axosoft product redesign for version 16 launch",
-      "Various other marketing, graphic design, and social media tasks"
+      "Designed and coded the Axosoft and GitKraken marketing sites as primary webmaster",
+      "Worked on the WordPress theme for Axosoft blogs, including a CSS framework that shared code and design language with the marketing sites",
+      "Produced graphics for the GitKraken launch",
+      "Took part in the Axosoft v16 product redesign"
     ],
     "skills": [
       "User Experience",
@@ -181,7 +178,7 @@
       "CSS",
       "Sass",
       "Git",
-      "Github"
+      "GitHub"
     ]
   }
 ]

@@ -4,23 +4,24 @@
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/code-label" as cl;
 
 .l-sitefooter {
-  @include s.padding(1 0);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid cv.cv(color-surface-border);
   background-color: cv.cv(color-surface-raised);
+  padding: 0.75rem 0;
   text-transform: lowercase;
   > :first-child {
     @include tf.typeface(accent);
-    @include fs.font-size(xxxs);
+    font-size: 0.6875rem;
     @include s.margin-left(1);
   }
   &::before {
-    content: "<footer />";
+    @include cl.code-label("<footer />");
   }
   &__links {
     @include fs.font-size(m);
@@ -28,8 +29,8 @@
     display: flex;
     flex-direction: column;
     a {
-      @include s.padding(0.5 1);
       display: block;
+      padding: 0.5rem 1.5rem;
       white-space: nowrap;
     }
   }
@@ -37,10 +38,10 @@
 
 @include b.breakpoint-lg {
   .l-sitefooter {
-    @include s.padding(0);
+    padding: 0;
     &__links {
-      @include s.padding-bottom(1);
-      @include s.padding-top(1);
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
       @include s.margin-left(1);
       flex-direction: row;
       align-items: center;

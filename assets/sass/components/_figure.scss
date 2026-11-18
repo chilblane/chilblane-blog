@@ -5,7 +5,7 @@
 @use "../mixins/cssvars" as cv;
 
 .c-figure {
-  @include s.margin(2 0);
+  margin: 2rem 0;
   text-align: center;
   a {
     display: inline-block;
@@ -16,7 +16,6 @@
   }
   img {
     @include if.img-fluid;
-    opacity: 80%;
     margin: 0 auto;
   }
   figcaption {
@@ -24,11 +23,17 @@
     margin-left: auto;
     max-width: cv.cv(sizes-content-width);
     font-style: italic;
-    @include fs.font-size(xxs);
+    font-size: 0.875rem;
   }
 
-  a:hover {
+  // Dim only where hover exists; touch users always get full images.
+  @media (hover: hover) {
     img {
+      opacity: 88%;
+      transition: opacity 0.2s;
+    }
+    a:hover img,
+    a:focus-visible img {
       opacity: 100%;
     }
   }

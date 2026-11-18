@@ -6,66 +6,83 @@
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
+@use "../mixins/code-label" as cl;
+@use "../mixins/title-bar" as tb;
 
 .p-home {
+  // Desktop: title + intro | featured, then specialties across both.
   @include b.breakpoint-xl {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    article {
-      @include s.padding-bottom(2);
-    }
   }
   section {
-    @include s.padding(1);
+    @include cb.content-block;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     &:not(:last-child) {
       border-bottom: 1px solid cv.cv(color-surface-border);
     }
   }
   &__title {
     &::before {
-      content: '<section class="p-home__title" />';
+      @include cl.code-label('<section class="p-home__title" />');
     }
   }
   &__intro {
     &::before {
-      content: '<section class="p-home__intro" />';
+      @include cl.code-label('<section class="p-home__intro" />');
     }
   }
   &__specialties {
+    border-top: 1px solid cv.cv(color-surface-border);
+    @include b.breakpoint-xl {
+      grid-column: 1 / -1;
+    }
     &::before {
-      content: '<section class="p-home__specialties" />';
+      @include cl.code-label('<section class="p-home__specialties" />');
     }
   }
   h1 {
-    @include tf.typeface(heading);
     @include fs.font-size(xxl);
+    margin-bottom: 1rem;
+  }
+  // Tagline under the h1: Michroma, letterspaced, light gray (not amber:
+  // amber means interactive).
+  &__title p.c-display--3 {
+    margin-top: 0.6rem;
+    color: cv.cv(color-text-heading);
+    font-size: 1.1875rem;
+    letter-spacing: 0.32em;
   }
   h2 {
-    display: flex;
-    column-gap: 1rem;
-    &::after {
-      display: block;
-      flex-grow: 1;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 16px,
-        cv.cv(color-surface-stripe) 16px,
-        cv.cv(color-surface-stripe) 24px
-      );
-      content: "";
-    }
+    @include tb.title-bar;
+  }
+  aside h2:first-child,
+  &__specialties h2 {
+    margin-top: 0;
+  }
+  aside p {
+    margin: 1.25rem 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
   }
   aside {
     border-top: 1px solid cv.cv(color-surface-border);
     @include s.margin-top(1);
+    > section {
+      padding: 2.25rem 1.75rem 2rem;
+    }
+    h2 {
+      margin-bottom: 1.25rem;
+    }
     hr {
       border: 0;
       border-top: 1px solid cv.cv(color-surface-border);
       @include s.margin-top(1);
     }
     &::before {
-      content: "<aside />";
+      @include cl.code-label("<aside />");
     }
     @include b.breakpoint-xl {
       margin: 0;
@@ -75,27 +92,46 @@
   }
 }
 
+// Specialties as rows (name | description), not three squeezed columns.
 .p-home-panels {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
   .c-card {
-    @include s.padding(0.25 1);
+    padding: 0.9rem 1rem;
   }
   h3 {
-    @include s.padding-bottom(0.25);
-    border-bottom: 1px solid cv.cv(color-surface-border);
+    @include tf.typeface(heading);
+    margin: 0 0 0.35rem;
+    font-size: 1.0625rem;
+    letter-spacing: 0.06em;
     text-transform: lowercase;
   }
-  @include b.breakpoint-lg {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    flex-direction: row;
-    h3 {
-      @include fs.font-size(xs);
+  p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+  @media (min-width: 40rem) {
+    .c-card {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      column-gap: 1rem;
+      align-items: baseline;
     }
-    p {
-      @include fs.font-size(xxs);
+    h3 {
+      margin: 0;
+    }
+  }
+  // Full frame width: three cards side by side, name above description.
+  @include b.breakpoint-xl {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    .c-card {
+      display: block;
+    }
+    h3 {
+      margin: 0 0 0.5rem;
     }
   }
 }
@@ -103,6 +139,23 @@
 .p-home-featured {
   display: flex;
   flex-direction: column;
+  // Tablet: the aside is full width, so sit the thumbnail beside the
+  // details instead of stretching it ~400px tall.
+  @include b.breakpoint-lg {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    .p-home-featured__thumbnail {
+      flex: 0 0 45%;
+    }
+  }
+  @include b.breakpoint-xl {
+    flex-direction: column;
+    gap: 0;
+    .p-home-featured__thumbnail {
+      flex: 1 0 auto;
+    }
+  }
   &__thumbnail {
     flex: 1 0 auto;
     img {
@@ -112,13 +165,25 @@
   }
   &__metadata {
     flex: 0 1 auto;
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.55;
+    }
   }
 
   h3 {
-    @include s.margin(0.5 0);
+    margin: 0.75rem 0 0;
     @include fs.font-size(l);
     .c-button {
       display: flex;
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.25rem;
+    .c-tag {
+      margin: 0;
     }
   }
 }

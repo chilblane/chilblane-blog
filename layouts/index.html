@@ -3,16 +3,17 @@
     <article>
       <section class="p-home__title c-accent">
         <h1 class="c-display">The design system architect</h1>
+        <p class="c-display c-display--3">Design systems designer</p>
       </section>
       <section class="p-home__intro c-accent">
         <p class="c-lead">
-          I'm <strong>Daniel Singer</strong>, a design technologist and product
-          designer who has built my 15-year career in the intersection between
-          design and front-end engineering. Since the start of the decade I've
-          been focused on design system architecture and implementation,
-          fulfilling the roles of product manager, designer, and engineer.
-          Outside of design systems, my areas of specialty are content
-          management, marketing experiences, and conversion UX.
+          I'm <strong>Daniel Singer</strong>, a design systems designer with 15
+          years of experience working between design and front-end engineering.
+          I've worked on a design system at every company since 2017: Floorplan
+          at Offerpad, Lodestar at Smartsheet, DSPLY at Zonar, the SharePoint
+          Design System at Microsoft, and now Ledger at PNC Bank. I maintain
+          Figma libraries, plan token systems, write documentation, and run
+          governance, and I can build the components in code too.
         </p>
         <p class="c-lead">
           I am very much a process- and system-oriented individual, thorough in
@@ -21,35 +22,11 @@
           consider my adaptability to new environments, projects, and tools my
           most significant strength of all.
         </p>
-      </section>
-      <section class="p-home__specialties c-accent">
-        <h2 class="c-display c-display--3">Specialties</h2>
-        <div class="p-home-panels">
-          <div class="c-card">
-            <h3>Design systems</h3>
-            <p>
-              Collaborated with design, engineering, branding, and product to
-              plan out effective, flexible design systems and tokens, that work
-              across disciplines, along with detailed documentation.
-            </p>
-          </div>
-          <div class="c-card">
-            <h3>UX ideation</h3>
-            <p>
-              Worked with product and other stakeholders to architect new and
-              updated experiences for the user, making decisions based on data
-              and commonly-accepted best practices.
-            </p>
-          </div>
-          <div class="c-card">
-            <h3>Web product design</h3>
-            <p>
-              Designed and built content, marketing, and conversion experiences
-              using tools and languages like Figma, React, Sass, Gatsby, Hugo,
-              Jekyll, and more.
-            </p>
-          </div>
-        </div>
+        <p class="c-lead">
+          Open to design systems designer, design systems engineer, design
+          technologist, and product designer roles. Remote, on-site or hybrid in
+          the Phoenix area, and open to relocation.
+        </p>
       </section>
     </article>
     <aside class="c-accent">
@@ -65,28 +42,19 @@
                 {{ $thumbnail = $featured_image }}
               {{ end }}
               {{ with $thumbnail }}
-                {{ $imageSm := .Resize "320x" }}
-                {{ $imageMd := .Resize "600x" }}
-                {{ $imageLg := .Resize "1200x" }}
-                <img
-                  srcset="
-                    {{ $imageSm.RelPermalink }}  320w,
-                    {{ $imageMd.RelPermalink }}  600w,
-                    {{ $imageLg.RelPermalink }} 1200w
-                  "
-                  src="{{ $imageLg.RelPermalink }}"
-                  alt="{{ $title }}"
-                />
+                {{ partial "responsive-image.html" (dict
+                  "img" .
+                  "alt" $title
+                  "sizes" "(min-width: 60rem) 19rem, (min-width: 40rem) 45vw, 100vw"
+                  "loading" "eager"
+                  )
+                }}
               {{ end }}
             </div>
             <div class="p-home-featured__metadata">
               <span class="c-tag">{{- .Params.project_year -}}</span>
               <h3>
-                <a
-                  class="c-button c-button--primary"
-                  href="{{ .Permalink }}"
-                  data-button-label="{{- $title -}}"
-                >
+                <a class="c-button c-button--primary" href="{{ .Permalink }}">
                   <span class="c-button__label">{{- $title -}}</span>
                 </a>
               </h3>
@@ -108,35 +76,36 @@
             </div>
           </div>
         {{ end }}
-        <hr />
-        <h2 class="c-display c-display--3">Current Project</h2>
-        <div class="p-home-featured">
-          <div class="p-home-featured__metadata">
-            <h3>
-              <a
-                class="c-button c-button--primary"
-                href="https://compendium.dnas.is/"
-                data-button-label="Warcraft Race/Class Compendium"
-              >
-                <span class="c-button__label"
-                  >Warcraft Race/Class Compendium</span
-                >
-              </a>
-            </h3>
-            <p class="text-base">
-              A Hugo/Tailwind/Markdown project to document all possible playable
-              race and class combinations in the MMO <em>World of Warcraft</em>.
-              Currently paused due to needing to write all the pages.
-            </p>
-            <div class="p-home-featured__tags">
-              <span class="c-tag">content strategy</span>
-              <span class="c-tag">information architecture</span>
-              <span class="c-tag">hugo</span>
-              <span class="c-tag">tailwind css</span>
-            </div>
-          </div>
-        </div>
       </section>
     </aside>
+    <section class="p-home__specialties c-accent">
+      <h2 class="c-display c-display--3">Specialties</h2>
+      <div class="p-home-panels">
+        <div class="c-card">
+          <h3>Design systems</h3>
+          <p>
+            Collaborated with design, engineering, branding, and product to plan
+            out effective, flexible design systems and tokens, that work across
+            disciplines, along with detailed documentation.
+          </p>
+        </div>
+        <div class="c-card">
+          <h3>UX ideation</h3>
+          <p>
+            Worked with product and other stakeholders to architect new and
+            updated experiences for the user, making decisions based on data and
+            commonly-accepted best practices.
+          </p>
+        </div>
+        <div class="c-card">
+          <h3>Web product design</h3>
+          <p>
+            Designed and built content, marketing, and conversion experiences
+            using tools and languages like Figma, React, Sass, Gatsby, Hugo,
+            Jekyll, and more.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 {{ end }}

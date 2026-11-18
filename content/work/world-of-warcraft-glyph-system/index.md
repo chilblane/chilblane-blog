@@ -2,6 +2,7 @@
 title: 'World of Warcraft Glyphs'
 description: 'A history of cosmetic customization and the Glyphs system in World of Warcraft, and my ideas on how to improve the gameplay and user interface for glyphs'
 project_year: 2020
+side_project: true
 knowledge: ['unsolicited redesign', 'systems design', 'user experience']
 skills: ['figma']
 featured_image: featured-image.jpg
@@ -19,7 +20,7 @@ Massively multiplayer online role-playing games are a rich video game genre that
 
 - **Cooperative play** &mdash; while you can quest together with friends or strangers, the endgame experience often focuses on self-contained "dungeons" where anywhere from 3 to 40 players or more have to work together to overcome challenges, usually difficult, scripted boss encounters. The culture that emerged over the 20+ years of this "raiding" experience, including guild management, competition, and so on, is really interesting and could fill several volumes. I'm not here to talk about it.
 
-{{< img name="raid-screenshot.jpg" alt="Screenshot of a World of Warcraft raid boss fight, which a variety of different user interface elements visible" caption="(Discussing raiding user interfaces could also fill several volumes.)" >}}
+{{< img name="raid-screenshot.jpg" alt="Screenshot of a World of Warcraft raid boss fight, with a variety of different user interface elements visible" caption="(Discussing raiding user interfaces could also fill several volumes.)" >}}
 
 - **Competitive play** &mdash; while there is competition between raiding guilds, I am specifically referring to player-versus-player gameplay where groups prioritize optimal character builds and team compositions. This gameplay loop is comparable to [MOBA games](https://en.wikipedia.org/wiki/Multiplayer_online_battle_arena) which have generally superseded MMO PvP, especially in esports.
 
@@ -33,7 +34,7 @@ Massively multiplayer online role-playing games are a rich video game genre that
 
 Good news! They're working on it!
 
-Okay, let me clarify. They have been. Once up a time, you would get a new piece of gear for your character, and it would be an upgrade. Eventually, you end up [looking like a clown](https://wow.gamepedia.com/Clownsuit).
+Okay, let me clarify. They have been. Once upon a time, you would get a new piece of gear for your character, and it would be an upgrade. Eventually, you end up [looking like a clown](https://wow.gamepedia.com/Clownsuit).
 
 {{< img name="clownsuit.jpg" alt="Screenshot of a World of Warcraft character wearing mismatching pieces of gear in such a way they look comical" caption="Example of a clownsuit" >}}
 
@@ -43,7 +44,7 @@ In the beginning, you had to go to an NPC and pay gold to replace these appearan
 
 Finally, the transmogrification collection itself had a nice little UI added, called the Appearances tab, that let people browse the "catalog" and find appearances they owned or had yet to collect. All of these appearances were shared account-wide, as well, and generally restricted by what character class the player had.
 
-{{< img name="transmogrify.jpg" alt="Screenshot of the Transmogify user interface in World of Warcraft" caption="The Transmogrify user interface" >}}
+{{< img name="transmogrify.jpg" alt="Screenshot of the Transmogrify user interface in World of Warcraft" caption="The Transmogrify user interface" >}}
 
 Overall, it took about a decade, but the process of customizing your gear in WoW has evolved considerably. Even with the latest expansion in development, Shadowlands, improvements are still being made to fix weird limitations and other issues with the system. So if you like armoring your character up completely, you're all set!
 
@@ -63,7 +64,7 @@ The expansion introduced a new profession (a crafting job for characters, indepe
 
 {{< img name="legacy-glyphs.jpg" alt="Screenshot of an old version of the Glyphs user interface in World of Warcraft" caption="Old glyphs user interface" >}}
 
-These cosmetic changes were usually minor visual changes to the spell. For example, the warrior class has the ability to charge into a foe, and a glyph can be added that a trail of fire remains behind. For druids, glyphs were how they were able to change their animal forms, such as when they take flight or travel underwater.
+These cosmetic changes were usually minor visual changes to the spell. For example, the warrior class has the ability to charge into a foe, and a glyph can be added so that a trail of fire remains behind. For druids, glyphs were how they were able to change their animal forms, such as when they take flight or travel underwater.
 
 Over time, the glyph system became less and less of a focus in the game, as Blizzard wanted to move these power-customization traits away from a crafting profession and into expansion-based systems. In the Legion expansion, traits that customized player power came from the character's Artifact weapon, and upgrading and enhancing those traits came from various sources in the game. The Glyph system was entirely gutted; the interface above was actually removed, and the remaining cosmetic glyphs now had to be applied directly to the spell in the Spellbook interface. Here's an example of a Spellbook for the warlock class, with the Banish and Create Soulwell spells affected by glyphs (the pink corner icon).
 
@@ -71,7 +72,7 @@ Over time, the glyph system became less and less of a focus in the game, as Bliz
 
 Inscription still had plenty of cosmetic glyphs to craft, but the profession received very few new ones to make in Legion, and even fewer in the latest released expansion, Battle for Azeroth. Instead, scribes were given other new types of items to craft.
 
-Today, at the end of the Battle of Azeroth cycle, on the eve of the Shadowlands expansion launch, customizing the look of your abilities and spells is not in a good place.
+Today, at the end of the Battle for Azeroth cycle, on the eve of the Shadowlands expansion launch, customizing the look of your abilities and spells is not in a good place.
 
 - With the Glyph interface removed, many players believe glyphs were removed entirely from the game, and there is no user interface or tutorial that explains how to add glyphs to the Spellbook to apply them.
 
@@ -97,7 +98,7 @@ World of Warcraft also has a cash shop, but as a subscription-required game (\$1
 
 {{< img name="blizzard-shop.png" alt="Screenshot of the World of Warcraft cosmetics shop, with mounts available for sale" caption="Mounts for sale in the World of Warcraft shop" >}}
 
-You will also recall I mentioned earlier that in Shadowlands, physical character customization is being overhauled. The special form appearances druids have been earning, both from glyphs and well as other rewards, will be available when creating a new druid, or from the in-game barber shop for existing characters.
+You will also recall I mentioned earlier that in Shadowlands, physical character customization is being overhauled. The special form appearances druids have been earning, both from glyphs as well as other rewards, will be available when creating a new druid, or from the in-game barber shop for existing characters.
 
 So let's mix this all together.
 
@@ -111,7 +112,7 @@ How would a player browse glyphs? Taking a page from the Spellbook, and from Pat
 
 With this system we can also now allow a glyph's effect to apply to multiple spells and abilities, and mix and match, much like Path of Exile. For example, for warriors, there are multiple "shout" abilities, and multiple glyphs that can apply different effects when you shout, like terrifying nearby critters or briefly levitating you in the air. We could apply one of these effects to all of the shout abilities or use multiple ones.
 
-How would a player enable and disable glyphs? Probably by selecting one of those glyphs in that popout menu. But this is where it gets tricky. We are going to assume that players can only have one cosmetic appearance on at a time per ability. Your Dragon Roar ability can only terrify critters or levitate you in the air, it cannot do both simultaneously. But there a couple of glyph "types" I've identified that will play by different rules, and for that, we need to talk about racial and class flavor...
+How would a player enable and disable glyphs? Probably by selecting one of those glyphs in that popout menu. But this is where it gets tricky. We are going to assume that players can only have one cosmetic appearance on at a time per ability. Your Dragon Roar ability can only terrify critters or levitate you in the air, it cannot do both simultaneously. But there are a couple of glyph "types" I've identified that will play by different rules, and for that, we need to talk about racial and class flavor...
 
 ### Customizing class and racial identity
 
@@ -127,7 +128,7 @@ My proposal is a new glyph type which I call "epigraphs". Epigraphs would be a s
 
 ### Appearance glyphs
 
-The other new glyph type would be appearance glyphs. These glyphs would, much like epigraphs, not be so much applicable to any specific combat ability as it would be changing the character's model or appearance. The druid forms are an excellent example of this. You could collect all of the available glyphs to change your druid's aquatic form (dolphin, orca, etc), see those glyphs listed in the Glyphs tab, and then go to the barber shop to select them. But it doesn't just apply to druids! There are other classes with customizable appearances (that aren't tied to a specific ability) that could benefit immediately. Shaman characters could have customizable totem sets instead of their race-based default, and potentially their ghost form (which defaults to a wolf) could be set at the barber shop as well. Paladins have had a tricky time with their racial mounts: each race has a default mount they utilize for spells like Divine Steed, but the [existing methods](https://wow.gamepedia.com/Golden_Charger%27s_Bridle) for customizing that mount to be something else has been pretty clunky to obtain and use. Ultimately, this glyph type will be the least common and I'd expect most classes will have zero use for it.
+The other new glyph type would be appearance glyphs. These glyphs would, much like epigraphs, not be so much applicable to any specific combat ability as it would be changing the character's model or appearance. The druid forms are an excellent example of this. You could collect all of the available glyphs to change your druid's aquatic form (dolphin, orca, etc), see those glyphs listed in the Glyphs tab, and then go to the barber shop to select them. But it doesn't just apply to druids! There are other classes with customizable appearances (that aren't tied to a specific ability) that could benefit immediately. Shaman characters could have customizable totem sets instead of their race-based default, and potentially their ghost form (which defaults to a wolf) could be set at the barber shop as well. Paladins have had a tricky time with their racial mounts: each race has a default mount they utilize for spells like Divine Steed, but the [existing methods](https://wow.gamepedia.com/Golden_Charger%27s_Bridle) for customizing that mount to be something else have been pretty clunky to obtain and use. Ultimately, this glyph type will be the least common and I'd expect most classes will have zero use for it.
 
 ### Obtaining glyphs
 
@@ -137,7 +138,7 @@ I would argue no. Many crafting professions already have, in the past, had oppor
 
 As for other sources, we can again look to the other cosmetics for precedent. Over the past several years, pets and weapon illusions have been added to the list of possible dropped rewards when players kill bosses in both current and older raid and dungeon content. Glyphs could be added to these "loot tables" as well, encouraging players to continue to return to that content for a chance to collect those rewards.
 
-As previously mentioned, special questlines could be added for obtaining epigraphs, that help illustrate the story significance of the epigraphs and what they mean for the player's character. Because glyphs are inherently unique to the player's class, they would be hard to sprinkle into quest rewards in leveling content as we're seen happen with some pets and toys.
+As previously mentioned, special questlines could be added for obtaining epigraphs, that help illustrate the story significance of the epigraphs and what they mean for the player's character. Because glyphs are inherently unique to the player's class, they would be hard to sprinkle into quest rewards in leveling content as we've seen happen with some pets and toys.
 
 Certain achievements in game have cosmetic rewards, and this can be applied to glyphs, as well. Again, this has to be done carefully as unlike other rewards, glyphs don't apply universally to all classes.
 
@@ -147,11 +148,11 @@ Finally, we could see some glyphs added to the cash shop. It's my opinion that p
 
 A couple minor notes on glyphs. Historically, Blizzard has been particularly careful about keeping abilities "recognizable". It is important that players be able to see their allies' and opponents' spells and abilities and react accordingly. We shouldn't have glyphs change the appearance so much that the player doesn't recognize them.
 
-Additionally, the overhauls to the glyph systems means that we can invest in improving their effects significantly, but we'll want to make sure that client performance isn't impacted.
+Additionally, the overhauls to the glyph systems mean that we can invest in improving their effects significantly, but we'll want to make sure that client performance isn't impacted.
 
 ## The output
 
-So that was my line of thinking around the changes to the glyph system. I had been workshopping the idea in my head for months before I decided to publish something about it. I had prior experience with [posting work to the WoW subreddit](/blog/armory-redesign/), and decided this would be a great way to spread the word and get feedback.
+So that was my line of thinking around the changes to the glyph system. I had been workshopping the idea in my head for months before I decided to publish something about it. I had prior experience with [posting work to the WoW subreddit](/work/armory-redesign/), and decided this would be a great way to spread the word and get feedback.
 
 First, I wrote up a quick thread discussing the current issues with the system. I didn't expect this thread to do well as it was a discussion post and I wasn't bringing my own imagery to the table. The lack of success of the post motivated me to work on something more substantial. After brainstorming, I decided the most impactful visual would be my proposed new Collections tab, as polished as I could possibly make it, potentially to make some readers think it was real.
 

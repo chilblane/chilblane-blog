@@ -1,47 +1,26 @@
 {{ define "main" }}
+  {{ $pages := (.Pages.ByParam "project_year").Reverse }}
   <main class="p-list">
     <header class="c-accent">
       <h1 class="c-display c-display--1">Selected work</h1>
     </header>
+    <header class="c-accent">
+      <h2 class="c-display c-display--2">Client work</h2>
+    </header>
     <section class="p-list__grid">
-      {{ range (.Pages.ByParam "project_year").Reverse }}
-        <div class="p-list__item c-card c-accent">
-          {{ $title := .Title }}
-          {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
-          {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
-          {{ if $featured_image }}
-            {{ $thumbnail = $featured_image }}
-          {{ end }}
-          {{ with $thumbnail }}
-            <img src="{{ .Permalink }}" alt="{{ $title }}" />
-          {{ end }}
-          <span class="c-tag">{{- .Params.project_year -}}</span>
-          <h3>
-            <a
-              class="c-button"
-              href="{{ .Permalink }}"
-              data-button-label="{{- $title -}}"
-            >
-              <span class="c-button__label">{{- $title -}}</span>
-            </a>
-          </h3>
-          <p>{{- .Description -}}</p>
-          <div class="p-list__tags">
-            {{ $knowledge := "knowledge" }}
-            {{ $skills := "skills" }}
-            {{ with .Param $knowledge }}
-              {{ range $index, $tag := . }}
-                <span class="c-tag">{{ $tag }}</span>
-              {{- end -}}
-            {{- end -}}
-            {{ with .Param $skills }}
-              {{ range $index, $tag := . }}
-                <span class="c-tag">{{ $tag }}</span>
-              {{- end -}}
-            {{- end -}}
-          </div>
-        </div>
+      {{ range where $pages "Params.side_project" "!=" true }}
+        {{ partial "work-card.html" . }}
       {{- end -}}
     </section>
+    {{ with where $pages "Params.side_project" true }}
+      <header class="c-accent">
+        <h2 class="c-display c-display--2">Side projects</h2>
+      </header>
+      <section class="p-list__grid">
+        {{ range . }}
+          {{ partial "work-card.html" . }}
+        {{- end -}}
+      </section>
+    {{ end }}
   </main>
 {{ end }}

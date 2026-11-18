@@ -1,0 +1,38 @@
+{{/* One portfolio card. Context: a work page. */}}
+<div class="p-list__item c-card c-accent">
+  {{ $title := .Title }}
+  {{ $thumbnail :=resources.Get "images/placeholder.jpg" }}
+  {{ $featured_image := (.Resources.ByType "image").GetMatch "featured-image*" }}
+  {{ if $featured_image }}
+    {{ $thumbnail = $featured_image }}
+  {{ end }}
+  {{ with $thumbnail }}
+    {{ partial "responsive-image.html" (dict
+      "img" .
+      "alt" $title
+      "sizes" "(min-width: 60rem) 29rem, 100vw"
+      )
+    }}
+  {{ end }}
+  <span class="c-tag">{{- .Params.project_year -}}</span>
+  <h3>
+    <a class="c-button" href="{{ .Permalink }}">
+      <span class="c-button__label">{{- $title -}}</span>
+    </a>
+  </h3>
+  <p>{{- .Description -}}</p>
+  <div class="p-list__tags">
+    {{ $knowledge := "knowledge" }}
+    {{ $skills := "skills" }}
+    {{ with .Param $knowledge }}
+      {{ range $index, $tag := . }}
+        <span class="c-tag">{{ $tag }}</span>
+      {{- end -}}
+    {{- end -}}
+    {{ with .Param $skills }}
+      {{ range $index, $tag := . }}
+        <span class="c-tag">{{ $tag }}</span>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</div>

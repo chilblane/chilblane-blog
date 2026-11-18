@@ -1,0 +1,181 @@
+@use "../settings/typography" as t;
+
+// Print styles. Any page prints clean, and /resume/ prints as a plain
+// one-column resume (npm run pdf turns it into the downloadable PDF).
+
+.u-print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+
+  :root {
+    --r12-color-canvas: #fff;
+    --r12-color-surface: #fff;
+    --r12-color-text: #000;
+    --r12-color-text-heading: #000;
+    --r12-color-text-interactive-primary: #000;
+    --r12-color-surface-border: #999;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .l-layout {
+    backdrop-filter: none;
+    margin: 0;
+    box-shadow: none;
+    border: 0;
+    background: none;
+    max-width: none;
+  }
+
+  .l-siteheader,
+  .l-sitefooter,
+  .c-button,
+  .u-print-hide {
+    display: none !important;
+  }
+
+  .u-print-only {
+    display: block;
+  }
+
+  // the "<section />" code labels
+  .c-accent::before {
+    content: none !important;
+  }
+
+  // the site lowercases headings, buttons, and tags; print uses real case
+  * {
+    text-transform: none !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  // tags print as a plain comma-separated list
+  ul:has(> .c-tag) {
+    margin: 0.15rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .c-tag {
+    display: inline;
+    clip-path: none;
+    margin: 0;
+    background: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: t.$font-body;
+    letter-spacing: 0;
+    &:not(:last-child)::after {
+      content: ", ";
+    }
+  }
+
+  // resume
+  .p-resume {
+    padding: 0;
+    article {
+      max-width: none;
+    }
+    header {
+      display: none;
+    }
+    section {
+      border: 0 !important;
+      padding: 0;
+    }
+    // undo the screen title bar: plain heading with a rule under it
+    section > h2 {
+      display: block;
+      margin: 0.9rem 0 0.4rem;
+      border-top: 0;
+      border-bottom: 1px solid #000;
+      background: none;
+      padding: 0 0 0.15rem;
+      font-weight: 700;
+      font-size: 14pt;
+      font-family: t.$font-heading;
+      font-size-adjust: none;
+      letter-spacing: 0;
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+    h3 {
+      margin: 0.5rem 0 0.1rem;
+      font-size: 11.5pt;
+    }
+    p,
+    li {
+      margin: 0.1rem 0;
+    }
+    ul:not(:has(> .c-tag)) {
+      margin: 0.2rem 0;
+      padding-left: 1.1rem;
+    }
+  }
+
+  .p-experience {
+    > div {
+      margin-bottom: 0.6rem !important;
+    }
+    // a job may continue on the next page, but never splits its header
+    // from its first bullets, or a bullet in half
+    .p-experience__header,
+    h3 {
+      break-after: avoid;
+      break-inside: avoid;
+    }
+    li {
+      break-inside: avoid;
+    }
+    // dates and location on one line
+    .p-experience__header p {
+      display: inline;
+    }
+    .p-experience__header p + p::before {
+      content: " \00B7  ";
+    }
+    h3 {
+      font-size: 13pt !important;
+    }
+    li:not(.c-tag),
+    .p-experience__header p {
+      margin: 0.1rem 0;
+      font-size: inherit;
+      line-height: inherit;
+    }
+    > div > ul:has(> .c-tag) {
+      color: #333;
+      font-size: 9pt;
+    }
+  }
+
+  .p-resume__print-header {
+    margin-bottom: 0.4rem;
+    .p-resume__name {
+      margin: 0;
+      font-weight: 700;
+      font-size: 24pt;
+      line-height: 1.1;
+      font-family: t.$font-heading;
+    }
+    p {
+      margin: 0.1rem 0;
+    }
+  }
+}

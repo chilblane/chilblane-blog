@@ -14,7 +14,7 @@ knowledge:
 skills: ['css', 'figma', 'react']
 ---
 
-The first project I worked on for the request experience was a redesign of the offer view with my product manager. We sought to transform a mobile-unfriendly, one-page experience into more of a guided tour with additional helpful information for the prospective seller. After further iterations on these designs, I worked with our senior front-end developer to bring it into fruition as the company's first React app.
+The first project I worked on for the request experience was a redesign of the offer view with my product manager. We sought to transform a mobile-unfriendly, one-page experience into more of a guided tour with additional helpful information for the prospective seller. After further iterations on these designs, I worked with our senior front-end developer to bring it to fruition as the company's first React app.
 
 Desktop
 
@@ -32,7 +32,7 @@ Here are some [Figma mockups](https://www.figma.com/file/myKOsbnzIRtzw4mCd9LTdN/
 
 ## Request 3.0 proposal
 
-Later on I was tasked with planning a significant overhaul of the request form experience. The goal of the project was to accommodate for an expanded line of services by the company, to account for pre-populating data of the user's home from public record, and to improve testing and UX of the UI itself. Alongside these charts and wireframes was a detailed proposal document I wrote. After finishing my work, various tech team leads and product managers convened to help estimate the various parts of the project if it were to be implemented. While the project ultimately was shelved for the future, it has still be a useful reference for other Offerpad projects I've worked on.
+Later on I was tasked with planning a significant overhaul of the request form experience. The goal of the project was to accommodate for an expanded line of services by the company, to account for pre-populating data of the user's home from public record, and to improve testing and UX of the UI itself. Alongside these charts and wireframes was a detailed proposal document I wrote. After finishing my work, various tech team leads and product managers convened to help estimate the various parts of the project if it were to be implemented. While the project ultimately was shelved for the future, it has still been a useful reference for other Offerpad projects I've worked on.
 
 (The proposal document is available to view upon request.) [Figma wireframes link](https://www.figma.com/file/dZ5Tm3NWAf8K36dDksZBNb/new-request-form?node-id=189%253A0)
 

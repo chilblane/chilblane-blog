@@ -1,8 +1,9 @@
 ---
 title: 'Among Us Companion App'
-description: 'UX designer, React UI development, and product direction on a popular (and controversial) companion app for the popular online game.'
+description: 'UX design, React UI development, and product direction on a popular (and controversial) companion app for the popular online game.'
 project_url: https://kedyn.github.io/fusliez-notes/
 project_year: 2020
+side_project: true
 knowledge: ['product management', 'user experience', 'ux engineering']
 skills: ['css', 'github', 'react']
 featured_image: featured-image.png
@@ -10,11 +11,11 @@ featured_image: featured-image.png
 
 In late summer of 2020, the gaming trends on Twitch were changing.
 
-Due to quarantines from the COVID-19 pandemic, streamers had become increasing isolated and sought any opportunity to socialize in-game. Options were somewhat limited, as it didn't feel like there was many new games in light of studios' postponements. Streamer groups relied on casual, calming games like Minecraft or Animal Crossing: New Horizons to collaborate together, or organized squads to play Valorant, a new shooter by Riot Games.
+Due to quarantines from the COVID-19 pandemic, streamers had become increasingly isolated and sought any opportunity to socialize in-game. Options were somewhat limited, as it didn't feel like there were many new games in light of studios' postponements. Streamer groups relied on casual, calming games like Minecraft or Animal Crossing: New Horizons to collaborate together, or organized squads to play Valorant, a new shooter by Riot Games.
 
 Then, in August, two events happened that took advantage of these shifting trends.
 
-First, Fall Guys, which could be best described as a Mario Party-like minigame collection turned battle royale, was released. The game featured a squad of up to 4 players trying to get through obstacle courses and sports until one player was left, the crown winner. The game was a [huge hit on Twitch and other streaming services](https://www.theverge.com/2020/9/23/21452358/fall-guys-among-us-twitch-facebook-gaming); streamers enjoyed a new way to play games which their friends, and the in-game cosmetic shop and [interesting lore](https://twitter.com/FallGuysGame/status/1308853560411656197) made the game very meme-able on Twitter and Reddit.
+First, Fall Guys, which could be best described as a Mario Party-like minigame collection turned battle royale, was released. The game featured a squad of up to 4 players trying to get through obstacle courses and sports until one player was left, the crown winner. The game was a [huge hit on Twitch and other streaming services](https://www.theverge.com/2020/9/23/21452358/fall-guys-among-us-twitch-facebook-gaming); streamers enjoyed a new way to play games with their friends, and the in-game cosmetic shop and [interesting lore](https://twitter.com/FallGuysGame/status/1308853560411656197) made the game very meme-able on Twitter and Reddit.
 
 Meanwhile, a popular streamer, Sodapoppin, who was already bored with games to stream, found a little-known [social deduction](https://en.wikipedia.org/wiki/Social_deduction_game) game and decided to play it with his group of streamer friends. The game, Among Us, was an immediate content hit on the Twitch site, and immediately other streamers began to pick up the game. For much of September, Twitch was full of Fall Guys and Among Us streams. Eventually, the novelty of Fall Guys fell off, but Among Us continued to grow.
 
@@ -30,7 +31,7 @@ Among Us itself became a [hugely popular game](https://www.nytimes.com/2020/10/1
 
 Among Us can be a complicated game to play. The rules are simple: a group of up to 10 people are working to perform tasks in a ship, space station, or colony. Secretly, 1-3 players are impostors: they work to undermine the other crew mates, sabotaging systems and killing the others in isolation. When a body is discovered, the group convenes at the meeting table to determine who might be the impostor and kick them out the airlock.
 
-That means the game is deeply rooted in lies and deception, but also observation and critical thinking. An innocent player, while performing tasks, has to keep tabs on other players around them, watching who groups up with who, who clears themselves as innocent, and who might be faking tasks. For some people, it can be a lot to track of.
+That means the game is deeply rooted in lies and deception, but also observation and critical thinking. An innocent player, while performing tasks, has to keep tabs on other players around them, watching who groups up with who, who clears themselves as innocent, and who might be faking tasks. For some people, it can be a lot to keep track of.
 
 It's not uncommon for any strategy game to take notes to help organize your thoughts. For the streamer Fuslie, that's exactly what she did as she began playing and streaming the game on her Twitch channel.
 
@@ -44,7 +45,7 @@ The developer (sykO) published a [GitHub repo](https://github.com/Kedyn/fusliez-
 
 The app continued to evolve as the developers added new functionality and updated the design, while [I started thinking](https://github.com/Kedyn/fusliez-notes/issues/36) about the future of the app and who would use it.
 
-{{< img name="github-issue.png" alt="Screenshot of a Github issue related to the project" caption="An issue I opened to consider the users of the app" >}}
+{{< img name="github-issue.png" alt="Screenshot of a GitHub issue related to the project" caption="An issue I opened to consider the users of the app" >}}
 
 In mid-September, I had not yet understood the popularity the game would have, especially among people playing the game directly on their phones.
 
@@ -64,7 +65,7 @@ The functionality of the app was often debated. The feedback we gathered from us
 
 {{< img name="version-prior-redesign.png" alt="Screenshot of the app prior to being redesigned" caption="The app version just prior to my redesign" >}}
 
-We continued to receive feedback on the app, asking for a lot of additional functionality, some of which wasn't feasible. We also thought about what features would possibly give too much of an advantage to the user. One example was allowing users to track player positions on the map. As of this writing, we currently have that functionality, but that could change in the future. When Fuslie posted the app to Twitter, there were a lot of negative replies calling the entire app a cheat, which added to the existing discourse between streamers about much Among Us is taken seriously as a competitive or casual game.
+We continued to receive feedback on the app, asking for a lot of additional functionality, some of which wasn't feasible. We also thought about what features would possibly give too much of an advantage to the user. One example was allowing users to track player positions on the map. As of this writing, we currently have that functionality, but that could change in the future. When Fuslie posted the app to Twitter, there were a lot of negative replies calling the entire app a cheat, which added to the existing discourse between streamers about how much Among Us is taken seriously as a competitive or casual game.
 
 We also wanted to create a mobile layout so the app was effortless to use as a web app on someone's phone. That was an interesting challenge to overcome in the React codebase, and I relied on my past history with React to give the other devs advice on how to solve it.
 

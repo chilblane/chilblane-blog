@@ -4,75 +4,73 @@
 @use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
+@use "../mixins/code-label" as cl;
+@use "../mixins/title-bar" as tb;
 
 .p-single {
   @include s.padding(1);
+
+  // Figures and galleries break out of the text column into whatever room
+  // the page has, up to the frame width. 100cqw is .p-single's content box,
+  // so this never overflows (the old fixed 10rem did between 640 and 960px).
+  container-type: inline-size;
   article {
     margin-right: auto;
     margin-left: auto;
     max-width: cv.cv(sizes-content-width);
   }
   &::before {
-    content: "<article />";
+    @include cl.code-label("<article />");
   }
   header {
-    @include s.padding-top(1);
-    @include s.padding-bottom(1);
+    @include cb.content-block;
     border-bottom: 1px solid cv.cv(color-surface-border);
     h1 {
       @include s.margin(0.5 0);
     }
     &::before {
       left: 0;
-      content: "<header />";
+      @include cl.code-label("<header />");
     }
   }
   section {
-    @include s.padding-top(1);
-    @include s.padding-bottom(1);
+    @include cb.content-block;
     &::before {
       left: 0;
-      content: "<section />";
+      @include cl.code-label("<section />");
     }
   }
 
-  h2 {
-    @include tf.typeface(heading);
-    @include fs.font-size(xxl);
-    @include s.margin-top(2);
-    display: flex;
-    column-gap: 1rem;
-    line-height: 1;
-    text-transform: lowercase;
-    &:first-child {
-      @include s.margin-top(1);
-    }
-    &::after {
-      display: block;
-      flex-grow: 1;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 16px,
-        cv.cv(color-surface-stripe) 16px,
-        cv.cv(color-surface-stripe) 24px
-      );
-      content: "";
-    }
+  section h2 {
+    @include tb.title-bar;
+  }
+  section h3 {
+    font-size: 1.1875rem;
+    letter-spacing: 0;
+  }
+  section p,
+  section li {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  article > header p {
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+  .c-figure,
+  .c-gallery {
+    margin-inline: calc(
+      -1 *
+        clamp(
+          0px,
+          (100cqw - #{cv.cv(sizes-content-width)}) / 2,
+          (#{cv.cv(sizes-layout-width)} - #{cv.cv(sizes-content-width)}) / 2
+        )
+    );
   }
 
   @include b.breakpoint-lg {
-    .c-figure,
-    .gallery-wrapper {
-      margin-right: min(
-        -1.5rem,
-        (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2
-      );
-      margin-left: min(
-        -1.5em,
-        (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2
-      );
-    }
     .c-figure {
       img {
         max-height: 60rem;
