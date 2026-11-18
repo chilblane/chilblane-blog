@@ -1,10 +1,12 @@
+@use "../settings/typography" as t;
 @use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
 
 .c-display {
-  @include tf.typeface(heading);
+  @include tf.typeface(display);
+  font-size-adjust: t.$font-display-size-adjust;
   line-height: 1;
   text-transform: lowercase;
   &--1 {
@@ -20,6 +22,6 @@
 }
 
 .c-lead {
-  @include fs.font-size(s);
-  line-height: 1.5;
+  font-size: 1.125rem;
+  line-height: 1.6;
 }

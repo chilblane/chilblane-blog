@@ -17,7 +17,7 @@
   text-transform: lowercase;
   > :first-child {
     @include tf.typeface(accent);
-    @include fs.font-size(xxxs);
+    font-size: 0.6875rem;
     @include s.margin-left(1);
   }
   &::before {

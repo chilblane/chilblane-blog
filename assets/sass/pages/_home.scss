@@ -7,6 +7,7 @@
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
 @use "../mixins/code-label" as cl;
+@use "../mixins/title-bar" as tb;
 
 .p-home {
   @include b.breakpoint-xl {
@@ -38,24 +39,26 @@
     }
   }
   h1 {
-    @include tf.typeface(heading);
     @include fs.font-size(xxl);
   }
+  // Tagline under the h1: Michroma, letterspaced, light gray (not amber:
+  // amber means interactive).
+  &__title p.c-display--3 {
+    margin-top: 0.6rem;
+    color: cv.cv(color-text-heading);
+    font-size: 1.1875rem;
+    letter-spacing: 0.32em;
+  }
   h2 {
-    display: flex;
-    column-gap: 1rem;
-    &::after {
-      display: block;
-      flex-grow: 1;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 16px,
-        cv.cv(color-surface-stripe) 16px,
-        cv.cv(color-surface-stripe) 24px
-      );
-      content: "";
-    }
+    @include tb.title-bar;
+  }
+  aside h2:first-child,
+  &__specialties h2 {
+    margin-top: 0;
+  }
+  aside p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
   }
   aside {
     border-top: 1px solid cv.cv(color-surface-border);
@@ -76,27 +79,35 @@
   }
 }
 
+// Specialties as rows (name | description), not three squeezed columns.
 .p-home-panels {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
   .c-card {
-    @include s.padding(0.25 1);
+    padding: 0.9rem 1rem;
   }
   h3 {
-    @include s.padding-bottom(0.25);
-    border-bottom: 1px solid cv.cv(color-surface-border);
+    @include tf.typeface(heading);
+    margin: 0 0 0.35rem;
+    font-size: 1.0625rem;
+    letter-spacing: 0.06em;
     text-transform: lowercase;
   }
-  @include b.breakpoint-lg {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    flex-direction: row;
-    h3 {
-      @include fs.font-size(xs);
+  p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+  @media (min-width: 40rem) {
+    .c-card {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      column-gap: 1rem;
+      align-items: baseline;
     }
-    p {
-      @include fs.font-size(xxs);
+    h3 {
+      margin: 0;
     }
   }
 }
@@ -113,6 +124,10 @@
   }
   &__metadata {
     flex: 0 1 auto;
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.55;
+    }
   }
 
   h3 {

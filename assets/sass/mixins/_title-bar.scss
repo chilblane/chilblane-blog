@@ -1,0 +1,46 @@
+@use "../settings/typography" as t;
+@use "../typey/mixins/typeface" as tf;
+@use "cssvars" as cv;
+@use "code-label" as cl;
+
+// Panel title bar (2Advanced "FEATURE / SUB.DATA"): Michroma label, blue
+// » glyph, beveled translucent bar, blue dot-grid fill to the right edge.
+// Contrast: keep color-titlebar-fill at or under 5.5% white.
+@mixin title-bar {
+  @include tf.typeface(display);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 2.25rem 0 1rem;
+  border-top: 1px solid cv.cv(color-titlebar-highlight);
+  border-bottom: 1px solid cv.cv(color-titlebar-shadow);
+  background: cv.cv(color-titlebar-fill);
+  padding: 0.3rem 0.5rem 0.25rem;
+  color: cv.cv(color-text-heading);
+  font-size: 1.0625rem;
+  font-size-adjust: t.$font-display-size-adjust;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  &::before {
+    @include tf.typeface(heading);
+    @include cl.code-label("\00BB");
+    position: static;
+    opacity: 1;
+    color: cv.cv(color-chrome-glyph);
+    font-size: 1.125rem;
+    font-size-adjust: none;
+    letter-spacing: 0;
+  }
+  &::after {
+    flex: 1 1 auto;
+    align-self: stretch;
+    background-image: radial-gradient(
+      cv.cv(color-chrome-dots) 1px,
+      transparent 1.5px
+    );
+    background-size: 4px 4px;
+    min-height: 12px;
+    content: "";
+  }
+}

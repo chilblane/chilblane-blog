@@ -20,8 +20,9 @@
   }
   &__far {
     @include s.padding(0 1);
-    @include tf.typeface(heading);
+    @include tf.typeface(display);
     @include fs.font-size(l);
+    font-size-adjust: $font-display-size-adjust;
     display: flex;
     flex-direction: column;
     justify-content: center;

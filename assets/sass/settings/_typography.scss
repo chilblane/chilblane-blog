@@ -10,9 +10,22 @@ $font-monospace:
   "Roboto Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
   monospace;
 
-$font-body: join("Verdana", $font-system, comma);
-$font-heading: join("Rajdhani", $font-system, comma);
-$font-accent: join("Silkscreen", $font-system, comma);
+// Locked 2026-11-17 (design-direction.md): Michroma = display layer
+// (wordmark, h1, tagline, title bars); Atkinson Hyperlegible Next = reading
+// text, bold for h3/nav/buttons; Atkinson Hyperlegible Mono = tags, year
+// chips, code labels, footer.
+$font-body: join(("Atkinson Hyperlegible Next", "Verdana"), $font-system, comma);
+$font-heading: join("Atkinson Hyperlegible Next", $font-system, comma);
+$font-display: join("Michroma", $font-system, comma);
+$font-accent: join(
+  ("Atkinson Hyperlegible Mono", "Roboto Mono"),
+  $font-system,
+  comma
+);
+
+// Michroma has a very tall x-height; this keeps it at the size the
+// mocks were approved at.
+$font-display-size-adjust: 0.42;
 
 // These variables come from Typey and Normalize.
 
@@ -75,7 +88,7 @@ $font-size: (
 // This map and accompanying function help provide granular control over
 // setting and retrieving static font weights.
 $font-weight: (
-  bold: 900,
+  bold: 700,
   normal: 400,
   lighter: 200,
 ) !default;
@@ -117,6 +130,10 @@ $typefaces: (
   heading: (
     font-family: $font-heading,
     weight: bold,
+  ),
+  display: (
+    font-family: $font-display,
+    weight: normal,
   ),
   accent: (
     font-family: $font-accent,

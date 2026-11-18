@@ -1,5 +1,6 @@
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/typeface" as tf;
+@use "../mixins/cssvars" as cv;
 
 .c-accent {
   position: relative;
@@ -8,11 +9,11 @@
     top: 0.25rem;
     left: 0.25rem;
     @include tf.typeface(accent);
-    @include fs.font-size(xxxs);
-    opacity: 40%;
+    opacity: 50%;
+    color: cv.cv(color-chrome-label);
+    font-size: 0.625rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     pointer-events: none;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale;
-    font-smooth: none;
   }
 }

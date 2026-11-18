@@ -17,6 +17,7 @@
     --r12-color-canvas: #fff;
     --r12-color-surface: #fff;
     --r12-color-text: #000;
+    --r12-color-text-heading: #000;
     --r12-color-text-interactive-primary: #000;
     --r12-color-surface-border: #999;
   }
@@ -96,11 +97,20 @@
       border: 0 !important;
       padding: 0;
     }
+    // undo the screen title bar: plain heading with a rule under it
     section > h2 {
+      display: block;
       margin: 0.9rem 0 0.4rem;
+      border-top: 0;
       border-bottom: 1px solid #000;
-      padding-bottom: 0.15rem;
+      background: none;
+      padding: 0 0 0.15rem;
+      font-family: t.$font-heading;
+      font-weight: 700;
       font-size: 14pt;
+      font-size-adjust: none;
+      letter-spacing: 0;
+      &::before,
       &::after {
         content: none;
       }
@@ -142,6 +152,12 @@
     }
     h3 {
       font-size: 13pt !important;
+    }
+    li:not(.c-tag),
+    .p-experience__header p {
+      margin: 0.1rem 0;
+      font-size: inherit;
+      line-height: inherit;
     }
     > div > ul:has(> .c-tag) {
       color: #333;

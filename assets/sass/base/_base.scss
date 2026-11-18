@@ -25,6 +25,8 @@
     color-surface-stripe: #{c.$color-surface-stripe},
 
     color-text: #{c.$color-text},
+    color-text-heading: #{c.$color-text-heading},
+    color-text-meta: #{c.$color-text-meta},
     color-text-logo: #{c.$color-text-logo},
 
     color-text-interactive-basic: #{c.$color-text-interactive-basic},
@@ -44,6 +46,14 @@
     color-interactive-border-primary-hover:
       #{c.$color-interactive-border-primary-hover},
 
+    color-focus: #{c.$color-focus},
+    color-chrome-glyph: #{c.$color-chrome-glyph},
+    color-chrome-label: #{c.$color-chrome-label},
+    color-chrome-dots: #{c.$color-chrome-dots},
+    color-titlebar-fill: #{c.$color-titlebar-fill},
+    color-titlebar-highlight: #{c.$color-titlebar-highlight},
+    color-titlebar-shadow: #{c.$color-titlebar-shadow},
+
     shadow-raised: #{c.$shadow-raised},
     shadow-text-sunken: #{c.$shadow-text-sunken},
     shadow-text-raised: #{c.$shadow-text-raised},
@@ -59,21 +69,11 @@
 body {
   @include tf.typeface(body);
   @include fs.font-size(xs);
-  background-image:
-    radial-gradient(cv.cv(color-canvas-line) 12%, transparent 13%),
-    linear-gradient(cv.cv(color-canvas), cv.cv(color-canvas-alt)),
-    url("/background.webp");
-  background-position:
-    0 0,
-    0 0,
-    center center;
-  // background source https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
-  background-size:
-    1rem 1rem,
-    auto auto,
-    cover;
-  background-attachment: fixed, fixed, fixed;
-  background-color: cv.cv(color-canvas);
+  // Low-orbit wireframe + fractal flame + HUD (locked 2026-11-17).
+  // Source + generator: chilblane-site/design-assets (not in this repo).
+  background: url("/background-r10-orbit.webp") center / cover no-repeat
+    fixed;
+  background-color: #{c.$crayon-gray-110};
   color: cv.cv(color-text);
   line-height: 1.5;
 }
@@ -82,6 +82,12 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  color: cv.cv(color-text-heading);
 }
 
 a {
@@ -93,9 +99,23 @@ a {
   }
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid cv.cv(color-focus);
+  outline-offset: 2px;
+}
+
 p,
 li {
   @include s.margin(1 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
 }
 
 code,

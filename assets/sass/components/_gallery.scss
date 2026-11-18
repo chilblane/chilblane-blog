@@ -8,10 +8,14 @@
   border: 1px solid cv.cv(color-surface-border);
   background-color: cv.cv(color-surface-raised);
   @include s.padding(0.25);
-  .galleryImg {
-    opacity: 80%;
-    &:hover {
-      opacity: 1;
+  @media (hover: hover) {
+    .galleryImg {
+      opacity: 88%;
+      transition: opacity 0.2s;
+      &:hover,
+      &:focus-visible {
+        opacity: 1;
+      }
     }
   }
 }
