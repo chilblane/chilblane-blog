@@ -11,14 +11,12 @@
       "img" .
       "alt" $title
       "sizes" "(min-width: 60rem) 29rem, 100vw"
-    ) }}
+      )
+    }}
   {{ end }}
   <span class="c-tag">{{- .Params.project_year -}}</span>
   <h3>
-    <a
-      class="c-button"
-      href="{{ .Permalink }}"
-    >
+    <a class="c-button" href="{{ .Permalink }}">
       <span class="c-button__label">{{- $title -}}</span>
     </a>
   </h3>

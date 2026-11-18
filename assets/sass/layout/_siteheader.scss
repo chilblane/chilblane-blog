@@ -8,14 +8,14 @@
 @use "../mixins/code-label" as cl;
 
 .l-siteheader {
-  // 0.75rem keeps the <header /> label clear of the nav text.
-  padding: 0.75rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid cv.cv(color-surface-border);
   background-color: cv.cv(color-surface-raised);
+  // 0.75rem keeps the <header /> label clear of the nav text.
+  padding: 0.75rem 0;
   &::before {
     @include cl.code-label("<header />");
   }
@@ -23,12 +23,12 @@
     @include s.padding(0 1);
     @include tf.typeface(display);
     @include fs.font-size(l);
-    font-size-adjust: $font-display-size-adjust;
     display: flex;
     flex-direction: column;
     justify-content: center;
     order: 2;
     line-height: 1;
+    font-size-adjust: $font-display-size-adjust;
     text-align: right;
     text-shadow: cv.cv(shadow-text-raised);
     text-transform: lowercase;

@@ -30,12 +30,12 @@
   }
 
   .l-layout {
+    backdrop-filter: none;
     margin: 0;
     box-shadow: none;
     border: 0;
     background: none;
     max-width: none;
-    backdrop-filter: none;
   }
 
   .l-siteheader,
@@ -72,12 +72,12 @@
   }
   .c-tag {
     display: inline;
-    margin: 0;
     clip-path: none;
+    margin: 0;
     background: none;
     padding: 0;
-    font-family: t.$font-body;
     font-size: inherit;
+    font-family: t.$font-body;
     letter-spacing: 0;
     &:not(:last-child)::after {
       content: ", ";
@@ -105,9 +105,9 @@
       border-bottom: 1px solid #000;
       background: none;
       padding: 0 0 0.15rem;
-      font-family: t.$font-heading;
       font-weight: 700;
       font-size: 14pt;
+      font-family: t.$font-heading;
       font-size-adjust: none;
       letter-spacing: 0;
       &::before,
@@ -169,10 +169,10 @@
     margin-bottom: 0.4rem;
     .p-resume__name {
       margin: 0;
-      font-family: t.$font-heading;
       font-weight: 700;
       font-size: 24pt;
       line-height: 1.1;
+      font-family: t.$font-heading;
     }
     p {
       margin: 0.1rem 0;

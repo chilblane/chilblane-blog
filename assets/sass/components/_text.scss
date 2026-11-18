@@ -6,8 +6,8 @@
 
 .c-display {
   @include tf.typeface(display);
-  font-size-adjust: t.$font-display-size-adjust;
   line-height: 1;
+  font-size-adjust: t.$font-display-size-adjust;
   text-transform: lowercase;
   &--1 {
     @include fs.font-size(xxxl);

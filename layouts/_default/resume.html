@@ -2,7 +2,8 @@
   <main class="p-resume c-accent">
     <article>
       {{/* Print/PDF only. The real email address renders only in the "pdf"
-        environment (npm run pdf), so the live page never carries it. */}}
+        environment (npm run pdf), so the live page never carries it.
+      */}}
       <div class="p-resume__print-header u-print-only">
         <p class="p-resume__name">{{ .Site.Params.navTitle }}</p>
         <p>Design systems designer &middot; Tempe, Arizona</p>
@@ -71,7 +72,8 @@
             <div class="p-experience__header">
               <div>
                 <h3>
-                  {{ .role }}, {{ .company }}
+                  {{ .role }},
+                  {{ .company }}
                 </h3>
                 <p class="u-margin-z">
                   {{ .startDate }} -
@@ -79,7 +81,8 @@
                 </p>
                 <p class="u-margin-z">
                   {{ .location }}{{ with .employmentType }}
-                    &middot; {{ . }}
+                    &middot;
+                    {{ . }}
                   {{ end }}
                 </p>
               </div>

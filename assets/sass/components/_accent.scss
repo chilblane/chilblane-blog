@@ -10,10 +10,10 @@
     left: 0.25rem;
     @include tf.typeface(accent);
     opacity: 50%;
+    pointer-events: none;
     color: cv.cv(color-chrome-label);
     font-size: 0.625rem;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    pointer-events: none;
   }
 }

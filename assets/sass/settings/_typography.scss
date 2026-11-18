@@ -7,14 +7,18 @@ $font-system:
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $font-monospace:
-  "Atkinson Hyperlegible Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-  monospace;
+  "Atkinson Hyperlegible Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace;
 
 // Locked 2026-11-17 (design-direction.md): Michroma = display layer
 // (wordmark, h1, tagline, title bars); Atkinson Hyperlegible Next = reading
 // text, bold for h3/nav/buttons; Atkinson Hyperlegible Mono = tags, year
 // chips, code labels, footer.
-$font-body: join(("Atkinson Hyperlegible Next", "Verdana"), $font-system, comma);
+$font-body: join(
+  ("Atkinson Hyperlegible Next", "Verdana"),
+  $font-system,
+  comma
+);
 $font-heading: join("Atkinson Hyperlegible Next", $font-system, comma);
 $font-display: join("Michroma", $font-system, comma);
 $font-accent: join(

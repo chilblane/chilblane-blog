@@ -18,8 +18,8 @@
   padding: 0.3rem 0.5rem 0.25rem;
   color: cv.cv(color-text-heading);
   font-size: 1.0625rem;
-  font-size-adjust: t.$font-display-size-adjust;
   line-height: 1.2;
+  font-size-adjust: t.$font-display-size-adjust;
   letter-spacing: 0.14em;
   text-transform: lowercase;
   &::before {

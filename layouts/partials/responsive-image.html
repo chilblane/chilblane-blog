@@ -1,13 +1,12 @@
-{{/*
-  Responsive <img> with a WebP srcset. Every image on the site that needs
+{{/* Responsive <img> with a WebP srcset. Every image on the site that needs
   srcset goes through here, so widths and quality live in one place.
 
   Params (dict):
-    img      image resource (required)
-    alt      alt text
-    sizes    how wide the image displays, e.g. "(min-width: 60rem) 29rem, 100vw"
-    widths   target widths (default 480 800 1280)
-    loading  "lazy" (default) or "eager" for images near the top of the page
+  img      image resource (required)
+  alt      alt text
+  sizes    how wide the image displays, e.g. "(min-width: 60rem) 29rem, 100vw"
+  widths   target widths (default 480 800 1280)
+  loading  "lazy" (default) or "eager" for images near the top of the page
 
   Never upscales: widths wider than the original are skipped, and an image
   narrower than the largest width also gets a copy at its own width.
@@ -33,6 +32,7 @@
   {{ $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $r.Width) }}
   {{ $largest = $r }}
 {{ end }}
+
 
 <img
   srcset="{{ delimit $srcset ", " }}"

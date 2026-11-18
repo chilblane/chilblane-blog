@@ -67,8 +67,7 @@ body {
   @include fs.font-size(xs);
   // Low-orbit wireframe + fractal flame + HUD (locked 2026-11-17).
   // Source + generator: chilblane-site/design-assets (not in this repo).
-  background: url("/background-r10-orbit.webp") center / cover no-repeat
-    fixed;
+  background: url("/background-r10-orbit.webp") center / cover no-repeat fixed;
   background-color: #{c.$crayon-gray-110};
   // Tall, narrow screens (phones) only ever show the middle of the image;
   // serve that 1000x1600 column (322 KB instead of 678 KB).
