@@ -22,6 +22,10 @@
     flex-grow: 999;
     content: "";
   }
+  // main.js sizes every row exactly; the no-JS spacer would only get in the way
+  &.is-justified::after {
+    display: none;
+  }
   &__item {
     display: block;
     flex: var(--ar) 1 calc(var(--ar) * var(--row));

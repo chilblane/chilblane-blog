@@ -10,6 +10,11 @@
 
 .p-single {
   @include s.padding(1);
+
+  // Figures and galleries break out of the text column into whatever room
+  // the page has, up to the frame width. 100cqw is .p-single's content box,
+  // so this never overflows (the old fixed 10rem did between 640 and 960px).
+  container-type: inline-size;
   article {
     margin-right: auto;
     margin-left: auto;
@@ -53,19 +58,19 @@
     font-size: 1.125rem;
     line-height: 1.55;
   }
+  .c-figure,
+  .c-gallery {
+    margin-inline: calc(
+      -1 *
+        clamp(
+          0px,
+          (100cqw - #{cv.cv(sizes-content-width)}) / 2,
+          (#{cv.cv(sizes-layout-width)} - #{cv.cv(sizes-content-width)}) / 2
+        )
+    );
+  }
 
   @include b.breakpoint-lg {
-    .c-figure,
-    .c-gallery {
-      margin-right: min(
-        -1.5rem,
-        (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2
-      );
-      margin-left: min(
-        -1.5em,
-        (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2
-      );
-    }
     .c-figure {
       img {
         max-height: 60rem;
