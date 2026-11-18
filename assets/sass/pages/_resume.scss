@@ -91,8 +91,9 @@
   }
   h3 {
     @include tf.typeface(heading);
+    margin: 0 0 0.4rem;
     font-size: 1.1875rem;
-    line-height: 1;
+    line-height: 1.2;
     letter-spacing: 0;
     text-transform: lowercase;
   }
