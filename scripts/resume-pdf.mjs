@@ -94,5 +94,12 @@ try {
   console.log(`Wrote ${OUT} (${Math.round(statSync(out).size / 1024)} KB)`);
   check(out);
 } finally {
-  hugo.kill();
+  // On Windows "hugo" is often a shim (Chocolatey, Scoop) that starts the real
+  // hugo.exe as a child; killing the shim leaves the server running. Kill the
+  // whole process tree instead.
+  if (process.platform === "win32") {
+    spawnSync("taskkill", ["/pid", String(hugo.pid), "/T", "/F"], { stdio: "ignore" });
+  } else {
+    hugo.kill();
+  }
 }
