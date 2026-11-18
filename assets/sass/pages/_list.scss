@@ -5,6 +5,7 @@
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
 @use "../mixins/code-label" as cl;
 @use "../mixins/title-bar" as tb;
 
@@ -12,12 +13,11 @@
   header,
   section {
     @include ct.container();
-    @include s.padding-bottom(2);
+    @include cb.content-block;
   }
   header {
-    @include s.padding-top(2);
     h1 {
-      @include s.margin(0.5 0);
+      margin: 0;
     }
     h2 {
       @include tb.title-bar;
@@ -25,16 +25,13 @@
     }
     // Section title bars: room for the code label above, none below.
     &:has(> h2) {
-      @include s.padding-top(1);
       padding-bottom: 0;
     }
     &::before {
       @include cl.code-label("<header />");
     }
   }
-  section {
-    @include s.padding-top(1);
-  }
+
   &__grid {
     display: grid;
     gap: 1.5rem;
@@ -49,7 +46,7 @@
     }
     img {
       @include if.img-fluid;
-      @include s.margin(1 0);
+      margin: 1rem 0;
     }
     @media (hover: hover) {
       img {

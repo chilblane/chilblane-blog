@@ -6,6 +6,7 @@
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
 @use "../mixins/code-label" as cl;
 @use "../mixins/title-bar" as tb;
 
@@ -16,7 +17,9 @@
     grid-template-columns: 2fr 1fr;
   }
   section {
-    @include s.padding(1);
+    @include cb.content-block;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     &:not(:last-child) {
       border-bottom: 1px solid cv.cv(color-surface-border);
     }
@@ -42,6 +45,7 @@
   }
   h1 {
     @include fs.font-size(xxl);
+    margin-bottom: 1rem;
   }
   // Tagline under the h1: Michroma, letterspaced, light gray (not amber:
   // amber means interactive).
@@ -59,12 +63,19 @@
     margin-top: 0;
   }
   aside p {
+    margin: 1.25rem 0;
     font-size: 0.9375rem;
     line-height: 1.55;
   }
   aside {
     border-top: 1px solid cv.cv(color-surface-border);
     @include s.margin-top(1);
+    > section {
+      padding: 2.25rem 1.75rem 2rem;
+    }
+    h2 {
+      margin-bottom: 1.25rem;
+    }
     hr {
       border: 0;
       border-top: 1px solid cv.cv(color-surface-border);
@@ -144,10 +155,18 @@
   }
 
   h3 {
-    @include s.margin(0.5 0);
+    margin: 0.75rem 0 0;
     @include fs.font-size(l);
     .c-button {
       display: flex;
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.25rem;
+    .c-tag {
+      margin: 0;
     }
   }
 }

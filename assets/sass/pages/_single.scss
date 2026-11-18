@@ -4,6 +4,7 @@
 @use "../typey/mixins/typeface" as tf;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/content-block" as cb;
 @use "../mixins/code-label" as cl;
 @use "../mixins/title-bar" as tb;
 
@@ -18,8 +19,7 @@
     @include cl.code-label("<article />");
   }
   header {
-    @include s.padding-top(1);
-    @include s.padding-bottom(1);
+    @include cb.content-block;
     border-bottom: 1px solid cv.cv(color-surface-border);
     h1 {
       @include s.margin(0.5 0);
@@ -30,8 +30,7 @@
     }
   }
   section {
-    @include s.padding-top(1);
-    @include s.padding-bottom(1);
+    @include cb.content-block;
     &::before {
       left: 0;
       @include cl.code-label("<section />");

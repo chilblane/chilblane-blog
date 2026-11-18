@@ -8,7 +8,8 @@
 @use "../mixins/code-label" as cl;
 
 .l-siteheader {
-  @include s.padding(1 0);
+  // 0.75rem keeps the <header /> label clear of the nav text.
+  padding: 0.75rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -1,0 +1,16 @@
+// Vertical spacing for a framed content block (a section/header that
+// carries a code label). The block owns the space at its edges: the
+// first and last child's own margins are dropped so they don't stack on
+// top of the padding. 1.75rem leaves room for the code label above.
+$content-block-space: 1.75rem;
+
+@mixin content-block($space: $content-block-space) {
+  padding-top: $space;
+  padding-bottom: $space;
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
