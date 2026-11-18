@@ -1,0 +1,79 @@
+@use "../mixins/cssvars" as cv;
+
+// Click-to-load YouTube video (layouts/shortcodes/youtube.html). Framed like
+// a gallery; the play button uses the site's amber chevron because it's the
+// one thing here you can press.
+.c-video {
+  margin: 2rem 0;
+  box-shadow: cv.cv(shadow-raised);
+  border: 1px solid cv.cv(color-surface-border);
+  background-color: cv.cv(color-surface-raised);
+  padding: 0.375rem;
+
+  &__link,
+  iframe {
+    display: block;
+    position: relative;
+    border: 0;
+    background: cv.cv(color-fill-code);
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__play {
+    // Grid centers the triangle both ways (margin: auto on a block only
+    // centers it horizontally, which left it stuck to the top edge).
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    place-items: center;
+    translate: -50% -50%;
+    // Solid amber so it reads as the one control on a busy thumbnail, with
+    // the buttons' clipped bottom-right corner.
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 0.5rem),
+      calc(100% - 0.5rem) 100%,
+      0 100%
+    );
+    transition: background-color 0.2s ease-out;
+    background: cv.cv(color-interactive-border-primary);
+    width: 6rem;
+    height: 4rem;
+    &::before {
+      // Nudge right: a triangle's visual center sits left of its box center.
+      translate: 0.15rem 0;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      background: cv.cv(color-interactive-fill-primary);
+      width: 1.5rem;
+      height: 1.875rem;
+      content: "";
+    }
+  }
+  &__link:hover &__play,
+  &__link:focus-visible &__play {
+    transition-timing-function: ease-in;
+    background: cv.cv(color-interactive-border-primary-hover);
+  }
+
+  &__label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(12, 16, 21, 0.85);
+    padding: 0.5rem 0.75rem;
+    color: cv.cv(color-text);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+}

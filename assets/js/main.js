@@ -205,6 +205,27 @@ if (document.readyState === 'loading') {
 }
 
 // ---------------------------------------------------------------------------
+// Click-to-load YouTube (layouts/shortcodes/youtube.html): the thumbnail link
+// becomes the player only when pressed, so YouTube loads nothing before then.
+
+document.addEventListener('click', (e) => {
+  const link = e.target.closest?.('a[data-youtube-id]');
+  if (!link || e.defaultPrevented || e.button !== 0) return;
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // new tab/window
+
+  e.preventDefault();
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(link.dataset.youtubeId)}?autoplay=1`;
+  iframe.title = link.dataset.youtubeTitle || 'YouTube video';
+  iframe.allow =
+    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
+  iframe.allowFullscreen = true;
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  link.replaceWith(iframe);
+  iframe.focus();
+});
+
+// ---------------------------------------------------------------------------
 
 document.addEventListener('click', (e) => {
   const link = e.target.closest?.(LINKS);

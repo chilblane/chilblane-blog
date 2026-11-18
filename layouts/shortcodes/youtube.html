@@ -1,0 +1,47 @@
+{{/* YouTube video, click to load (replaces Hugo's built-in youtube shortcode).
+  The page shows the video's thumbnail, fetched at build time and served from
+  this site, so nothing loads from YouTube until someone presses play. Then
+  assets/js/main.js swaps in the player (youtube-nocookie.com). Without JS
+  the link opens the video on YouTube.
+
+  Params:
+  id     YouTube video id (required)
+  title  video title, used for the link text and the player's title
+*/}}
+{{ $id := .Get "id" }}
+{{ $title := .Get "title" | default "YouTube video" }}
+
+{{/* maxresdefault doesn't exist for every video; Hugo returns nil on a 404 */}}
+{{ $thumb := false }}
+{{ range slice "maxresdefault" "hqdefault" }}
+  {{ if not $thumb }}
+    {{ with try (resources.GetRemote (printf "https://i.ytimg.com/vi/%s/%s.jpg" $id .)) }}
+      {{ with .Err }}
+        {{ warnf "youtube shortcode: thumbnail for %s: %s" $id . }}
+      {{ else with .Value }}
+        {{ $thumb = . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+
+<figure class="c-video">
+  <a
+    class="c-video__link"
+    href="https://www.youtube.com/watch?v={{ $id }}"
+    data-youtube-id="{{ $id }}"
+    data-youtube-title="{{ $title }}"
+  >
+    {{ with $thumb }}
+      {{ partial "responsive-image.html" (dict
+        "img" .
+        "alt" ""
+        "sizes" "(min-width: 40rem) 40rem, 100vw"
+        )
+      }}
+    {{ end }}
+    <span class="c-video__play" aria-hidden="true"></span>
+    <span class="c-video__label">Play video: {{ $title }}</span>
+  </a>
+</figure>
