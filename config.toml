@@ -1,7 +1,6 @@
 baseURL = "https://www.chilblane.com/"
 languageCode = "en-us"
 title = "Daniel Singer | Design systems designer"
-theme = ["hugo-shortcode-gallery"]
 timeout = 60000
 
 
@@ -15,14 +14,6 @@ timeout = 60000
     currentAlert = "Welcome! We're in the middle of a redesign, so please pardon the dust."
 
     images = ["og-image.jpg"]
-    galleryLoadJQuery = true
-    gallerySortOrder = "asc"
-    galleryPreviewType ="blur"
-    galleryEmbedPreview = true
-    galleryLastRow = "nojustify"
-    galleryRowHeight = 200
-    galleryMaxRowHeight = false
-    galleryThumbnailResizeOptions="600x600 q90 Lanczos"
 
 [menu]
     [[menu.main]]
