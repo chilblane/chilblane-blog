@@ -55,16 +55,26 @@ function build() {
     else if (e.key === 'ArrowRight') show(index + 1);
   });
 
-  // Swipe left/right on touch screens.
+  // Swipe left/right on touch screens. The dialog's touch-action (pan-y
+  // pinch-zoom, components/_lightbox.scss) keeps horizontal drags from being
+  // claimed as a pan, which would end in pointercancel instead of pointerup.
+  // While pinch-zoomed in, a drag pans the image instead of changing it.
+  const zoomed = () => (window.visualViewport?.scale ?? 1) > 1.01;
   let startX = null;
   dialog.addEventListener('pointerdown', (e) => {
-    if (e.pointerType !== 'mouse') startX = e.clientX;
+    if (e.pointerType !== 'mouse' && !zoomed()) startX = e.clientX;
+  });
+  dialog.addEventListener('pointercancel', () => {
+    startX = null;
   });
   dialog.addEventListener('pointerup', (e) => {
     if (startX === null) return;
     const dx = e.clientX - startX;
     startX = null;
     if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+  });
+  window.visualViewport?.addEventListener('resize', () => {
+    dialog.style.touchAction = zoomed() ? 'auto' : '';
   });
 
   // Esc (native) or the close button: hand focus back to the clicked image.

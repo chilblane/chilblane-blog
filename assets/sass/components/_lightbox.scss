@@ -19,6 +19,8 @@ html:has(.c-lightbox[open]) {
   max-width: none;
   height: 100%;
   max-height: none;
+  // Horizontal drags are swipes (main.js); vertical pan + pinch stay native.
+  touch-action: pan-y pinch-zoom;
   color: cv.cv(color-text);
   &[open] {
     display: grid;
