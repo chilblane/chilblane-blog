@@ -5,6 +5,7 @@
 @use "../typey/mixins/font-size" as fs;
 @use "../typey/mixins/spacing" as s;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/code-label" as cl;
 
 .p-list {
   header,
@@ -18,7 +19,7 @@
       @include s.margin(0.5 0);
     }
     &::before {
-      content: "<header />";
+      @include cl.code-label("<header />");
     }
   }
   section {
@@ -34,7 +35,7 @@
   &__item {
     @include s.padding(0 1 1);
     &::before {
-      content: '<div class="c-card" />';
+      @include cl.code-label('<div class="c-card" />');
     }
     img {
       @include if.img-fluid;

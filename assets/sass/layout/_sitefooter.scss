@@ -4,6 +4,7 @@
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/code-label" as cl;
 
 .l-sitefooter {
   @include s.padding(1 0);
@@ -20,7 +21,7 @@
     @include s.margin-left(1);
   }
   &::before {
-    content: "<footer />";
+    @include cl.code-label("<footer />");
   }
   &__links {
     @include fs.font-size(m);

@@ -6,6 +6,7 @@
 @use "../typey/mixins/spacing" as s;
 @use "../typey/mixins/typeface" as tf;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/code-label" as cl;
 
 .p-home {
   @include b.breakpoint-xl {
@@ -23,17 +24,17 @@
   }
   &__title {
     &::before {
-      content: '<section class="p-home__title" />';
+      @include cl.code-label('<section class="p-home__title" />');
     }
   }
   &__intro {
     &::before {
-      content: '<section class="p-home__intro" />';
+      @include cl.code-label('<section class="p-home__intro" />');
     }
   }
   &__specialties {
     &::before {
-      content: '<section class="p-home__specialties" />';
+      @include cl.code-label('<section class="p-home__specialties" />');
     }
   }
   h1 {
@@ -65,7 +66,7 @@
       @include s.margin-top(1);
     }
     &::before {
-      content: "<aside />";
+      @include cl.code-label("<aside />");
     }
     @include b.breakpoint-xl {
       margin: 0;

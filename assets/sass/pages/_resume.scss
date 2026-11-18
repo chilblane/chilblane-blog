@@ -4,6 +4,7 @@
 @use "../mixins/breakpoints" as b;
 @use "../mixins/containers" as ct;
 @use "../mixins/cssvars" as cv;
+@use "../mixins/code-label" as cl;
 
 .p-resume {
   @include s.padding(1);
@@ -13,7 +14,7 @@
     max-width: cv.cv(sizes-content-width);
   }
   &::before {
-    content: "<article />";
+    @include cl.code-label("<article />");
   }
   header {
     @include s.padding-top(1);
@@ -24,7 +25,7 @@
     border-bottom: 1px solid cv.cv(color-surface-border);
     &::before {
       left: 0;
-      content: "<header />";
+      @include cl.code-label("<header />");
     }
     h1 {
       @include s.margin(0.5 0);
@@ -54,7 +55,7 @@
     }
     &::before {
       left: 0;
-      content: "<section />";
+      @include cl.code-label("<section />");
     }
   }
   section > h2 {
