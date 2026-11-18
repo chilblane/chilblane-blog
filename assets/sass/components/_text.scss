@@ -11,7 +11,12 @@
   text-transform: lowercase;
   &--1 {
     @include fs.font-size(xxxl);
+    // Michroma is wide: on small phones a long word ("experience") is wider
+    // than the column at 60px. Scale with the column (viewport minus the 3rem
+    // page gutters) below ~390px; break a word only if it still can't fit.
+    font-size: min(3.75rem, calc((100vw - 3rem) * 0.19));
     line-height: 1;
+    overflow-wrap: break-word;
   }
   &--2 {
     @include fs.font-size(xxl);
