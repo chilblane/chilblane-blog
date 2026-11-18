@@ -17,6 +17,11 @@
   img {
     @include if.img-fluid;
     margin: 0 auto;
+    // The width/height attributes (responsive-image.html) count as a fixed
+    // CSS width. With width auto, max-width and the max-height in
+    // pages/_single.scss shrink both sides together instead of squashing a
+    // tall screenshot sideways.
+    width: auto;
   }
   figcaption {
     margin-right: auto;

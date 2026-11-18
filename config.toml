@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "Daniel Singer | Design systems designer"
 timeout = 60000
 
+# No taxonomies: case studies use knowledge/skills params, so Hugo's default
+# /tags/ and /categories/ pages were empty (and listed in the sitemap).
+disableKinds = ["taxonomy", "term"]
+
 
 [params]
     description = "Daniel Singer is a design systems designer and design technologist based in Tempe, Arizona."
@@ -11,7 +15,6 @@ timeout = 60000
     email = "daniel at chilblane dot com"
     github = "https://www.github.com/chilblane"
     linkedin = "https://www.linkedin.com/in/chilblane"
-    currentAlert = "Welcome! We're in the middle of a redesign, so please pardon the dust."
 
     images = ["og-image.jpg"]
 

@@ -8,45 +8,23 @@
 <meta property="og:title" content="{{ $title }}" />
 <meta name="twitter:title" content="{{ $title }}" />
 
-{{/* description */}}
-
-
-<meta
-  name="description"
-  content="{{ with .Description }}
-    {{ . }}
+{{/* description: page description, else the page summary, else the site
+  description. Built once and trimmed so the attribute holds clean text.
+*/}}
+{{ $description := .Description }}
+{{ if not $description }}
+  {{ if .IsPage }}
+    {{ $description = .Summary | plainify }}
   {{ else }}
-    {{ if .IsPage }}
-      {{ .Summary }}
-    {{ else }}
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{ end }}
-  {{ end }}"
-/>
-<meta
-  property="og:description"
-  content="{{ with .Description }}
-    {{ . }}
-  {{ else }}
-    {{ if .IsPage }}
-      {{ .Summary }}
-    {{ else }}
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{ end }}
-  {{ end }}"
-/>
-<meta
-  name="twitter:description"
-  content="{{ with .Description }}
-    {{ . }}
-  {{ else }}
-    {{ if .IsPage }}
-      {{ .Summary }}
-    {{ else }}
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{ end }}
-  {{ end }}"
-/>
+    {{ $description = .Site.Params.description }}
+  {{ end }}
+{{ end }}
+{{ $description = $description | strings.TrimSpace }}
+{{ with $description }}
+  <meta name="description" content="{{ . }}" />
+  <meta property="og:description" content="{{ . }}" />
+  <meta name="twitter:description" content="{{ . }}" />
+{{ end }}
 
 {{/* thumbnail */}}
 
