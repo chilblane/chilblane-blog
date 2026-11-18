@@ -139,6 +139,23 @@
 .p-home-featured {
   display: flex;
   flex-direction: column;
+  // Tablet: the aside is full width, so sit the thumbnail beside the
+  // details instead of stretching it ~400px tall.
+  @include b.breakpoint-lg {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    .p-home-featured__thumbnail {
+      flex: 0 0 45%;
+    }
+  }
+  @include b.breakpoint-xl {
+    flex-direction: column;
+    gap: 0;
+    .p-home-featured__thumbnail {
+      flex: 1 0 auto;
+    }
+  }
   &__thumbnail {
     flex: 1 0 auto;
     img {
