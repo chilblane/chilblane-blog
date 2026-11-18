@@ -56,7 +56,7 @@
 
   @include b.breakpoint-lg {
     .c-figure,
-    .gallery-wrapper {
+    .c-gallery {
       margin-right: min(
         -1.5rem,
         (cv.cv(sizes-layout-width) - cv.cv(sizes-content-width)) / -2

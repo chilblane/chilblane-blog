@@ -1,0 +1,58 @@
+{{/* Image gallery: justified rows done in CSS (no JS). Each thumbnail links
+  to the original image and opens in the page lightbox (assets/js/main.js).
+
+  Params:
+  match  glob of page resources, e.g. "redesign-1/mobile/*" (required)
+  alt    optional prefix for the alt text, e.g. "Low-fidelity mockup"
+
+  Alt text is built from the file name: "01-list-view-mobile.png" becomes
+  "List view mobile" (or "Low-fidelity mockup: List view mobile").
+*/}}
+{{ $prefix := .Get "alt" }}
+{{ $images := .Page.Resources.Match (.Get "match") }}
+<div class="c-gallery">
+  {{ range sort $images "Name" }}
+    {{ if eq .ResourceType "image" }}
+      {{ $label := path.Base .Name
+        | strings.TrimSuffix (path.Ext .Name)
+        | replaceRE `^\d+[-_]` ""
+        | humanize
+      }}
+      {{ $alt := $label }}
+      {{ with $prefix }}{{ $alt = printf "%s: %s" . $label }}{{ end }}
+
+      {{/* thumbnail: 360px tall covers the ~170px row at 2x */}}
+      {{ $thumb := . }}
+      {{ if gt .Height 360 }}
+        {{ $thumb = .Resize "x360 webp q80" }}
+      {{ else }}
+        {{ $thumb = .Resize (printf "%dx webp q80" .Width) }}
+      {{ end }}
+
+      {{/* lightbox image: WebP, never wider than 1920 */}}
+      {{ $full := . }}
+      {{ if gt .Width 1920 }}
+        {{ $full = .Resize "1920x webp q85" }}
+      {{ else }}
+        {{ $full = .Resize (printf "%dx webp q85" .Width) }}
+      {{ end }}
+
+
+      <a
+        class="c-gallery__item"
+        href="{{ .RelPermalink }}"
+        data-lightbox-src="{{ $full.RelPermalink }}"
+        style="--ar: {{ div (float .Width) .Height }}"
+      >
+        <img
+          src="{{ $thumb.RelPermalink }}"
+          width="{{ $thumb.Width }}"
+          height="{{ $thumb.Height }}"
+          alt="{{ $alt }}"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    {{ end }}
+  {{ end }}
+</div>

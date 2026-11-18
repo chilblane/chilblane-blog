@@ -1,0 +1,138 @@
+@use "../mixins/breakpoints" as b;
+@use "../mixins/cssvars" as cv;
+@use "../mixins/title-bar" as tb;
+
+// Image viewer (assets/js/main.js): a native modal <dialog> styled like a
+// site panel. Amber stays reserved for the controls you can press.
+
+html:has(.c-lightbox[open]) {
+  overflow: hidden;
+}
+
+.c-lightbox {
+  margin: 0;
+  inset: 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  color: cv.cv(color-text);
+  &[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  &::backdrop {
+    backdrop-filter: blur(6px);
+    background: rgba(12, 16, 21, 0.88);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    &[open] {
+      animation: c-lightbox-in 0.15s ease-out;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    max-width: 90rem;
+  }
+  &__title {
+    @include tb.title-bar;
+    flex: 1;
+    margin: 0;
+  }
+  &__close {
+    flex: 0 0 auto;
+    cursor: pointer;
+    border: 1px solid cv.cv(color-interactive-border-basic);
+    background: cv.cv(color-interactive-fill-basic);
+    width: 2.5rem;
+    height: 2.5rem;
+    color: cv.cv(color-text-interactive-primary);
+    font-size: 1.5rem;
+    line-height: 1;
+    &:hover {
+      border-color: cv.cv(color-interactive-border-basic-hover);
+    }
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 0.5rem 1rem;
+    min-height: 0;
+    @include b.breakpoint-lg {
+      padding: 0 4rem 1.5rem;
+    }
+  }
+  &__img {
+    box-shadow: cv.cv(shadow-raised);
+    border: 1px solid cv.cv(color-surface-border);
+    background: cv.cv(color-surface-raised);
+    max-width: 100%;
+    min-height: 0;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  &__caption {
+    margin-top: 0.75rem;
+    max-width: 60ch;
+    font-style: italic;
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+
+  // prev/next: the site's button chevron, large enough for thumbs
+  &__nav {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    cursor: pointer;
+    border: 1px solid cv.cv(color-interactive-border-basic);
+    background: cv.cv(color-interactive-fill-basic);
+    width: 2.75rem;
+    height: 4rem;
+    &::before {
+      display: block;
+      margin: auto;
+      background: cv.cv(color-text-interactive-primary);
+      width: 0.6rem;
+      height: 1.1rem;
+      content: "";
+    }
+    &:hover {
+      border-color: cv.cv(color-interactive-border-basic-hover);
+    }
+    &--prev {
+      left: 0.5rem;
+      &::before {
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+      }
+    }
+    &--next {
+      right: 0.5rem;
+      &::before {
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+      }
+    }
+    &[hidden] {
+      display: none;
+    }
+  }
+}
+
+@keyframes c-lightbox-in {
+  from {
+    opacity: 0;
+  }
+}

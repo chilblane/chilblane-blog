@@ -1,7 +1,15 @@
-{{/* Case study image. Links to the full-size original. */}}
+{{/* Case study image. Links to the full-size original; with JS the link
+  opens the page lightbox instead (assets/js/main.js), using a WebP copy.
+*/}}
 {{ with $.Page.Resources.GetMatch (.Get "name") }}
+  {{ $full := . }}
+  {{ if gt .Width 1920 }}
+    {{ $full = .Resize "1920x webp q85" }}
+  {{ else }}
+    {{ $full = .Resize (printf "%dx webp q85" .Width) }}
+  {{ end }}
   <figure class="c-figure">
-    <a href="{{ .RelPermalink }}">
+    <a href="{{ .RelPermalink }}" data-lightbox-src="{{ $full.RelPermalink }}">
       {{ partial "responsive-image.html" (dict
         "img" .
         "alt" ($.Get "alt")
