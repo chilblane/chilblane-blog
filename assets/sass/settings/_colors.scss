@@ -50,8 +50,6 @@ $crayon-orange-110: #331f00;
 // 5. Contrast floors are measured over the lightest background area.
 
 $color-canvas: color.adjust($crayon-gray-110, $alpha: -0.4);
-$color-canvas-alt: color.adjust($crayon-blue-100, $alpha: -0.4);
-$color-canvas-line: color.adjust($crayon-blue-040, $alpha: -0.8);
 
 // Glass panel: 50% tint over the blurred background (min 6.57:1 text
 // contrast measured over background-r10-orbit.webp).
@@ -59,12 +57,9 @@ $color-surface: color.adjust($crayon-gray-110, $alpha: -0.5);
 $color-surface-raised: color.adjust($crayon-gray-080, $alpha: -0.5);
 $color-surface-border: $crayon-gray-070;
 $color-surface-divider: $crayon-gray-060;
-$color-surface-stripe: color.adjust($crayon-gray-060, $alpha: -0.5);
 
 $color-text: $crayon-gray-020;
 $color-text-heading: $crayon-gray-010;
-$color-text-meta: $crayon-gray-030;
-$color-text-logo: $crayon-gray-090;
 
 // Button label text, on the amber or gray button fill.
 $color-text-interactive: $crayon-gray-010;
